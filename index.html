@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Livee 메인</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="liveecss_1.01.css" />
-  <style>
-    /* 섹션 전환 */
-    .page-section { display: none; }
-    .page-section.active { display: block; }
-  </style>
+  <link rel="stylesheet" href="main.css?v=1.08" />
 </head>
 <body>
   <!-- HEADER -->
@@ -23,133 +18,94 @@
     </div>
   </header>
 
-  <!-- 메인 페이지 -->
-  <div id="home" class="page-section active">
-    <!-- BANNER -->
-    <div class="banner-container" id="bannerContainer">
-      <div class="banner-slide" id="bannerSlide">
-        <div class="banner">나의 방송 경력으로 기회를 만들어보세요</div>
-        <div class="banner">지금 바로 프로필을 등록하세요</div>
-        <div class="banner">쇼핑라이브로 성장하세요</div>
-      </div>
-      <div class="slide-dots" id="dots">
-        <div class="dot active" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
-      </div>
+  <!-- BANNER -->
+  <div class="banner-container" id="bannerContainer">
+    <div class="banner-slide" id="bannerSlide">
+      <div class="banner">나의 방송 경력으로 기회를 만들어보세요</div>
+      <div class="banner">지금 바로 프로필을 등록하세요</div>
+      <div class="banner">쇼핑라이브로 성장하세요</div>
     </div>
-
-    <main>
-      <!-- 쇼핑라이브 공고 -->
-      <section>
-        <div class="section-head">
-          <h2>쇼핑라이브 공고</h2>
-          <a href="#" class="more" onclick="showPage('recruit')">더보기</a>
-        </div>
-        <div class="card-grid">
-          <div class="live-card">
-            <img src="https://via.placeholder.com/200x100/ffccc7/000?text=공고1" alt="공고1">
-            <div class="info">
-              <div class="title">신규 화장품 라이브</div>
-              <div class="brand">브랜드 A</div>
-              <button>지원하기</button>
-            </div>
-          </div>
-          <div class="live-card">
-            <img src="https://via.placeholder.com/200x100/bae7ff/000?text=공고2" alt="공고2">
-            <div class="info">
-              <div class="title">패션 신상 라이브</div>
-              <div class="brand">브랜드 B</div>
-              <button>지원하기</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 인기 쇼호스트 -->
-      <section>
-        <div class="section-head">
-          <h2>인기 쇼호스트</h2>
-          <a href="#" class="more">더보기</a>
-        </div>
-        <div class="host-list">
-          <div class="host-card"><div class="avatar"></div>쇼호스트 1</div>
-          <div class="host-card"><div class="avatar"></div>쇼호스트 2</div>
-          <div class="host-card"><div class="avatar"></div>쇼호스트 3</div>
-        </div>
-      </section>
-
-      <!-- 실시간 후기 -->
-      <section>
-        <div class="section-head">
-          <h2>실시간 후기</h2>
-          <a href="#" class="more">더보기</a>
-        </div>
-        <div class="review-card">
-          <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1">
-          <div class="review-info">
-            <div class="stars">★★★★★</div>
-            <p>"라이브 덕분에 매출이 늘었어요!"</p>
-            <span class="author">- 쇼핑몰 A</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2">
-          <div class="review-info">
-            <div class="stars">★★★★☆</div>
-            <p>"쇼호스트 진행이 너무 좋아요."</p>
-            <span class="author">- 브랜드 B</span>
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="slide-dots" id="dots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+    </div>
   </div>
 
-  <!-- 공고리스트 페이지 -->
-  <div id="recruit" class="page-section">
-    <main class="recruit-list">
+  <!-- CONTENT -->
+  <main>
+    <!-- 쇼핑라이브 공고 -->
+    <section>
       <div class="section-head">
-        <h2>쇼핑라이브 공고 리스트</h2>
-        <a href="#" class="more" onclick="showPage('home')">← 돌아가기</a>
+        <h2>쇼핑라이브 공고</h2>
+        <a href="recruitlist.html" class="more">더보기</a>
       </div>
-      <div class="recruit-card">
-        <img src="https://via.placeholder.com/300x150/ffd6e7/000?text=공고1" alt="공고1">
-        <div class="info">
-          <div class="title">여름 패션 신상 소개 라이브</div>
-          <div class="brand">브랜드 A</div>
-          <div class="meta">방송일: 2025-08-10 | 오후 8시</div>
-          <button>지원하기</button>
+      <div class="card-grid">
+        <div class="live-card">
+          <img src="https://via.placeholder.com/200x100/ffccc7/000?text=공고1" alt="공고1">
+          <div class="info">
+            <div class="title">신규 화장품 라이브</div>
+            <div class="brand">브랜드 A</div>
+            <button>지원하기</button>
+          </div>
+        </div>
+        <div class="live-card">
+          <img src="https://via.placeholder.com/200x100/bae7ff/000?text=공고2" alt="공고2">
+          <div class="info">
+            <div class="title">패션 신상 라이브</div>
+            <div class="brand">브랜드 B</div>
+            <button>지원하기</button>
+          </div>
         </div>
       </div>
-      <div class="recruit-card">
-        <img src="https://via.placeholder.com/300x150/d6eaff/000?text=공고2" alt="공고2">
-        <div class="info">
-          <div class="title">신제품 화장품 런칭 라이브</div>
-          <div class="brand">브랜드 B</div>
-          <div class="meta">방송일: 2025-08-15 | 오후 6시</div>
-          <button>지원하기</button>
+    </section>
+
+    <!-- 인기 쇼호스트 -->
+    <section>
+      <div class="section-head">
+        <h2>인기 쇼호스트</h2>
+        <a href="#" class="more">더보기</a>
+      </div>
+      <div class="host-list">
+        <div class="host-card"><div class="avatar"></div>쇼호스트 1</div>
+        <div class="host-card"><div class="avatar"></div>쇼호스트 2</div>
+        <div class="host-card"><div class="avatar"></div>쇼호스트 3</div>
+      </div>
+    </section>
+
+    <!-- 실시간 후기 -->
+    <section>
+      <div class="section-head">
+        <h2>실시간 후기</h2>
+        <a href="#" class="more">더보기</a>
+      </div>
+      <div class="review-card">
+        <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1">
+        <div class="review-info">
+          <div class="stars">★★★★★</div>
+          <p>"라이브 덕분에 매출이 늘었어요!"</p>
+          <span class="author">- 쇼핑몰 A</span>
         </div>
       </div>
-    </main>
-  </div>
+      <div class="review-card">
+        <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2">
+        <div class="review-info">
+          <div class="stars">★★★★☆</div>
+          <p>"쇼호스트 진행이 너무 좋아요."</p>
+          <span class="author">- 브랜드 B</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- NAV -->
   <nav>
-    <button class="active" onclick="showPage('home')"><i class="ri-home-line"></i>홈</button>
-    <button onclick="showPage('recruit')"><i class="ri-live-line"></i>라이브</button>
+    <button class="active"><i class="ri-home-line"></i>홈</button>
+    <button onclick="location.href='recruitlist.html'"><i class="ri-live-line"></i>라이브</button>
     <button><i class="ri-briefcase-line"></i>구직</button>
     <button><i class="ri-user-3-line"></i>마이</button>
   </nav>
 
-  <script defer src="liveejs_1.01.js"></script>
-  <script>
-    function showPage(page) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(page).classList.add('active');
-      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-      if (page === 'home') document.querySelectorAll('nav button')[0].classList.add('active');
-      if (page === 'recruit') document.querySelectorAll('nav button')[1].classList.add('active');
-    }
-  </script>
+  <script defer src="main.js"></script>
 </body>
 </html>
