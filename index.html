@@ -6,7 +6,7 @@
   <title>라이비 메인페이지</title>
   <link rel="stylesheet" href="main.css" />
   <script defer src="main.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
   <!-- 공지 띠 배너 -->
@@ -54,71 +54,57 @@
     </div>
   </section>
 
-  <!-- 이런 문제 겪어보셨나요 -->
-  <section class="problem-section">
-    <h2>이런 문제 겪어보셨나요?</h2>
-    <ul>
-      <li>❌ 대금 미지급</li>
-      <li>⏰ 촬영 시간 초과</li>
-      <li>📸 과도한 노출 강요</li>
-      <li>📩 DM으로 섭외 요청</li>
-    </ul>
-    <p>그래서 <strong>라이비</strong>가 필요합니다</p>
-    <p>검증된 프로필 기반 섭외 매칭 시스템</p>
-  </section>
-
   <!-- 모집 중인 쇼핑라이브 -->
   <section class="recruit-section">
     <div class="section-header">
       <h2>모집 중인 쇼핑라이브</h2>
       <a href="recruitment_0725_v1.01.html" class="more-link">더보기</a>
     </div>
-    <p class="empty-text">현재 모집 중인 공고가 없습니다.</p>
+    <div id="recruit-preview"></div>
+  </section>
+
+  <!-- 이런 문제 겪어보셨나요? -->
+  <section class="problems">
+    <h2>이런 문제 겪어보셨나요?</h2>
+    <ul>
+      <li>📦 제품만 보내고 방송 내용은 전혀 공유되지 않았던 경험</li>
+      <li>💰 방송 후 정산이 제대로 되지 않아 곤란했던 경험</li>
+      <li>⏰ 촬영 시간 초과, 무리한 요구로 힘들었던 경험</li>
+      <li>📩 DM이나 지인 추천으로만 섭외가 이루어졌던 불편함</li>
+    </ul>
+    <p class="solution">그래서 <strong>라이비</strong>가 필요합니다.<br />검증된 쇼호스트와 브랜드를 안전하게 연결합니다.</p>
   </section>
 
   <!-- 인기 쇼호스트 -->
-  <section class="host-section">
+  <section class="gray">
     <h2>인기 쇼호스트</h2>
     <div class="host-grid">
       <div class="host-card">
-        <img src="https://via.placeholder.com/150" alt="쇼호스트1" />
-        <div class="host-info">
-          <h3>홍길동</h3>
-          <p>경력 3년 · 밝고 명랑한 성격</p>
-        </div>
+        <img src="https://via.placeholder.com/80" />
+        <div>홍길동</div>
+        <div>5년차</div>
+        <div>밝고 에너지 넘침</div>
       </div>
       <div class="host-card">
-        <img src="https://via.placeholder.com/150" alt="쇼호스트2" />
-        <div class="host-info">
-          <h3>이영희</h3>
-          <p>경력 2년 · 꼼꼼한 설명 전문가</p>
-        </div>
+        <img src="https://via.placeholder.com/80" />
+        <div>김민지</div>
+        <div>3년차</div>
+        <div>전문적이고 꼼꼼함</div>
       </div>
     </div>
   </section>
 
   <!-- 방송 후기 -->
-  <section class="review-section">
+  <section>
     <h2>방송 후기</h2>
-    <div class="review-list">
-      <div class="review-card white-bg">
-        <p>“진짜 찐 방송경험이 느껴져요!”</p>
-        <span>- 브랜드A</span>
-      </div>
-      <div class="review-card gray-bg">
-        <p>“이전보다 매출이 2배 늘었습니다”</p>
-        <span>- 브랜드B</span>
-      </div>
-    </div>
+    <div class="review-card">🎤 쇼호스트 너무 잘하시고 즐거운 방송이었습니다!</div>
+    <div class="review-card">🛍️ 제품이 잘 팔려서 다음에도 꼭 함께하고 싶어요.</div>
   </section>
 
   <!-- 진행 중인 라이브 방송 -->
-  <section class="live-section">
+  <section class="gray">
     <h2>진행 중인 라이브 방송</h2>
-    <div class="live-box">
-      <p>아직 계약된 방송이 없습니다.</p>
-      <p>제휴를 원하시면 문의해주세요.</p>
-    </div>
+    <div class="review-card">현재 계약된 라이브 없음 – 제휴 문의 바랍니다.</div>
   </section>
 
   <!-- 하단 탭바 -->
