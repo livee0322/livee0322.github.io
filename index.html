@@ -3,115 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>라이비 메인페이지</title>
-  <link rel="stylesheet" href="main.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-  <script defer src="main.js"></script>
+  <title>Livee 메인페이지</title>
+  <link rel="stylesheet" href="/text/main.css" />
+  <script defer src="/text/main.js"></script>
 </head>
 <body>
+  <!-- 📌 상단 띠배너 -->
+  <div id="top-banner"></div>
 
-  <!-- 공지 띠 배너 -->
-  <div class="notice-banner">현재 개발중입니다</div>
-
-  <!-- 헤더 -->
+  <!-- 📌 헤더 영역 -->
   <header>
-    <div class="logo" onclick="location.href='index.html'">Livee</div>
-    <div class="auth-links">
-      <span id="loginLink" onclick="location.href='login_0725_v1.02.html'">로그인</span>
-      <span class="divider">|</span>
-      <span id="joinLink" onclick="location.href='join_0725_v1.04.html'">회원가입</span>
-    </div>
-    <div class="search">
-      <input type="text" id="searchInput" placeholder="검색어 입력" />
-      <button onclick="search()"><i class="ri-search-line"></i></button>
-    </div>
+    <div class="logo"></div>
+    <div class="search"></div>
+    <div class="auth-buttons"></div>
   </header>
 
-  <!-- 슬라이딩 배너 -->
-  <div class="slider">
-    <div class="slide red">
-      <div class="slide-text">
-        <p class="subtitle">라이브 커머스의 새로운 시작</p>
-        <h1 class="title">지금, 쇼핑라이브를<br>시작해보세요</h1>
-        <p class="desc">검증된 쇼호스트와 브랜드를 연결합니다</p>
-      </div>
-    </div>
-    <div class="slide orange">
-      <div class="slide-text">
-        <p class="subtitle">섭외가 고민이라면</p>
-        <h1 class="title">섭외공고 등록하고<br>지원 받아보세요</h1>
-        <p class="desc">수익은 공유하고, 과정은 간편하게</p>
-      </div>
-    </div>
-    <div class="slide yellow">
-      <div class="slide-text">
-        <p class="subtitle">쇼호스트라면</p>
-        <h1 class="title">나의 방송 경력으로<br>기회를 만들어보세요</h1>
-        <p class="desc">지금 바로 프로필을 등록하세요</p>
-      </div>
-    </div>
-  </div>
+  <!-- 📌 메인 슬라이드 배너 -->
+  <section id="main-slider"></section>
 
-  <!-- 모집 중인 쇼핑라이브 -->
-  <section>
-    <div class="section-header">
-      <h2>모집 중인 쇼핑라이브</h2>
-      <a href="recruitment_0725_v1.01.html">더보기</a>
-    </div>
-    <div id="recruit-preview"></div>
-  </section>
+  <!-- 📌 문제 제시 영역 -->
+  <section id="problem-section"></section>
 
-  <!-- 이런 문제 겪어보셨나요? -->
-  <section class="problems">
-    <h2>이런 문제 겪어보셨나요?</h2>
-    <ul>
-      <li>📦 제품만 보내고 방송 내용은 전혀 공유되지 않았던 경험</li>
-      <li>💰 방송 후 정산이 제대로 되지 않아 곤란했던 경험</li>
-      <li>⏰ 촬영 시간 초과, 무리한 요구로 힘들었던 경험</li>
-      <li>📩 DM이나 지인 추천으로만 섭외가 이루어졌던 불편함</li>
-    </ul>
-    <p class="solution">그래서 <strong>라이비</strong>가 필요합니다.<br />검증된 쇼호스트와 브랜드를 안전하게 연결합니다.</p>
-  </section>
+  <!-- 📌 모집 중인 쇼핑라이브 공고 -->
+  <section id="recruitment-preview"></section>
 
-  <!-- 인기 쇼호스트 -->
-  <section class="gray">
-    <h2>인기 쇼호스트</h2>
-    <div class="host-grid">
-      <div class="host-card">
-        <img src="https://via.placeholder.com/80" />
-        <div>홍길동</div>
-        <div>5년차</div>
-        <div>밝고 에너지 넘침</div>
-      </div>
-      <div class="host-card">
-        <img src="https://via.placeholder.com/80" />
-        <div>김민지</div>
-        <div>3년차</div>
-        <div>전문적이고 꼼꼼함</div>
-      </div>
-    </div>
-  </section>
+  <!-- 📌 인기 쇼호스트 리스트 -->
+  <section id="popular-hosts"></section>
 
-  <!-- 방송 후기 -->
-  <section>
-    <h2>방송 후기</h2>
-    <div class="review-card">🎤 쇼호스트 너무 잘하시고 즐거운 방송이었습니다!</div>
-    <div class="review-card">🛍️ 제품이 잘 팔려서 다음에도 꼭 함께하고 싶어요.</div>
-  </section>
+  <!-- 📌 방송 후기 슬라이드 -->
+  <section id="review-section"></section>
 
-  <!-- 진행 중인 라이브 방송 -->
-  <section class="gray">
-    <h2>진행 중인 라이브 방송</h2>
-    <div class="review-card">현재 계약된 라이브 없음 – 제휴 문의 바랍니다.</div>
-  </section>
+  <!-- 📌 진행 중인 라이브 방송 / 제휴 문의 -->
+  <section id="live-now"></section>
 
-  <!-- 하단 탭바 -->
-  <div class="fixed-tab">
-    <div><i class="ri-home-4-line"></i><br />홈</div>
-    <div><i class="ri-tv-line"></i><br />쇼핑라이브</div>
-    <div><i class="ri-user-search-line"></i><br />구직</div>
-    <div><i class="ri-user-line"></i><br />마이페이지</div>
-  </div>
+  <!-- 📌 인스타 홍보 요청 리스트 -->
+  <section id="mission-preview"></section>
 
+  <!-- 📌 하단 고정 탭바 -->
+  <footer id="tab-bar"></footer>
 </body>
 </html>
