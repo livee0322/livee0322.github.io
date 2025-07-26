@@ -1,9 +1,23 @@
-/* 기본 설정 */
-body {
+/* RESET */
+body, h1, h2, p, ul, li, button, a {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
 }
 
 /* HEADER */
@@ -14,7 +28,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 18px; /* 세로 패딩 축소 */
+  padding: 8px 18px;
   background: #fff;
   color: #000;
   box-shadow: 0 1px 6px rgba(0,0,0,0.05);
@@ -47,12 +61,12 @@ header .icons i { font-size: 1.3rem; margin-left: 14px; cursor: pointer; }
 
 /* CONTENT */
 main { padding: 0 16px 100px; }
-section { margin-bottom: 40px; } /* 섹션 간 여백 확대 */
+section { margin-bottom: 32px; }
 .section-head {
   display: flex; justify-content: space-between; align-items: center;
-  margin: 36px 0 16px; /* 제목 아래 여백 늘림 */
+  margin: 28px 0 16px;
 }
-.section-head h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.section-head h2 { margin: 0; font-size: 1.3rem; font-weight: 700; }
 .more { font-size: 0.9rem; color: #999; text-decoration: none; }
 
 /* LIVE CARD */
@@ -91,21 +105,6 @@ section { margin-bottom: 40px; } /* 섹션 간 여백 확대 */
 .review-info p { font-size: 0.9rem; margin: 0 0 4px; }
 .review-info .author { font-size: 0.8rem; color: #888; }
 
-/* NAVIGATION */
-nav {
-  display: flex; justify-content: space-around; align-items: center;
-  height: 60px; background: white; border-top: 1px solid #ddd;
-  position: fixed; bottom: 0; left: 0; width: 100%;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05); /* 상단 그림자 */
-}
-nav button {
-  background: none; border: none; font-size: 0.75rem;
-  display: flex; flex-direction: column; align-items: center;
-  color: #666;
-}
-nav button i { font-size: 1.5rem; margin-bottom: 4px; }
-nav button.active { color: #000; font-weight: 600; }
-
 /* FILTER BAR */
 .filter-bar {
   display: flex;
@@ -130,9 +129,7 @@ nav button.active { color: #000; font-weight: 600; }
 }
 
 /* RECRUIT CARD */
-.recruit-list {
-  padding: 16px;
-}
+.recruit-list { padding: 16px; }
 .recruit-card {
   background: white;
   border-radius: 12px;
@@ -145,9 +142,7 @@ nav button.active { color: #000; font-weight: 600; }
   height: 150px;
   object-fit: cover;
 }
-.recruit-card .info {
-  padding: 12px;
-}
+.recruit-card .info { padding: 12px; }
 .recruit-card .title {
   font-size: 1rem;
   font-weight: 600;
@@ -173,6 +168,19 @@ nav button.active { color: #000; font-weight: 600; }
   font-size: 0.85rem;
   cursor: pointer;
 }
-.recruit-card button:hover {
-  background: #4048c9;
+.recruit-card button:hover { background: #4048c9; }
+
+/* NAVIGATION */
+nav {
+  display: flex; justify-content: space-around; align-items: center;
+  height: 60px; background: white; border-top: 1px solid #ddd;
+  position: fixed; bottom: 0; left: 0; width: 100%;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
 }
+nav button {
+  background: none; border: none; font-size: 0.75rem;
+  display: flex; flex-direction: column; align-items: center;
+  color: #666;
+}
+nav button i { font-size: 1.5rem; margin-bottom: 4px; }
+nav button.active { color: #000; font-weight: 600; }
