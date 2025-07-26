@@ -3,116 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>라이비 메인페이지</title>
+  <title>Livee</title>
   <link rel="stylesheet" href="main.css" />
-  <script defer src="main.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- 공지 띠 배너 -->
   <div class="notice-banner">현재 개발중입니다</div>
 
-  <!-- 헤더 -->
   <header class="main-header">
-    <div class="header-top">
-      <h1 class="logo">Livee</h1>
-      <div class="nav-buttons">
-        <a href="login_0725_v1.02.html">로그인</a>
-        <span class="divider">|</span>
-        <a href="join_0725_v1.04.html">회원가입</a>
-      </div>
+    <h1 class="logo">Livee</h1>
+    <div class="nav-links">
+      <a href="#">로그인</a>
+      <span class="divider">|</span>
+      <a href="#">회원가입</a>
     </div>
-    <div class="search-bar">
-      <input type="text" placeholder="검색어 입력" id="searchInput" />
-      <button id="searchButton"><i class="ri-search-line"></i></button>
+    <div class="search-box">
+      <input type="text" placeholder="검색어 입력" />
+      <button><i class="ri-search-line"></i></button>
     </div>
   </header>
 
-  <!-- 슬라이딩 배너 -->
-  <section class="slide-container">
-    <div class="slide-wrapper">
-      <div class="slide pink">
-        <small>라이브 커머스의 새로운 시작</small>
-        <h2>지금, 쇼핑라이브를<br />시작해보세요</h2>
-        <p>검증된 쇼호스트와 브랜드를 연결합니다</p>
-      </div>
-      <div class="slide white">
-        <small>섭외가 고민이라면</small>
-        <h2>섭외공고 등록하고<br />지원 받아보세요</h2>
-        <p>수익은 공유하고, 과정은 간편하게</p>
-      </div>
-      <div class="slide yellow">
-        <small>쇼호스트라면</small>
+  <section class="slide-banner">
+    <div class="slider">
+      <div class="slide slide1">
+        <p class="sub">쇼호스트라면</p>
         <h2>나의 방송 경력으로<br />기회를 만들어보세요</h2>
-        <p>지금 바로 프로필을 등록하세요</p>
+        <p class="desc">지금 바로 프로필을 등록하세요</p>
+      </div>
+      <div class="slide slide2">
+        <p class="sub">섭외가 고민이라면</p>
+        <h2>섭외공고 등록하고<br />지원 받아보세요</h2>
+        <p class="desc">수익은 공유하고, 과정은 간편하게</p>
       </div>
     </div>
-    <div class="slide-dots">
+    <div class="dots">
       <span class="dot active"></span>
-      <span class="dot"></span>
       <span class="dot"></span>
     </div>
   </section>
 
-  <!-- 모집 중인 쇼핑라이브 -->
+  <section class="problem-section">
+    <h2>이런 문제 겪어보셨나요?</h2>
+    <ul>
+      <li>📦 제품만 보내고 방송 내용은 공유되지 않음</li>
+      <li>💲 방송 후 정산 지연 및 불투명한 조건</li>
+      <li>⏰ 촬영 시간 초과, 무리한 요구</li>
+      <li>📩 DM/지인 추천 중심 섭외 구조</li>
+    </ul>
+    <p class="why">그래서 <strong>라이비</strong>가 필요합니다.<br />검증된 프로필 기반 섭외 매칭 시스템</p>
+  </section>
+
   <section class="recruit-section">
     <div class="section-header">
       <h2>모집 중인 쇼핑라이브</h2>
-      <a href="recruitment_0725_v1.01.html" class="more-link">더보기</a>
+      <a href="#">더보기</a>
     </div>
-    <div id="recruit-preview"></div>
+    <p class="empty-text">현재 모집 중인 공고가 없습니다.</p>
   </section>
 
-  <!-- 이런 문제 겪어보셨나요? -->
-  <section class="problems">
-    <h2>이런 문제 겪어보셨나요?</h2>
-    <ul>
-      <li>📦 제품만 보내고 방송 내용은 전혀 공유되지 않았던 경험</li>
-      <li>💰 방송 후 정산이 제대로 되지 않아 곤란했던 경험</li>
-      <li>⏰ 촬영 시간 초과, 무리한 요구로 힘들었던 경험</li>
-      <li>📩 DM이나 지인 추천으로만 섭외가 이루어졌던 불편함</li>
-    </ul>
-    <p class="solution">그래서 <strong>라이비</strong>가 필요합니다.<br />검증된 쇼호스트와 브랜드를 안전하게 연결합니다.</p>
-  </section>
-
-  <!-- 인기 쇼호스트 -->
-  <section class="gray">
+  <section class="host-section">
     <h2>인기 쇼호스트</h2>
     <div class="host-grid">
       <div class="host-card">
-        <img src="https://via.placeholder.com/80" />
-        <div>홍길동</div>
-        <div>5년차</div>
-        <div>밝고 에너지 넘침</div>
+        <img src="https://via.placeholder.com/100" alt="프로필사진" />
+        <p><strong>홍길동</strong><br />5년차<br />밝고 에너지 넘침</p>
       </div>
       <div class="host-card">
-        <img src="https://via.placeholder.com/80" />
-        <div>김민지</div>
-        <div>3년차</div>
-        <div>전문적이고 꼼꼼함</div>
+        <img src="https://via.placeholder.com/100" alt="프로필사진" />
+        <p><strong>김민지</strong><br />3년차<br />전문적이고 꼼꼼함</p>
       </div>
     </div>
   </section>
 
-  <!-- 방송 후기 -->
-  <section>
+  <section class="review-section">
     <h2>방송 후기</h2>
-    <div class="review-card">🎤 쇼호스트 너무 잘하시고 즐거운 방송이었습니다!</div>
-    <div class="review-card">🛍️ 제품이 잘 팔려서 다음에도 꼭 함께하고 싶어요.</div>
+    <div class="review-card">
+      <p>🎤 쇼호스트 너무 잘하시고 즐거운 방송이었습니다!</p>
+      <p>🛍️ 제품이 잘 팔려서 다음에도 꼭 함께하고 싶어요.</p>
+    </div>
   </section>
 
-  <!-- 진행 중인 라이브 방송 -->
-  <section class="gray">
-    <h2>진행 중인 라이브 방송</h2>
-    <div class="review-card">현재 계약된 라이브 없음 – 제휴 문의 바랍니다.</div>
-  </section>
-
-  <!-- 하단 탭바 -->
-  <nav class="bottom-tabbar">
+  <footer class="tab-bar">
     <a href="#"><i class="ri-home-4-line"></i><span>홈</span></a>
     <a href="#"><i class="ri-tv-line"></i><span>쇼핑라이브</span></a>
     <a href="#"><i class="ri-user-search-line"></i><span>구직</span></a>
     <a href="#"><i class="ri-user-line"></i><span>마이페이지</span></a>
-  </nav>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
