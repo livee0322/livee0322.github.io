@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- 페이지 타입: 공고리스트 -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Livee - 공고리스트</title>
-<link rel="stylesheet" href="main.css?v=1.08" />
-<script defer src="main.js"></script>
+  <title>Livee - 쇼핑라이브 공고 리스트</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css?v=1.08" />
 </head>
 <body>
   <!-- HEADER -->
@@ -19,7 +18,7 @@
     </div>
   </header>
 
-  <!-- FILTER SECTION -->
+  <!-- FILTER BAR -->
   <div class="filter-bar">
     <button class="filter-btn active">전체</button>
     <button class="filter-btn">패션</button>
@@ -27,6 +26,7 @@
     <button class="filter-btn">식품</button>
     <button class="filter-btn">디지털</button>
     <button class="filter-btn">기타</button>
+    <button class="write-btn" onclick="location.href='recruit-write.html'">작성하기</button>
   </div>
 
   <!-- CONTENT -->
@@ -35,6 +35,7 @@
       <div class="section-head">
         <h2>쇼핑라이브 공고 리스트</h2>
       </div>
+
       <div class="recruit-card">
         <img src="https://via.placeholder.com/300x150/ffd6e7/000?text=공고1" alt="공고1">
         <div class="info">
@@ -44,6 +45,7 @@
           <button>지원하기</button>
         </div>
       </div>
+
       <div class="recruit-card">
         <img src="https://via.placeholder.com/300x150/d6eaff/000?text=공고2" alt="공고2">
         <div class="info">
@@ -53,6 +55,7 @@
           <button>지원하기</button>
         </div>
       </div>
+
       <div class="recruit-card">
         <img src="https://via.placeholder.com/300x150/d6ffd6/000?text=공고3" alt="공고3">
         <div class="info">
@@ -67,12 +70,12 @@
 
   <!-- NAV -->
   <nav>
-    <button><i class="ri-home-line"></i>홈</button>
+    <button onclick="location.href='index.html'"><i class="ri-home-line"></i>홈</button>
     <button class="active"><i class="ri-live-line"></i>라이브</button>
     <button><i class="ri-briefcase-line"></i>구직</button>
     <button><i class="ri-user-3-line"></i>마이</button>
   </nav>
 
-  <script defer src="liveejs_1.01.js"></script>
+  <script defer src="main.js"></script>
 </body>
 </html>
