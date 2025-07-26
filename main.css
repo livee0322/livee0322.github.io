@@ -1,132 +1,209 @@
-/* main.css - v1.08 */
-:root {
-  --main-color: #FF6B6B;
-  --sub-color: #FFD6D6;
-  --bg-gray: #F9F9F9;
-  --text-main: #333;
-  --text-sub: #888;
-  --font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
-}
+/* main.css v1.08 */
 
+/* Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-family);
+  font-family: 'Apple SD Gothic Neo', sans-serif;
   background: #fff;
-  color: var(--text-main);
+  color: #222;
+  line-height: 1.5;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 공지 배너 */
 .notice-banner {
-  background-color: var(--sub-color);
-  color: var(--text-main);
-  padding: 6px;
+  background-color: #fddede;
+  color: #222;
+  padding: 10px;
   text-align: center;
   font-size: 14px;
 }
 
-/* ✅ 헤더 정렬 수정 */
-header {
+/* 헤더 */
+.main-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 16px;
-  gap: 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
-/* 로고 */
 .logo {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* 로그인 | 회원가입 영역 */
-.auth-links {
-  display: flex;
-  gap: 8px;
+.auth-links span {
+  margin-left: 10px;
   font-size: 14px;
-  color: var(--main-color);
+  color: #f46c6c;
+  cursor: pointer;
 }
 
-/* 검색창 영역 */
-.search {
+.auth-links .divider {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* 검색창 */
+.search-box {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid #ddd;
+  margin: 20px 16px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
   border-radius: 24px;
-  padding: 6px 12px;
-  width: 90%;
-  max-width: 400px;
+  background: #fff;
 }
 
-.search input {
+.search-box input {
   border: none;
   outline: none;
-  width: 100%;
+  font-size: 14px;
+  flex: 1;
+  background: transparent;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
+
+/* 메인 슬라이드 */
+.main-slide {
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  padding: 40px 24px;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  min-height: 180px;
+}
+
+.slide strong {
+  font-size: 22px;
+  display: block;
+  margin: 10px 0 4px;
+  font-weight: 800;
+}
+
+.slide small {
+  font-size: 14px;
+  display: block;
+  margin-top: 6px;
+  color: #555;
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #222;
+}
+
+/* 섹션 기본 */
+.section {
+  padding: 24px 16px;
+}
+
+.section.white {
+  background: #fff;
+}
+
+.section.gray {
+  background: #f7f7f7;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section .desc {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 카드 리스트 */
+.card-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.card {
+  flex: 0 0 auto;
+  min-width: 120px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   font-size: 14px;
 }
 
-.search button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: var(--text-sub);
+/* 하단 여백 */
+.bottom-space {
+  height: 80px;
 }
 
-/* 문제 섹션 */
-.problem-section {
-  padding: 24px 16px;
-}
-
-.problem-section h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.card-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  line-height: 1.8;
-}
-
-/* 강조 텍스트 */
-.highlight {
-  color: var(--main-color);
-  font-weight: bold;
-}
-
-/* 모집 섹션 */
-.recruit-section {
-  padding: 24px 16px;
-}
-
-.card-placeholder {
-  background: var(--bg-gray);
-  padding: 16px;
-  margin-top: 12px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-/* 하단 탭 */
-.footer-tab {
+/* 하단탭 */
+.bottom-tab {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  height: 64px;
   background: #fff;
   border-top: 1px solid #eee;
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
+  align-items: center;
+  z-index: 1000;
 }
 
-.footer-tab .tab {
-  font-size: 14px;
-  color: var(--text-sub);
+.bottom-tab a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  color: #222;
+}
+
+.bottom-tab i {
+  font-size: 20px;
+  margin-bottom: 4px;
 }
