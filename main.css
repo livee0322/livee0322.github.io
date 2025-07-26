@@ -1,42 +1,32 @@
-/* 기본 스타일 초기화 */
+/* 기본 설정 */
 body {
   margin: 0;
-  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  padding: 0;
+  font-family: 'Apple SD Gothic Neo', sans-serif;
   background-color: #fff;
   color: #333;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-h1, h2, h3, h4 {
-  margin: 0;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-/* 공지 배너 */
 .notice-banner {
-  background: #fa5252;
-  color: white;
-  padding: 8px 16px;
+  background-color: #ff4d4f;
+  color: #fff;
   text-align: center;
+  padding: 6px 0;
   font-size: 14px;
 }
 
 /* 헤더 */
 .main-header {
   padding: 16px;
-  border-bottom: 1px solid #eee;
   background-color: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 .header-top {
@@ -46,9 +36,8 @@ ul {
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  color: #fa5252;
 }
 
 .nav-buttons {
@@ -56,160 +45,153 @@ ul {
 }
 
 .nav-buttons a {
-  margin: 0 6px;
+  margin: 0 4px;
+  color: #555;
 }
 
 .divider {
-  color: #ccc;
+  color: #aaa;
 }
 
-/* 검색창 */
 .search-bar {
+  margin-top: 12px;
   display: flex;
   gap: 8px;
-  margin-top: 12px;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 10px;
+  padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 14px;
 }
 
 .search-bar button {
-  background-color: #fa5252;
-  color: white;
+  padding: 8px 12px;
+  background-color: #ff4d4f;
+  color: #fff;
   border: none;
-  padding: 0 14px;
   border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
 }
 
-/* 슬라이딩 배너 */
+/* 슬라이드 배너 */
 .slide-container {
   overflow: hidden;
   position: relative;
+  height: 260px;
 }
 
 .slide-wrapper {
   display: flex;
+  transition: transform 0.5s ease-in-out;
   width: 300%;
-  transition: transform 0.5s ease;
+  height: 100%;
 }
 
 .slide {
-  flex: 1 0 100%;
-  padding: 48px 24px;
+  min-width: 100%;
+  height: 100%;
+  padding: 32px 20px;
   box-sizing: border-box;
-  min-height: 200px;
-}
-
-.slide h2 {
-  margin: 12px 0;
-  font-size: 22px;
-}
-
-.slide p {
-  font-size: 15px;
-  color: #555;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .slide.pink {
-  background: #ffe0e0;
+  background-color: #ffe5ec;
 }
 .slide.white {
-  background: #f8f8f8;
+  background-color: #fff6e5;
 }
 .slide.yellow {
-  background: #fff5cc;
+  background-color: #fff9dc;
+}
+
+.slide h2 {
+  margin: 12px 0 8px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.slide p {
+  font-size: 14px;
+  color: #666;
 }
 
 .slide-dots {
-  display: flex;
-  justify-content: center;
-  margin: 12px 0;
-  gap: 8px;
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
 }
 
-.slide-dots .dot {
+.dot {
+  display: inline-block;
   width: 8px;
   height: 8px;
+  margin: 0 4px;
+  background-color: #ccc;
   border-radius: 50%;
-  background: #ccc;
-  transition: background 0.3s;
+}
+.dot.active {
+  background-color: #ff4d4f;
 }
 
-.slide-dots .dot.active {
-  background: #fa5252;
-}
-
-/* 섹션 공통 */
-section {
+/* 문제 해결 섹션 */
+.problem-section {
   padding: 24px 16px;
+  background-color: #f9f9f9;
 }
 
-section.gray {
-  background-color: #f9f9f9;
+.problem-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.problem-section ul {
+  padding-left: 16px;
+  margin-bottom: 12px;
+}
+.problem-section ul li {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.problem-section .highlight {
+  color: #ff4d4f;
 }
 
 /* 섹션 헤더 */
 .section-header {
+  padding: 24px 16px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
 }
 
 .section-header h2 {
   font-size: 18px;
 }
-
-/* 모집공고 카드 */
-.recruit-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+.more-link {
+  font-size: 14px;
+  color: #ff4d4f;
 }
 
-/* 공고 없을 때 */
+/* 모집중 공고 */
+.recruit-section {
+  padding: 0 16px 32px;
+}
 .empty-text {
+  color: #999;
   font-size: 14px;
-  color: #888;
+  padding-left: 16px;
 }
 
-/* 문제 섹션 */
-.problems {
+/* 인기 쇼호스트 */
+.host-section {
+  background-color: #f6f6f6;
   padding: 24px 16px;
-  background: #fff3f3;
 }
 
-.problems h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.problems ul {
-  margin-bottom: 12px;
-}
-
-.problems li {
-  margin-bottom: 6px;
-  font-size: 14px;
-}
-
-.problems .solution {
-  font-size: 14px;
-  font-weight: bold;
-  color: #d6336c;
-}
-
-/* 쇼호스트 카드 */
 .host-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -217,30 +199,69 @@ section.gray {
 }
 
 .host-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
   text-align: center;
-  padding: 16px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-
 .host-card img {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  max-width: 120px;
+  height: auto;
   border-radius: 50%;
   margin-bottom: 8px;
-  object-fit: cover;
+}
+.host-card .name {
+  font-weight: bold;
+}
+.host-card .experience,
+.host-card .personality {
+  font-size: 13px;
+  color: #666;
 }
 
 /* 방송 후기 */
+.review-section {
+  padding: 24px 16px;
+}
 .review-card {
-  background: white;
+  border-radius: 10px;
   padding: 16px;
   margin-bottom: 12px;
-  border-radius: 8px;
-  border: 1px solid #eee;
+}
+.review-card.white {
+  background-color: #fff;
+}
+.review-card.gray {
+  background-color: #f1f1f1;
+}
+.review-card span {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 진행 중 라이브 */
+.live-section {
+  padding: 24px 16px 80px;
+  background-color: #fafafa;
+}
+.live-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.live-thumbnail {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.live-thumbnail a {
+  display: inline-block;
+  margin-top: 8px;
   font-size: 14px;
+  color: #ff4d4f;
 }
 
 /* 하단 탭바 */
@@ -249,39 +270,29 @@ section.gray {
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  background: #fff;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  padding: 6px 0 10px;
   z-index: 999;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
-
 .bottom-tabbar a {
-  text-align: center;
   font-size: 12px;
-  color: #555;
+  color: #333;
+  text-align: center;
 }
-
 .bottom-tabbar i {
-  font-size: 20px;
   display: block;
+  font-size: 20px;
   margin-bottom: 4px;
 }
 
-/* 하단 여백 확보 */
-body {
-  padding-bottom: 80px;
-}
-
-/* 반응형 */
-@media (min-width: 768px) {
-  .slide h2 {
-    font-size: 26px;
-  }
-  .host-card {
-    font-size: 16px;
+/* 반응형 대응 */
+@media (max-width: 400px) {
+  .host-grid {
+    grid-template-columns: 1fr;
   }
 }
