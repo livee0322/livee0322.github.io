@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 페이지 타입: 공고리스트 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Livee - 공고리스트</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="liveecss_1.01.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Livee</h1>
+    <div class="icons">
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+      <i class="ri-user-line"></i>
+    </div>
+  </header>
+
+  <!-- FILTER SECTION -->
+  <div class="filter-bar">
+    <button class="filter-btn active">전체</button>
+    <button class="filter-btn">패션</button>
+    <button class="filter-btn">뷰티</button>
+    <button class="filter-btn">식품</button>
+    <button class="filter-btn">디지털</button>
+    <button class="filter-btn">기타</button>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="recruit-list">
+    <section>
+      <div class="section-head">
+        <h2>쇼핑라이브 공고 리스트</h2>
+      </div>
+      <div class="recruit-card">
+        <img src="https://via.placeholder.com/300x150/ffd6e7/000?text=공고1" alt="공고1">
+        <div class="info">
+          <div class="title">여름 패션 신상 소개 라이브</div>
+          <div class="brand">브랜드 A</div>
+          <div class="meta">방송일: 2025-08-10 | 오후 8시</div>
+          <button>지원하기</button>
+        </div>
+      </div>
+      <div class="recruit-card">
+        <img src="https://via.placeholder.com/300x150/d6eaff/000?text=공고2" alt="공고2">
+        <div class="info">
+          <div class="title">신제품 화장품 런칭 라이브</div>
+          <div class="brand">브랜드 B</div>
+          <div class="meta">방송일: 2025-08-15 | 오후 6시</div>
+          <button>지원하기</button>
+        </div>
+      </div>
+      <div class="recruit-card">
+        <img src="https://via.placeholder.com/300x150/d6ffd6/000?text=공고3" alt="공고3">
+        <div class="info">
+          <div class="title">식품 브랜드 콜라보 라이브</div>
+          <div class="brand">브랜드 C</div>
+          <div class="meta">방송일: 2025-08-20 | 오후 7시</div>
+          <button>지원하기</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- NAV -->
+  <nav>
+    <button><i class="ri-home-line"></i>홈</button>
+    <button class="active"><i class="ri-live-line"></i>라이브</button>
+    <button><i class="ri-briefcase-line"></i>구직</button>
+    <button><i class="ri-user-3-line"></i>마이</button>
+  </nav>
+
+  <script defer src="liveejs_1.01.js"></script>
+</body>
+</html>
