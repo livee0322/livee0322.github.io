@@ -1,45 +1,135 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html><html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Livee 메인페이지</title>
-  <link rel="stylesheet" href="/text/main.css" />
-  <script defer src="/text/main.js"></script>
+  <title>라이비 메인페이지</title>
+  <link rel="stylesheet" href="text/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <script defer src="text/main.js"></script>
 </head>
 <body>
-  <!-- 📌 상단 띠배너 -->
-  <div id="top-banner"></div>
-
-  <!-- 📌 헤더 영역 -->
-  <header>
-    <div class="logo"></div>
-    <div class="search"></div>
-    <div class="auth-buttons"></div>
-  </header>
-
-  <!-- 📌 메인 슬라이드 배너 -->
-  <section id="main-slider"></section>
-
-  <!-- 📌 문제 제시 영역 -->
-  <section id="problem-section"></section>
-
-  <!-- 📌 모집 중인 쇼핑라이브 공고 -->
-  <section id="recruitment-preview"></section>
-
-  <!-- 📌 인기 쇼호스트 리스트 -->
-  <section id="popular-hosts"></section>
-
-  <!-- 📌 방송 후기 슬라이드 -->
-  <section id="review-section"></section>
-
-  <!-- 📌 진행 중인 라이브 방송 / 제휴 문의 -->
-  <section id="live-now"></section>
-
-  <!-- 📌 인스타 홍보 요청 리스트 -->
-  <section id="mission-preview"></section>
-
-  <!-- 📌 하단 고정 탭바 -->
-  <footer id="tab-bar"></footer>
+  <!-- 공지 띠 배너 -->
+  <div class="notice-banner">현재 개발중입니다</div>  <!-- 헤더 -->  <header>
+    <div class="logo" onclick="location.href='index.html'">Livee</div>
+    <div class="auth-links">
+      <span id="loginLink" onclick="location.href='login_0725_v1.02.html'">로그인</span>
+      <span class="divider">|</span>
+      <span id="joinLink" onclick="location.href='join_0725_v1.04.html'">회원가입</span>
+    </div>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="검색어 입력" />
+      <button onclick="search()"><i class="ri-search-line"></i></button>
+    </div>
+  </header>  <!-- 메인 배너 슬라이드 -->  <section class="main-banner">
+    <div class="slider">
+      <div class="slide active">
+        <div class="overlay"></div>
+        <img src="https://source.unsplash.com/800x600/?shopping" alt="배너1" />
+        <div class="text">
+          <h4>이제는 쇼핑라이브도</h4>
+          <h2>믿고 맡길 수 있어야 하니까</h2>
+          <p>프로와 함께하는 정식 섭외 매칭 플랫폼</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="overlay"></div>
+        <img src="https://source.unsplash.com/800x600/?studio" alt="배너2" />
+        <div class="text">
+          <h4>섭외 과정의 불편함을</h4>
+          <h2>라이비가 해결합니다</h2>
+          <p>검증된 쇼호스트와 브랜드를 연결해요</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="overlay"></div>
+        <img src="https://source.unsplash.com/800x600/?broadcast" alt="배너3" />
+        <div class="text">
+          <h4>이제는 메시지 대신</h4>
+          <h2>정식 프로필과 제안으로</h2>
+          <p>더 스마트하게 연결되세요</p>
+        </div>
+      </div>
+    </div>
+    <div class="dots"></div>
+  </section>  <!-- 이런 문제 겪어보셨나요? -->  <section class="problem-section">
+    <h3>이런 문제 겪어보셨나요?</h3>
+    <div class="problem-list">
+      <div class="problem-card">섭외 후 노쇼 발생</div>
+      <div class="problem-card">DM 답변이 너무 느려요</div>
+      <div class="problem-card">시간 약속이 잘 안 지켜져요</div>
+      <div class="problem-card">촬영 중 무리한 요구</div>
+    </div>
+    <div class="solution-text">그래서 <strong>라이비</strong>가 필요합니다.</div>
+  </section>  <!-- 모집중인 쇼핑라이브 -->  <section class="recruit-section">
+    <div class="section-header">
+      <h3>모집 중인 쇼핑라이브</h3>
+      <button onclick="location.href='recruitment_0725_v1.01.html'">더보기</button>
+    </div>
+    <div class="recruit-list">
+      <!-- 예시 카드 3개 -->
+      <div class="recruit-card">
+        <img src="https://source.unsplash.com/300x200/?product" alt="썸네일" />
+        <div class="info">
+          <h4>패션 브랜드 A</h4>
+          <p>7월 30일 방송 / 출연료 10만원</p>
+        </div>
+      </div>
+      <div class="recruit-card">
+        <img src="https://source.unsplash.com/300x200/?clothes" alt="썸네일" />
+        <div class="info">
+          <h4>뷰티 브랜드 B</h4>
+          <p>8월 2일 방송 / 출연료 15만원</p>
+        </div>
+      </div>
+      <div class="recruit-card">
+        <img src="https://source.unsplash.com/300x200/?cosmetic" alt="썸네일" />
+        <div class="info">
+          <h4>라이프스타일 C</h4>
+          <p>8월 5일 방송 / 출연료 협의</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- 인기 쇼호스트 -->  <section class="host-section">
+    <h3>인기 쇼호스트</h3>
+    <div class="host-grid">
+      <div class="host-card">
+        <img src="https://source.unsplash.com/200x200/?woman" alt="프로필" />
+        <div class="text">
+          <h4>이지은</h4>
+          <p>경력 3년 / 친근한 스타일</p>
+        </div>
+      </div>
+      <div class="host-card">
+        <img src="https://source.unsplash.com/200x200/?man" alt="프로필" />
+        <div class="text">
+          <h4>김호연</h4>
+          <p>경력 5년 / 깔끔한 진행</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- 방송 후기 -->  <section class="review-section">
+    <h3>방송 후기</h3>
+    <div class="review-list">
+      <div class="review-card">
+        <p>쇼호스트 분이 너무 친절해서 편하게 방송했어요!</p>
+        <span>- 브랜드 A</span>
+      </div>
+      <div class="review-card">
+        <p>계약부터 방송까지 너무 매끄럽고 만족스러웠습니다.</p>
+        <span>- 브랜드 B</span>
+      </div>
+    </div>
+  </section>  <!-- 진행 중인 라이브 방송 -->  <section class="live-section">
+    <h3>진행 중인 라이브 방송</h3>
+    <div class="live-box">
+      <p>현재 계약된 방송이 없습니다.</p>
+      <button onclick="location.href='mailto:contact@livee.kr'">제휴 문의</button>
+    </div>
+  </section>  <!-- 하단 탭바 -->  <nav class="bottom-tab">
+    <div class="tab-item" onclick="location.href='index.html'"><i class="ri-home-4-line"></i><span>홈</span></div>
+    <div class="tab-item" onclick="location.href='recruitment_0725_v1.01.html'"><i class="ri-tv-line"></i><span>쇼핑라이브</span></div>
+    <div class="tab-item" onclick="location.href='mypage_0725_v1.01.html'"><i class="ri-user-search-line"></i><span>구직</span></div>
+    <div class="tab-item" onclick="location.href='mypage_0725_v1.01.html'"><i class="ri-user-line"></i><span>마이페이지</span></div>
+  </nav>  <div class="bottom-space"></div>
 </body>
 </html>
