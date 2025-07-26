@@ -1,226 +1,213 @@
-/* 기본 초기화 */
-body, h1, h2, h3, p, ul {
+/* 기본 리셋 */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
-  font-family: 'Pretendard', sans-serif;
-  background-color: #fff;
-  color: #111;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #fff;
+  color: #333;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* 공지 띠배너 */
+/* 공지 띠 배너 */
 .notice-banner {
-  background-color: #f44336;
-  color: white;
-  text-align: center;
+  background-color: #ff4d4f;
+  color: #fff;
   padding: 8px 0;
+  text-align: center;
   font-size: 14px;
 }
 
 /* 헤더 */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 16px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
 }
-header .logo {
+.logo {
   font-size: 24px;
   font-weight: bold;
+  display: inline-block;
 }
-header nav a {
-  margin-left: 16px;
+.auth-links {
+  float: right;
   font-size: 14px;
-  text-decoration: none;
-  color: #333;
-  border-left: 1px solid #ccc;
-  padding-left: 12px;
 }
-
-/* 검색창 */
-.search-container {
+.auth-links span {
+  margin-left: 12px;
+  cursor: pointer;
+}
+.divider {
+  margin: 0 4px;
+}
+.search {
   display: flex;
-  align-items: center;
-  padding: 0 16px;
+  margin-top: 16px;
 }
-.search-container input[type="text"] {
+.search input {
   flex: 1;
   padding: 10px;
+  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 6px 0 0 6px;
-  font-size: 14px;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
 }
-.search-container button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 0 6px 6px 0;
+.search button {
+  padding: 0 16px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: 1px solid #ff4d4f;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.search button i {
+  font-size: 18px;
 }
 
-/* 슬라이드 배너 */
+/* 슬라이드 */
 .slider {
-  display: flex;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.slider .slide {
-  scroll-snap-align: start;
-  flex: 0 0 100%;
-  height: 280px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-direction: column;
-  text-align: center;
-  background-color: #ffeef0;
-  padding: 24px;
+  scroll-snap-type: x mandatory;
 }
-.slider .slide h2 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 8px 0;
+.slide {
+  min-width: 100vw;
+  padding: 60px 20px;
+  scroll-snap-align: center;
+  color: #fff;
 }
-.slider .slide p {
+.slide.red {
+  background: #ff4d4f;
+}
+.slide.orange {
+  background: #ffa940;
+}
+.slide.yellow {
+  background: #fadb14;
+  color: #000;
+}
+.slide-text {
+  max-width: 90%;
+  margin: auto;
+}
+.slide-text .subtitle {
   font-size: 14px;
-  color: #555;
+  margin-bottom: 8px;
+}
+.slide-text .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.slide-text .desc {
+  font-size: 14px;
 }
 
-/* dot 네비게이션 */
-.dots {
-  text-align: center;
-  margin-top: 8px;
-}
-.dots span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin: 0 4px;
-  background-color: #ccc;
-  border-radius: 50%;
-}
-.dots .active {
-  background-color: #f44336;
-}
-
-/* 섹션 공통 */
+/* 섹션 기본 */
 section {
   padding: 24px 16px;
 }
-section h2 {
+.gray {
+  background-color: #f7f7f7;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.section-header h2 {
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
+}
+.section-header a {
+  font-size: 14px;
+  color: #ff4d4f;
+  text-decoration: none;
 }
 
 /* 문제 섹션 */
-.issue-section ul {
-  margin-top: 8px;
-  padding-left: 18px;
+.problems h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
 }
-.issue-section li {
+.problems ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+}
+.problems ul li {
   margin-bottom: 6px;
-  font-size: 14px;
 }
-
-/* 모집 중인 쇼핑라이브 */
-.recruit-section .more {
-  float: right;
-  font-size: 14px;
-  color: #e91e63;
-  text-decoration: none;
-  font-weight: 500;
+.solution {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /* 인기 쇼호스트 */
 .host-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 12px;
 }
 .host-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 16px 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 .host-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .host-card img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  object-fit: cover;
   margin-bottom: 8px;
-}
-.host-card .name {
-  font-size: 16px;
-  font-weight: bold;
-}
-.host-card .experience {
-  font-size: 14px;
-  color: #666;
-}
-.host-card .traits {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.5;
-  margin-top: 4px;
 }
 
 /* 방송 후기 */
-.review-section .review-card {
-  background-color: #fafafa;
-  padding: 16px;
-  border-radius: 8px;
+.review-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 14px;
   margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* 진행 중 라이브 방송 */
-.live-section iframe {
-  width: 100%;
-  height: 200px;
-  border: none;
   border-radius: 8px;
-  margin-top: 12px;
+  font-size: 14px;
+  transition: box-shadow 0.3s;
+}
+.review-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* 하단 고정 탭바 */
-.tabbar {
+/* 하단 탭바 */
+.fixed-tab {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background: #fff;
-  box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  z-index: 999;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.08);
+  padding: 6px 0;
+  z-index: 100;
 }
-.tabbar a {
+.fixed-tab div {
   text-align: center;
   font-size: 12px;
-  color: #111;
-  text-decoration: none;
+  color: #444;
 }
-.tabbar i {
+.fixed-tab i {
   font-size: 20px;
-  display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
