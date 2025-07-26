@@ -1,284 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Apple SD Gothic Neo', sans-serif;
-  line-height: 1.6;
-  color: #111;
-  background: #fff;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.notice-banner {
-  background: #111;
-  color: #fff;
+/* 인기 쇼호스트 카드 개선 */
+.host-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px 12px;
   text-align: center;
-  padding: 6px 0;
-  font-size: 14px;
-}
-
-.main-header {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-links {
-  font-size: 14px;
-}
-
-.nav-links a {
-  margin-left: 12px;
-}
-
-.search-box {
-  margin-top: 12px;
-  display: flex;
-  gap: 4px;
-  width: 100%;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
-  font-size: 14px;
-}
-
-.search-box button {
-  padding: 0 12px;
-  border: 1px solid #ccc;
-  background: #e6004f;
-  color: #fff;
-  border-radius: 0 4px 4px 0;
-  font-size: 18px;
-}
-
-.slide-banner {
-  overflow: hidden;
-  position: relative;
-  height: 220px;
-  margin-bottom: 24px;
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 200%;
-  height: 100%;
-}
-
-.slide {
-  flex: 1 0 100%;
-  padding: 24px;
-  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.slide1 {
-  background: #fff8e1;
-}
-
-.slide2 {
-  background: #fff1f2;
-}
-
-.slide .sub {
-  font-size: 14px;
-  margin-bottom: 4px;
-  color: #888;
-}
-
-.slide h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.slide .desc {
-  font-size: 14px;
-  color: #444;
-}
-
-.dots {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ccc;
-}
-
-.dot.active {
-  background: #e6004f;
-}
-
-.problem-section {
-  background: #fff;
-  padding: 24px 16px;
-}
-
-.problem-section h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.problem-section ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.problem-section li {
-  margin-bottom: 6px;
-}
-
-.problem-section .why {
-  font-size: 14px;
-  color: #333;
-}
-
-.recruit-section {
-  background: #f9f9f9;
-  padding: 24px 16px;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-}
-
-.section-header h2 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.section-header a {
-  color: #e6004f;
   font-size: 14px;
+  gap: 6px;
+  transition: transform 0.2s ease;
 }
 
-.empty-text {
-  font-size: 14px;
-  color: #888;
+.host-card:hover {
+  transform: translateY(-4px);
 }
 
-.host-section {
-  background: #fff;
-  padding: 24px 16px;
+.host-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  object-fit: cover;
 }
 
-.host-section h2 {
-  font-size: 18px;
+.host-card .name {
   font-weight: bold;
-  margin-bottom: 16px;
+  font-size: 16px;
 }
 
+.host-card .experience {
+  font-size: 14px;
+  color: #777;
+}
+
+.host-card .traits {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* 카드 2열 그리드 유지 */
 .host-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-}
-
-.host-card {
-  text-align: center;
-}
-
-.host-card img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 8px;
-}
-
-.host-card p {
-  font-size: 14px;
-  color: #444;
-}
-
-.review-section {
-  background: #f9f9f9;
-  padding: 24px 16px;
-}
-
-.review-section h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.review-card {
-  background: #fff;
-  padding: 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  line-height: 1.5;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-.tab-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 8px 0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  z-index: 100;
-}
-
-.tab-bar a {
-  text-align: center;
-  font-size: 12px;
-  color: #222;
-  flex: 1;
-}
-
-.tab-bar i {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-
-@media (min-width: 768px) {
-  body {
-    max-width: 430px;
-    margin: 0 auto;
-  }
+  margin-top: 16px;
 }
