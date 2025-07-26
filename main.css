@@ -1,209 +1,94 @@
-/* main.css v1.08 */
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Apple SD Gothic Neo', sans-serif;
-  background: #fff;
-  color: #222;
-  line-height: 1.5;
+  margin: 0;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* 공지 배너 */
-.notice-banner {
-  background-color: #fddede;
-  color: #222;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* 헤더 */
-.main-header {
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 12px 18px;
   background: #fff;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.auth-links span {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #f46c6c;
-  cursor: pointer;
-}
-
-.auth-links .divider {
-  margin: 0 8px;
-  color: #999;
-}
-
-/* 검색창 */
-.search-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 16px;
-  padding: 10px 16px;
-  border: 1px solid #ccc;
-  border-radius: 24px;
-  background: #fff;
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  font-size: 14px;
-  flex: 1;
-  background: transparent;
-}
-
-.search-box button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: #888;
-  cursor: pointer;
-}
-
-/* 메인 슬라이드 */
-.main-slide {
-  margin-top: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.slide {
-  padding: 40px 24px;
   color: #000;
-  font-size: 18px;
-  text-align: center;
-  min-height: 180px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
 }
+header h1 { font-size: 1.5rem; font-weight: 700; }
+header .icons i { font-size: 1.4rem; margin-left: 16px; cursor: pointer; }
 
-.slide strong {
-  font-size: 22px;
-  display: block;
-  margin: 10px 0 4px;
-  font-weight: 800;
+/* BANNER */
+.banner-container { position: relative; overflow: hidden; height: 280px; }
+.banner-slide { display: flex; height: 100%; transition: transform 0.4s ease-in-out; }
+.banner {
+  flex: 0 0 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 700;
 }
+.banner:nth-child(1) { background: #ffe58f; }
+.banner:nth-child(2) { background: #ffccc7; }
+.banner:nth-child(3) { background: #bae7ff; }
 
-.slide small {
-  font-size: 14px;
-  display: block;
-  margin-top: 6px;
-  color: #555;
-}
-
+/* DOTS */
 .slide-dots {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  padding: 10px 0;
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px;
 }
-
 .dot {
-  width: 8px;
-  height: 8px;
-  background: #ccc;
-  border-radius: 50%;
+  width: 18px; height: 6px; background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px; cursor: pointer;
 }
+.dot.active { width: 28px; background: #000; }
 
-.dot.active {
-  background: #222;
+/* CONTENT */
+main { padding: 0 16px 100px; }
+.section-head { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 12px; }
+.section-head h2 { margin: 0; font-size: 1.3rem; font-weight: 700; }
+.more { font-size: 0.9rem; color: #999; text-decoration: none; }
+
+/* LIVE CARD */
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.live-card {
+  background: white; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex; flex-direction: column;
 }
-
-/* 섹션 기본 */
-.section {
-  padding: 24px 16px;
+.live-card img { width: 100%; height: 100px; object-fit: cover; }
+.live-card .info { padding: 10px; flex: 1; }
+.live-card .title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.live-card .brand { font-size: 0.8rem; color: #666; margin-bottom: 8px; }
+.live-card button {
+  width: 100%; padding: 8px 0; border: none; border-radius: 6px;
+  background: #5a62f4; color: white; font-size: 0.85rem; cursor: pointer;
 }
+.live-card button:hover { background: #4048c9; }
 
-.section.white {
-  background: #fff;
-}
+/* HOST LIST */
+.host-list { display: flex; overflow-x: auto; gap: 12px; padding-bottom: 5px; }
+.host-card { min-width: 120px; background: white; padding: 12px; border-radius: 12px; text-align: center; }
 
-.section.gray {
-  background: #f7f7f7;
-}
-
-.section h2 {
-  font-size: 18px;
-  font-weight: bold;
+/* REVIEW CARD */
+.review-card {
+  display: flex; align-items: flex-start; background: white; padding: 12px;
+  border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
+.review-card img { width: 80px; height: 80px; border-radius: 8px; margin-right: 12px; object-fit: cover; }
+.review-info { flex: 1; }
+.stars { color: #fadb14; font-size: 1.1rem; margin-bottom: 4px; }
+.review-info p { font-size: 0.9rem; margin: 0 0 4px; }
+.review-info .author { font-size: 0.8rem; color: #888; }
 
-.section .desc {
-  font-size: 14px;
-  color: #666;
+/* NAVIGATION */
+nav {
+  display: flex; justify-content: space-around; align-items: center;
+  height: 60px; background: white; border-top: 1px solid #ddd;
+  position: fixed; bottom: 0; left: 0; width: 100%;
 }
-
-/* 카드 리스트 */
-.card-list {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-}
-
-.card {
-  flex: 0 0 auto;
-  min-width: 120px;
-  padding: 16px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  font-size: 14px;
-}
-
-/* 하단 여백 */
-.bottom-space {
-  height: 80px;
-}
-
-/* 하단탭 */
-.bottom-tab {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background: #fff;
-  border-top: 1px solid #eee;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1000;
-}
-
-.bottom-tab a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 11px;
-  color: #222;
-}
-
-.bottom-tab i {
-  font-size: 20px;
-  margin-bottom: 4px;
-}
+nav button { background: none; border: none; font-size: 0.75rem; display: flex; flex-direction: column; align-items: center; color: #666; }
+nav button i { font-size: 1.5rem; margin-bottom: 4px; }
+nav button.active { color: #000; font-weight: 600; }
