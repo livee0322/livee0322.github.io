@@ -47,12 +47,12 @@ header .icons i { font-size: 1.3rem; margin-left: 14px; cursor: pointer; }
 
 /* CONTENT */
 main { padding: 0 16px 100px; }
-section { margin-bottom: 32px; } /* 섹션 간 여백 확대 */
+section { margin-bottom: 40px; } /* 섹션 간 여백 확대 */
 .section-head {
   display: flex; justify-content: space-between; align-items: center;
-  margin: 28px 0 16px; /* 제목 아래 여백 늘림 */
+  margin: 36px 0 16px; /* 제목 아래 여백 늘림 */
 }
-.section-head h2 { margin: 0; font-size: 1.3rem; font-weight: 700; }
+.section-head h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
 .more { font-size: 0.9rem; color: #999; text-decoration: none; }
 
 /* LIVE CARD */
