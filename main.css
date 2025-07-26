@@ -1,41 +1,132 @@
-/* main.css - v1.08 */ :root { --main-color: #FF6B6B; --sub-color: #FFD6D6; --bg-gray: #F9F9F9; --text-main: #333; --text-sub: #888; --font-family: 'Pretendard', 'Noto Sans KR', sans-serif; }
+/* main.css - v1.08 */
+:root {
+  --main-color: #FF6B6B;
+  --sub-color: #FFD6D6;
+  --bg-gray: #F9F9F9;
+  --text-main: #333;
+  --text-sub: #888;
+  --font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
 
-{ box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: #fff;
+  color: var(--text-main);
+}
 
-body { margin: 0; font-family: var(--font-family); background: #fff; color: var(--text-main); line-height: 1.6; padding-bottom: 80px; /* 하단탭 가림 방지 */ }
+.notice-banner {
+  background-color: var(--sub-color);
+  color: var(--text-main);
+  padding: 6px;
+  text-align: center;
+  font-size: 14px;
+}
 
-.container { padding: 0 16px; max-width: 768px; margin: 0 auto; }
+/* ✅ 헤더 정렬 수정 */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  gap: 10px;
+}
 
-.notice-banner { background: var(--sub-color); text-align: center; padding: 6px 0; font-size: 14px; color: #222; }
+/* 로고 */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-header { display: flex; justify-content: space-between; align-items: center; padding: 16px; }
+/* 로그인 | 회원가입 영역 */
+.auth-links {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--main-color);
+}
 
-.logo { font-weight: bold; font-size: 24px; }
+/* 검색창 영역 */
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  padding: 6px 12px;
+  width: 90%;
+  max-width: 400px;
+}
 
-.auth-links { font-size: 14px; } .auth-links span { color: var(--main-color); margin: 0 6px; cursor: pointer; } .divider { color: #ccc; }
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
 
-.search { display: flex; align-items: center; gap: 6px; padding: 0 16px 24px; }
+.search button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-sub);
+}
 
-.search input { flex: 1; padding: 10px 12px; border: 1px solid #ddd; border-radius: 24px; font-size: 14px; }
+/* 문제 섹션 */
+.problem-section {
+  padding: 24px 16px;
+}
 
-.search button { background: none; border: none; font-size: 20px; color: #888; cursor: pointer; }
+.problem-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
 
-.main-banner { position: relative; overflow: hidden; margin-bottom: 16px; }
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.8;
+}
 
-.main-banner img { width: 100%; height: auto; object-fit: cover; filter: brightness(70%) blur(2px); border-radius: 8px; }
+/* 강조 텍스트 */
+.highlight {
+  color: var(--main-color);
+  font-weight: bold;
+}
 
-.main-banner .text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: 500; text-align: center; }
+/* 모집 섹션 */
+.recruit-section {
+  padding: 24px 16px;
+}
 
-.section { padding: 0 16px 32px; }
+.card-placeholder {
+  background: var(--bg-gray);
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
 
-.section-title { font-size: 18px; font-weight: bold; margin-bottom: 12px; }
+/* 하단 탭 */
+.footer-tab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
 
-.problem-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-
-.problem-tags span { padding: 8px 14px; background: var(--bg-gray); border-radius: 24px; font-size: 14px; }
-
-.footer-tab { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: white; border-top: 1px solid #eee; padding: 10px 0; z-index: 100; }
-
-.footer-tab div { font-size: 12px; color: #555; text-align: center; }
-
+.footer-tab .tab {
+  font-size: 14px;
+  color: var(--text-sub);
+}
