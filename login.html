@@ -6,11 +6,10 @@
   <title>로그인 - Livee</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=82.01" />
-  <link rel="stylesheet" href="/login.css" />
+  <link rel="stylesheet" href="/login.css?v=1.01" />
 </head>
-<body>
+<body style="background: #fff;">
 
-  <!-- LOGIN SECTION -->
   <main class="login-container">
     <h1 class="login-logo-text">Livee</h1>
 
@@ -21,11 +20,21 @@
       <label for="password">비밀번호</label>
       <input type="password" id="password" placeholder="비밀번호를 입력하세요" required />
 
+      <div class="login-options">
+        <label><input type="checkbox" /> 자동 로그인</label>
+        <a href="#">비밀번호 찾기</a>
+      </div>
+
       <button type="submit" class="btn-login">로그인</button>
     </form>
 
+    <div class="social-login">
+      <button class="btn-social naver">네이버 아이디로 로그인</button>
+      <button class="btn-social apple">Apple로 로그인</button>
+    </div>
+
     <div class="login-links">
-      <a href="#">비밀번호 찾기</a> | <a href="#">회원가입</a>
+      <a href="#">회원가입</a>
     </div>
   </main>
 
