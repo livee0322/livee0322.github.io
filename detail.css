@@ -1,0 +1,67 @@
+/* ===== 공고 상세 썸네일 ===== */
+.detail-thumbnail {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== 공고 상세 본문 ===== */
+.detail-wrapper {
+  padding: 1.2rem;
+  background: #fff;
+}
+
+.detail-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.detail-brand {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.detail-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+  white-space: pre-line;
+}
+
+/* ===== 상세페이지 지원 버튼 ===== */
+.detail-apply {
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+
+.detail-apply button {
+  width: 100%;
+  background: #5c6eff;
+  color: white;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+/* ===== 반응형 여백 ===== */
+@media (min-width: 768px) {
+  .detail-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
