@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Livee 숏클립</title>
-  <link rel="stylesheet" href="/main.css?v=1.09">
-  <link rel="stylesheet" href="/clip.css?v=1.09">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <link rel="stylesheet" href="/clip.css?v=1.01" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -18,6 +19,7 @@
     </div>
   </header>
 
+  <!-- 상단탭 -->
   <nav class="top-tab">
     <a href="/index.html">홈</a>
     <a href="/clip.html" class="active">숏클립</a>
@@ -29,13 +31,16 @@
 
   <div class="clip-header">인기 숏클립</div>
   <div class="clip-list" id="clipList"></div>
+
   <button class="add-btn" onclick="openPopup()">+</button>
 
+  <!-- 팝업 -->
   <div class="popup" id="popup">
-    <input type="text" id="youtubeLink" placeholder="유튜브 Shorts 링크 붙여넣기">
+    <input type="text" id="youtubeLink" placeholder="유튜브 Shorts 링크 붙여넣기" />
     <button onclick="addClip()">추가</button>
   </div>
 
+  <!-- 하단탭 -->
   <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
@@ -43,6 +48,6 @@
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <script src="/clip.js?v=1.00" defer></script>
+  <script defer src="/clip.js?v=1.01"></script>
 </body>
 </html>
