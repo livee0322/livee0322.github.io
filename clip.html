@@ -1,73 +1,13 @@
-<!DOCTYPE html><html lang="ko">
+```html
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Livee 숏클립</title>
   <link rel="stylesheet" href="/main.css?v=1.03">
-  <style>
-    .clip-header {
-      padding: 1rem;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    .clip-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .clip-card iframe {
-      width: 100%;
-      aspect-ratio: 9/16;
-      border-radius: 1rem;
-      border: none;
-    }
-    .add-btn {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background: #5c6eff;
-      color: white;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      font-size: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      padding: 1rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-      display: none;
-    }
-    .popup input {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-    }
-    .popup button {
-      width: 100%;
-      padding: 0.5rem;
-      background: #5c6eff;
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="/clip.css?v=1.00">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
   <header class="header">
@@ -77,62 +17,36 @@
       <i class="ri-notification-3-line"></i>
       <i class="ri-user-line"></i>
     </div>
-  </header>  <nav class="top-tab">
+  </header>
+
+  <nav class="top-tab">
     <a href="/index.html">홈</a>
     <a href="/clip.html" class="active">숏클립</a>
     <a href="/event.html">이벤트</a>
     <a href="/live.html">라이브</a>
     <a href="/influencer.html">인플루언서</a>
     <a href="/agency.html">대행서비스</a>
-  </nav>  <div class="clip-header">인기 숏클립</div>
-  <div class="clip-list" id="clipList"></div><button class="add-btn" onclick="openPopup()">+</button>
+  </nav>
+
+  <div class="clip-header">인기 숏클립</div>
+  <div class="clip-list" id="clipList"></div>
+  <button class="add-btn" onclick="openPopup()">+</button>
 
   <div class="popup" id="popup">
     <input type="text" id="youtubeLink" placeholder="유튜브 Shorts 링크 붙여넣기">
     <button onclick="addClip()">추가</button>
-  </div>  <nav class="bottom-tab">
+  </div>
+
+  <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
     <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>구직</div></a>
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>  <script>
-    const clipList = document.getElementById('clipList');
-    const popup = document.getElementById('popup');
-    const input = document.getElementById('youtubeLink');
+  </nav>
 
-    const savedClips = JSON.parse(localStorage.getItem('clips') || '[]');
-
-    function renderClips() {
-      clipList.innerHTML = '';
-      savedClips.forEach(link => {
-        const id = link.split("/").pop().split("?")[0];
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube.com/embed/${id}?rel=0`;
-        iframe.allowFullscreen = true;
-
-        const card = document.createElement('div');
-        card.className = 'clip-card';
-        card.appendChild(iframe);
-
-        clipList.appendChild(card);
-      });
-    }
-
-    function openPopup() {
-      popup.style.display = 'block';
-    }
-
-    function addClip() {
-      const link = input.value.trim();
-      if (link) {
-        savedClips.push(link);
-        localStorage.setItem('clips', JSON.stringify(savedClips));
-        renderClips();
-        input.value = '';
-        popup.style.display = 'none';
-      }
-    }
-
-    renderClips();
-  </script></body>
+  <script src="/clip.js?v=1.00" defer></script>
+</body>
 </html>
+```
+
+---
