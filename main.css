@@ -10,7 +10,7 @@ body {
   background: #f9f9f9;
   color: #222;
   line-height: 1.5;
-  padding-bottom: 80px; /* 하단탭 안 가리게 */
+  padding-bottom: 80px; /* 하단탭 영역 확보 */
 }
 
 /* ===== 헤더 ===== */
@@ -42,7 +42,7 @@ body {
   background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
   padding: 2rem 1rem 3rem;
   text-align: center;
-  height: 220px; /* 슬라이드 높이 크게 */
+  height: 220px;
   overflow: hidden;
 }
 
@@ -106,7 +106,7 @@ body {
   text-decoration: none;
 }
 
-/* ===== 카드 ===== */
+/* ===== 카드 공통 ===== */
 .card-grid {
   display: flex;
   gap: 1rem;
@@ -154,7 +154,7 @@ body {
   cursor: pointer;
 }
 
-/* ===== 호스트 리스트 ===== */
+/* ===== 호스트 카드 ===== */
 .host-list {
   display: flex;
   gap: 1rem;
@@ -180,7 +180,7 @@ body {
   margin: 0 auto 0.5rem;
 }
 
-/* ===== 후기 ===== */
+/* ===== 후기 카드 ===== */
 .review-card {
   display: flex;
   align-items: center;
@@ -214,7 +214,7 @@ body {
   color: #888;
 }
 
-/* ===== 하단탭 ===== */
+/* ===== 하단탭 공통 ===== */
 .bottom-tab {
   position: fixed;
   bottom: 0;
