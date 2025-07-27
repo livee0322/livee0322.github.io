@@ -12,25 +12,6 @@ body {
   padding-bottom: 80px; /* 하단탭 가리지 않도록 */
   overflow-x: hidden;
 }
-/* ===== 인사이트박스 ===== */
-.insight-box {
-  background: #f1f5ff;
-  margin: 1.2rem;
-  padding: 1rem 1.2rem;
-  border-radius: 1rem;
-  font-size: 0.9rem;
-  color: #333;
-}
-.insight-box h3 {
-  margin-bottom: 0.4rem;
-  color: #364fc7;
-}
-.insight-box ul {
-  padding-left: 1.2rem;
-}
-.insight-box li {
-  margin-bottom: 0.3rem;
-}
 
 /* ===== 헤더 ===== */
 .header {
@@ -240,4 +221,43 @@ body {
 .bottom-tab a.active {
   color: #5c6eff;
   font-weight: bold;
+}
+
+/* 클로즈 베타 띠배너 */
+.beta-banner {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 10px;
+}
+
+/* 인사이트 섹션 */
+.insight-section {
+  padding: 16px;
+  background-color: #fff;
+}
+
+.insight-box {
+  background-color: #f9f9f9;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.insight-box h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.insight-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-box li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
