@@ -1,5 +1,4 @@
 
-```js
 const clipList = document.getElementById('clipList');
 const popup = document.getElementById('popup');
 const input = document.getElementById('youtubeLink');
