@@ -1,10 +1,11 @@
-
 const clipList = document.getElementById('clipList');
 const popup = document.getElementById('popup');
 const input = document.getElementById('youtubeLink');
 
+// 저장된 클립 불러오기
 const savedClips = JSON.parse(localStorage.getItem('clips') || '[]');
 
+// 클립 렌더링
 function renderClips() {
   clipList.innerHTML = '';
   savedClips.forEach(link => {
@@ -21,10 +22,12 @@ function renderClips() {
   });
 }
 
+// 팝업 열기
 function openPopup() {
   popup.style.display = 'block';
 }
 
+// 클립 추가
 function addClip() {
   const link = input.value.trim();
   if (link) {
