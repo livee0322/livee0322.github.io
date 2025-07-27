@@ -1,228 +1,218 @@
-/* ===== 기본 리셋 ===== */
-* {
+/* 전체 레이아웃 초기화 */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Arial', sans-serif;
-  background: #f9f9f9;
-  color: #222;
-  line-height: 1.5;
-  padding-bottom: 80px; /* 하단탭 영역 확보 */
-  overflow-x: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f9f9f9;
+  color: #111;
+  padding-bottom: 80px; /* 하단탭 안 가리도록 */
 }
 
-/* ===== 헤더 ===== */
-.header {
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-.right-icons i {
-  margin-left: 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+/* 섹션 공통 */
+section {
+  padding: 20px 16px;
 }
 
-/* ===== 슬라이드 영역 ===== */
-.banner-section {
-  background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
-  padding: 2rem 1rem 3rem;
-  text-align: center;
-  height: 220px;
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* 카드 공통 */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
   overflow: hidden;
-  position: relative;
-}
-.banner-slide {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-.banner {
-  flex: 0 0 100%;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #222;
-  text-align: center;
-  padding: 1rem;
-}
-.slide-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 4px;
-  cursor: pointer;
-}
-.dot.active {
-  background: #5c6eff;
 }
 
-/* ===== 공통 섹션 ===== */
-.recruit-section {
-  padding: 1rem;
-}
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-.section-head h2 {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.section-head .more {
-  font-size: 0.85rem;
-  color: #5c6eff;
-  text-decoration: none;
-}
-
-/* ===== 쇼핑라이브 카드 ===== */
-.card-grid {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
-.live-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  min-width: 220px;
-  flex-shrink: 0;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-.live-card img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-}
-.live-card .info {
-  padding: 0.75rem;
-}
-.live-card .title {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-.live-card .brand {
-  font-size: 0.85rem;
-  color: #777;
-}
-.apply-btn {
-  background: #5c6eff;
+/* 버튼 공통 */
+.btn {
+  background-color: #5C4CF3;
   color: #fff;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 15px;
   border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  width: 100%;
   cursor: pointer;
 }
 
-/* ===== 호스트 ===== */
-.host-list {
+/* 공고 카드 */
+.recruit-card {
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
-.host-card {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 0.8rem;
-  text-align: center;
-  min-width: 100px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  flex-shrink: 0;
-}
-.avatar {
-  width: 48px;
-  height: 48px;
-  background: #ddd;
-  border-radius: 50%;
-  margin: 0 auto 0.5rem;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* ===== 후기 ===== */
+/* 후기 카드 */
 .review-card {
   display: flex;
-  align-items: center;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-.review-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  margin-right: 1rem;
-}
-.review-info .stars {
-  color: #fadb14;
-  font-size: 0.85rem;
-}
-.review-info p {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
-}
-.review-info .author {
-  font-size: 0.75rem;
-  color: #888;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-/* ===== 하단탭 ===== */
+.review-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.review-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 쇼호스트 리스트 */
+.host-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.host-list::-webkit-scrollbar {
+  display: none;
+}
+
+.host-item {
+  width: 80px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 12px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.host-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eee;
+  margin-bottom: 8px;
+}
+
+/* 슬라이드 */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.slider .slide-track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slider .slide {
+  min-width: 100%;
+  height: 160px;
+  background-color: #eee;
+  border-radius: 16px;
+  margin-right: 0;
+}
+
+/* 페이지네이션 점 */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 6px;
+}
+
+.slider-dots div {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.slider-dots .active {
+  background-color: #5C4CF3;
+}
+
+/* 하단탭 (공통) */
 .bottom-tab {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
   display: flex;
   justify-content: space-around;
-  background: #fff;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
-  padding: 0.5rem 0 0.6rem;
-  z-index: 999;
+  align-items: center;
+  z-index: 100;
 }
-.bottom-tab a {
-  color: #555;
-  font-size: 0.75rem;
-  text-align: center;
-  text-decoration: none;
+
+.tab-item {
   flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.bottom-tab a i {
-  font-size: 1.2rem;
+
+.tab-item.active,
+.tab-item:hover {
+  color: #5C4CF3;
 }
-.bottom-tab a.active {
-  color: #5c6eff;
-  font-weight: bold;
+
+.tab-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.tab-label {
+  font-size: 11px;
+}
+
+/* FAB 버튼 (공고 작성용) */
+.fab {
+  position: fixed;
+  bottom: 72px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #5C4CF3;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 101;
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+  .card {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .host-item {
+    width: 72px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
 }
