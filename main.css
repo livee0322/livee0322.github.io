@@ -12,13 +12,6 @@ body {
   line-height: 1.5;
 }
 
-/* 공통 레이아웃 */
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 /* 헤더 */
 .header {
   background: #fff;
@@ -27,46 +20,34 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
-}
-
-.header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.back-button {
-  font-size: 0.9rem;
-  color: #666;
-  text-decoration: none;
-}
-
-/* 공통 버튼 */
-.btn-primary,
-.apply-btn {
-  background: #5c6eff;
-  color: #fff;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+.header .right-icons i {
+  margin-left: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+}
+
+/* 슬라이더 */
+.banner-section {
+  background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
+  padding: 2rem 1rem;
   text-align: center;
-  display: block;
-  text-decoration: none;
 }
 
-.btn-primary:hover,
-.apply-btn:hover {
-  background: #4758d6;
+.banner-section p {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.full {
-  width: 100%;
+/* 쇼핑라이브 카드 영역 */
+.recruit-section {
+  padding: 1rem;
 }
 
-/* 공고 카드 */
 .recruit-card {
   background: #fff;
   border-radius: 1rem;
@@ -75,102 +56,19 @@ body {
   margin-bottom: 1rem;
 }
 
-.recruit-card img {
-  width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* 공고작성 폼 */
-.form-wrapper {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.form-wrapper h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.form label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-input[type="text"],
-input[type="url"],
-input[type="file"],
-input[type="datetime-local"],
-select,
-textarea {
-  padding: 0.6rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  background: #fefefe;
-}
-
-textarea {
-  resize: vertical;
-}
-
-/* FAB 버튼 */
-.fab {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  background-color: #6366f1;
-  color: white;
-  border-radius: 50%;
-  font-size: 32px;
-  text-align: center;
-  line-height: 56px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-/* 필터 버튼 */
-.category-filters {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-  overflow-x: auto;
-}
-
-.category-filters button {
-  border: none;
-  background: #eee;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.category-filters button.active {
+.apply-btn {
   background: #5c6eff;
   color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  text-align: center;
+  display: block;
+  text-decoration: none;
 }
 
-/* 하단 탭바 */
-.tab-bar,
+/* 하단탭 */
 .bottom-tab {
   position: fixed;
   bottom: 0;
@@ -184,7 +82,6 @@ textarea {
   z-index: 100;
 }
 
-.tab-item,
 .bottom-tab a {
   color: #555;
   font-size: 0.85rem;
@@ -193,7 +90,6 @@ textarea {
   flex: 1;
 }
 
-.tab-item.active,
 .bottom-tab a.active {
   color: #5c6eff;
   font-weight: bold;
