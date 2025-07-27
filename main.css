@@ -42,7 +42,8 @@ body {
   background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
   padding: 2rem 1rem 3rem;
   text-align: center;
-  height: 220px; /* 슬라이드 영역 더 크게 */
+  height: 220px; /* 슬라이드 높이 크게 */
+  overflow: hidden;
 }
 
 .banner-slide {
@@ -51,6 +52,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  transition: transform 0.3s ease;
 }
 
 .banner {
@@ -58,7 +60,8 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #222;
-  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 1rem;
 }
 
 .slide-dots {
@@ -73,6 +76,7 @@ body {
   background: #ccc;
   border-radius: 50%;
   margin: 0 4px;
+  cursor: pointer;
 }
 
 .dot.active {
