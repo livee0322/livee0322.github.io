@@ -6,10 +6,11 @@
   <title>공고 상세</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.01" />
+  <link rel="stylesheet" href="/detail.css?v=1.01" />
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- 헤더 -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -19,36 +20,29 @@
     </div>
   </header>
 
-  <!-- 공고 상세 콘텐츠 -->
-  <main class="recruit-detail">
-    <img src="https://via.placeholder.com/600x300/ffe7ba/000?text=썸네일" alt="공고 썸네일" class="thumbnail">
+  <!-- 썸네일 -->
+  <img src="https://via.placeholder.com/800x300/bae7ff/000?text=라이브+공고+썸네일" alt="공고 썸네일" class="detail-thumbnail" />
 
-    <section class="detail-header">
-      <h2 class="title">[패션 브랜드 A] 신상 라이브 쇼핑 방송 진행</h2>
-      <div class="brand">브랜드 A</div>
-    </section>
+  <!-- 상세내용 -->
+  <div class="detail-wrapper">
+    <h2 class="detail-title">패션 브랜드 라이브 진행자 모집</h2>
+    <p class="detail-brand">브랜드명 A</p>
+    <p class="detail-description">
+      📅 방송 일정: 2025년 8월 10일 오후 3시  
+      📍 플랫폼: 네이버 쇼핑라이브  
+      
+      👗 다양한 여름 신상을 소개할 예정입니다.  
+      💁‍♀️ 스타일링 가능한 쇼호스트를 찾고 있습니다!  
+      🔗 실시간 소통과 판매 경험이 있다면 더욱 좋아요!
+    </p>
+  </div>
 
-    <section class="detail-info">
-      <p><strong>모집 기간:</strong> 2025.08.01 ~ 2025.08.10</p>
-      <p><strong>방송 일정:</strong> 2025.08.15 오후 8시</p>
-      <p><strong>카테고리:</strong> 패션 / 여성의류 / 라이브커머스</p>
-    </section>
+  <!-- 지원 버튼 -->
+  <div class="detail-apply">
+    <button>지원하기</button>
+  </div>
 
-    <section class="detail-description">
-      <h3>상세 설명</h3>
-      <p>
-        브랜드 A의 신상 제품을 소개하는 라이브 커머스 방송입니다.<br />
-        패션에 관심이 많고 자신감 있는 쇼호스트분들의 많은 지원 바랍니다.<br />
-        실시간 소통 및 제품 시연이 중심이며, 지원 시 과거 방송 경험을 꼭 기재해주세요.
-      </p>
-    </section>
-
-    <div class="detail-button">
-      <button class="btn-primary full">지원하기</button>
-    </div>
-  </main>
-
-  <!-- 하단탭 -->
+  <!-- 하단 탭 -->
   <nav class="bottom-tab">
     <a href="index.html"><i class="ri-home-line"></i><span>홈</span></a>
     <a href="recruitlist.html" class="active"><i class="ri-live-line"></i><span>라이브</span></a>
