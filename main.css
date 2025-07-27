@@ -12,6 +12,13 @@ body {
   line-height: 1.5;
 }
 
+/* 공통 레이아웃 */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* 헤더 */
 .header {
   background: #fff;
@@ -35,7 +42,8 @@ body {
 }
 
 /* 공통 버튼 */
-.btn-primary {
+.btn-primary,
+.apply-btn {
   background: #5c6eff;
   color: #fff;
   padding: 0.75rem;
@@ -44,9 +52,13 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-align: center;
+  display: block;
+  text-decoration: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.apply-btn:hover {
   background: #4758d6;
 }
 
@@ -54,7 +66,22 @@ body {
   width: 100%;
 }
 
-/* 공고작성 폼 스타일 */
+/* 공고 카드 */
+.recruit-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.recruit-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 공고작성 폼 */
 .form-wrapper {
   max-width: 600px;
   margin: 2rem auto;
@@ -101,6 +128,7 @@ textarea {
   resize: vertical;
 }
 
+/* FAB 버튼 */
 .fab {
   position: fixed;
   bottom: 80px;
@@ -118,24 +146,31 @@ textarea {
   z-index: 1000;
 }
 
-.recruit-list-header {
+/* 필터 버튼 */
+.category-filters {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
 }
 
-.btn-create {
-  padding: 8px 14px;
-  background-color: #6366f1;
-  color: white;
+.category-filters button {
+  border: none;
+  background: #eee;
   border-radius: 20px;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.category-filters button.active {
+  background: #5c6eff;
+  color: white;
 }
 
 /* 하단 탭바 */
+.tab-bar,
 .bottom-tab {
   position: fixed;
   bottom: 0;
@@ -149,6 +184,7 @@ textarea {
   z-index: 100;
 }
 
+.tab-item,
 .bottom-tab a {
   color: #555;
   font-size: 0.85rem;
@@ -157,6 +193,7 @@ textarea {
   flex: 1;
 }
 
+.tab-item.active,
 .bottom-tab a.active {
   color: #5c6eff;
   font-weight: bold;
