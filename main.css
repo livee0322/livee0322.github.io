@@ -13,37 +13,42 @@ body {
 }
 
 /* 헤더 */
-.header {
+header {
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.header .right-icons i {
-  margin-left: 1rem;
+header h1 {
   font-size: 1.2rem;
+}
+
+.icons i {
+  margin-left: 1rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
-/* 슬라이더 */
-.banner-section {
+/* 배너 슬라이더 */
+.banner-container {
   background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
   padding: 2rem 1rem;
   text-align: center;
 }
 
-.banner-section p {
-  font-weight: bold;
+.banner-container .banner {
   font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-/* 쇼핑라이브 카드 영역 */
+/* 공고 카드 리스트 */
 .recruit-section {
   padding: 1rem;
 }
@@ -68,7 +73,115 @@ body {
   text-decoration: none;
 }
 
-/* 하단탭 */
+/* 카테고리 필터 버튼 */
+.category-filter {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem;
+  gap: 0.5rem;
+  background: #fff;
+}
+
+.category-filter button {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background: #eee;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-filter button.active {
+  background: #5c6eff;
+  color: white;
+  font-weight: bold;
+}
+
+/* 공고작성용 폼 */
+.form-wrapper {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.form-wrapper h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="file"],
+input[type="datetime-local"],
+select,
+textarea {
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fefefe;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* FAB 버튼 */
+.fab {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 50%;
+  font-size: 32px;
+  text-align: center;
+  line-height: 56px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* 공고리스트 상단 영역 */
+.recruit-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.btn-create {
+  padding: 8px 14px;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 하단 탭바 */
 .bottom-tab {
   position: fixed;
   bottom: 0;
