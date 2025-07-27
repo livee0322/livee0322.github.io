@@ -1,11 +1,9 @@
-/* 로그인 컨테이너 */
 .login-container {
   max-width: 400px;
   margin: 3rem auto;
   padding: 2rem;
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   text-align: center;
 }
 
@@ -35,6 +33,14 @@
   font-size: 1rem;
 }
 
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
 .btn-login {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -46,8 +52,31 @@
   cursor: pointer;
 }
 
+.social-login {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.btn-social {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-social.naver {
+  background-color: #03c75a;
+}
+
+.btn-social.apple {
+  background-color: #000;
+}
+
 .login-links {
-  margin-top: 1.2rem;
-  font-size: 0.85rem;
-  color: #666;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
