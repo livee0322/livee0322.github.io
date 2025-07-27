@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>쇼핑라이브 공고 작성</title>
+  <link rel="stylesheet" href="main.css?v=1.08" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container flex-between">
+      <h1>Livee</h1>
+      <a href="index.html" class="back-button">← 뒤로가기</a>
+    </div>
+  </header>
+
+  <main class="form-wrapper">
+    <h2>쇼핑라이브 공고 작성</h2>
+
+    <form class="form">
+      <label>공고 제목<input type="text" placeholder="예: 여름 신상 소개 라이브" required></label>
+
+      <label>브랜드명<input type="text" placeholder="예: 브랜드 A" required></label>
+
+      <label>카테고리
+        <select required>
+          <option value="">카테고리 선택</option>
+          <option>패션</option>
+          <option>뷰티</option>
+          <option>식품</option>
+          <option>디지털</option>
+          <option>기타</option>
+        </select>
+      </label>
+
+      <label>방송일시<input type="datetime-local" required></label>
+
+      <label>썸네일 이미지<input type="file" accept="image/*" required></label>
+
+      <label>공고 상세 내용
+        <textarea placeholder="라이브 방송의 소개 및 모집 조건 등을 입력해주세요" rows="5" required></textarea>
+      </label>
+
+      <label>지원 링크<input type="url" placeholder="예: https://brand.com/apply" required></label>
+
+      <button type="submit" class="btn-primary full">등록하기</button>
+    </form>
+  </main>
+
+  <nav class="bottom-tab">
+    <a href="index.html">홈</a>
+    <a href="recruitlist.html" class="active">라이브</a>
+    <a href="#">구직</a>
+    <a href="#">마이</a>
+  </nav>
+</body>
+</html>
