@@ -1,4 +1,4 @@
-/* ===== 리셋 ===== */
+/* 기본 리셋 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,19 +9,23 @@ body {
   background: #f8f8f8;
   color: #222;
   line-height: 1.5;
+  padding-bottom: 80px; /* 하단탭 가리지 않도록 여백 확보 */
 }
 
-/* ===== 헤더 ===== */
+/* 헤더 */
 header {
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h1 {
+  font-size: 1.3rem;
 }
 .icons i {
   margin-left: 1rem;
@@ -29,180 +33,183 @@ header {
   cursor: pointer;
 }
 
-/* ===== 배너 ===== */
+/* 슬라이드 배너 */
 .banner-container {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
-  padding: 2rem 1rem;
-  text-align: center;
+  height: 200px; /* 슬라이드 높이 증가 */
 }
 .banner-slide {
   display: flex;
-  animation: slide 12s infinite;
+  width: 300%;
+  transition: transform 0.5s ease;
 }
 .banner {
-  min-width: 100%;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-@keyframes slide {
-  0%, 33% { transform: translateX(0); }
-  34%, 66% { transform: translateX(-100%); }
-  67%, 100% { transform: translateX(-200%); }
-}
-.slide-dots {
+  flex: 1 0 100%;
   display: flex;
   justify-content: center;
-  margin-top: 0.5rem;
+  align-items: center;
+  background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.slide-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
 }
 .dot {
   width: 8px;
   height: 8px;
-  background: #ddd;
+  background: #ccc;
   border-radius: 50%;
-  margin: 0 4px;
 }
 .dot.active {
-  background: #5c6eff;
+  background: #6366f1;
 }
 
-/* ===== 섹션 헤드 ===== */
+/* 섹션 공통 */
 .section-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem 0.5rem;
+  padding: 1rem;
 }
 .section-head h2 {
   font-size: 1.1rem;
-  font-weight: bold;
 }
-.more {
-  font-size: 0.85rem;
-  color: #5c6eff;
+.section-head .more {
+  font-size: 0.9rem;
+  color: #6366f1;
   text-decoration: none;
 }
 
-/* ===== 카드 리스트 ===== */
+/* 쇼핑라이브 카드 */
 .card-grid {
   display: flex;
-  gap: 1rem;
   overflow-x: auto;
   padding: 0 1rem 1rem;
+  gap: 1rem;
+}
+.card-grid::-webkit-scrollbar {
+  display: none;
 }
 .live-card {
+  min-width: 160px;
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  min-width: 180px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .live-card img {
   width: 100%;
-  height: auto;
-  border-radius: 1rem 1rem 0 0;
+  height: 100px;
+  object-fit: cover;
 }
-.info {
-  padding: 0.8rem;
+.live-card .info {
+  padding: 0.75rem;
 }
-.info .title {
-  font-size: 1rem;
+.live-card .title {
   font-weight: bold;
+  margin-bottom: 4px;
 }
-.info .brand {
+.live-card .brand {
   font-size: 0.85rem;
-  color: #666;
-  margin: 0.3rem 0;
+  color: #555;
 }
-.info button {
-  background: #5c6eff;
+.live-card button {
+  margin-top: 8px;
+  background: #6366f1;
   color: #fff;
   border: none;
   padding: 0.5rem;
-  width: 100%;
   border-radius: 0.5rem;
-  font-size: 0.9rem;
+  width: 100%;
+  cursor: pointer;
 }
 
-/* ===== 쇼호스트 ===== */
+/* 쇼호스트 */
 .host-list {
   display: flex;
-  padding: 0 1rem 1rem;
   gap: 1rem;
   overflow-x: auto;
+  padding: 0 1rem 1rem;
+}
+.host-list::-webkit-scrollbar {
+  display: none;
 }
 .host-card {
+  flex-shrink: 0;
+  width: 100px;
   background: #fff;
-  padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  min-width: 120px;
   text-align: center;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.9rem;
 }
 .avatar {
-  width: 60px;
-  height: 60px;
-  background: #ccc;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: #ccc;
   margin: 0 auto 0.5rem;
 }
 
-/* ===== 후기 ===== */
+/* 후기 */
 .review-card {
-  background: #fff;
   display: flex;
+  align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  margin: 0 1rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 0 1rem 1rem;
+  background: #fff;
 }
 .review-card img {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 0.5rem;
 }
 .review-info .stars {
-  color: #f7c948;
-  font-size: 0.9rem;
+  color: #facc15;
 }
 .review-info p {
-  font-size: 0.95rem;
+  margin: 0.3rem 0;
 }
 .review-info .author {
-  display: block;
   font-size: 0.8rem;
-  color: #999;
+  color: #777;
 }
 
-/* ===== 하단탭 ===== */
+/* 하단탭 */
 nav {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
   display: flex;
   justify-content: space-around;
-  background: #fff;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
   padding: 0.6rem 0;
-  z-index: 100;
+  z-index: 1000;
 }
 nav button {
   background: none;
   border: none;
-  font-size: 0.85rem;
-  color: #555;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #777;
+}
+nav button i {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 nav button.active {
   color: #5c6eff;
   font-weight: bold;
-}
-nav i {
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
 }
