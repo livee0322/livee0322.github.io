@@ -35,6 +35,33 @@ body {
   cursor: pointer;
 }
 
+/* ===== 상단탭 ===== */
+.top-tabs {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #eee;
+  gap: 1rem;
+}
+
+.top-tabs a {
+  font-size: 0.95rem;
+  color: #555;
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+.top-tabs a.active {
+  color: #5c6eff;
+  font-weight: bold;
+  border-bottom: 2px solid #5c6eff;
+}
+
+
 /* ===== 배너 슬라이드 ===== */
 .banner-section {
   background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
