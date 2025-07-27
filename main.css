@@ -35,6 +35,19 @@ body {
   cursor: pointer;
 }
 
+/* 가로 스크롤 시 스크롤바 숨김 (상단탭, 카드슬라이드 등) */
+.top-tabs::-webkit-scrollbar,
+.card-grid::-webkit-scrollbar,
+.host-list::-webkit-scrollbar {
+  display: none;
+}
+.top-tabs,
+.card-grid,
+.host-list {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 /* ===== 상단탭 ===== */
 .top-tabs {
   display: flex;
