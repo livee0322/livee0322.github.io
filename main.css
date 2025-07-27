@@ -101,6 +101,40 @@ textarea {
   resize: vertical;
 }
 
+.fab {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 50%;
+  font-size: 32px;
+  text-align: center;
+  line-height: 56px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.recruit-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn-create {
+  padding: 8px 14px;
+  background-color: #6366f1;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* 하단 탭바 */
 .bottom-tab {
   position: fixed;
