@@ -1,138 +1,217 @@
-/* /main.css - Livee 최종 승인 통합 스타일 v1.12 */
+/* ===== 기본 리셋 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.5;
+  padding-bottom: 80px; /* 하단탭 가리지 않게 */
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
+/* ===== 헤더 ===== */
+header {
+  background: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 1.4rem;
+}
+
+header .icons i {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== 배너 슬라이드 ===== */
+.banner-container {
+  background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+  height: 220px;
+  overflow: hidden;
+}
+
+.banner-slide {
+  display: flex;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.banner {
+  min-width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #5c6eff;
+}
+
+/* ===== 섹션 공통 ===== */
+section {
+  padding: 1rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.section-head h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.section-head .more {
+  font-size: 0.85rem;
+  color: #5c6eff;
   text-decoration: none;
 }
 
-.container {
-  max-width: 768px;
-  margin: 0 auto;
-  padding-bottom: 100px;
-}
-
-/* 헤더 */
-header {
-  background: #fff;
-  padding: 16px;
+/* ===== 카드 ===== */
+.card-grid {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-/* 메인 슬라이드 */
-.main-slide {
-  margin: 24px 0;
-  overflow: hidden;
-}
-
-.slide-container {
-  display: flex;
-  gap: 12px;
-  padding: 0 16px;
+  gap: 1rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
 }
 
-.slide-container::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  min-width: 88%;
-  height: 160px;
+.live-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  min-width: 200px;
   flex-shrink: 0;
-  background: #eee;
-  border-radius: 12px;
-  scroll-snap-align: center;
-}
-
-/* 공고 카드 */
-.announcement-section {
-  padding: 0 16px;
-  margin-top: 24px;
-}
-
-.announcement-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-.announcement-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* 버튼 */
-.apply-btn {
-  width: 100%;
-  padding: 12px 0;
-  background: #5569f2;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  margin-top: 12px;
-}
-
-/* 쇼호스트 섹션 */
-.hosts-section {
-  margin-top: 32px;
-  padding: 0 16px;
   overflow: hidden;
 }
 
-.hosts-slider {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 8px;
+.live-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
 }
 
-.hosts-slider::-webkit-scrollbar {
-  display: none;
+.live-card .info {
+  padding: 0.75rem;
+}
+
+.live-card .title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.live-card .brand {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.live-card button {
+  background: #5c6eff;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ===== 인기 쇼호스트 ===== */
+.host-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
 .host-card {
-  min-width: 96px;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 0.8rem;
   text-align: center;
-  background: #fff;
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  min-width: 100px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex-shrink: 0;
 }
 
-/* 후기 섹션 */
-.review-section {
-  padding: 0 16px;
-  margin-top: 32px;
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
 }
 
+/* ===== 후기 ===== */
 .review-card {
+  display: flex;
+  align-items: center;
   background: #fff;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  margin-bottom: 16px;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* 하단탭 */
-.bottom-tab {
+.review-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.review-info .stars {
+  color: #fadb14;
+  font-size: 0.85rem;
+}
+
+.review-info p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.review-info .author {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* ===== 하단탭 ===== */
+nav {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -140,51 +219,29 @@ header {
   display: flex;
   justify-content: space-around;
   background: #fff;
-  border-top: 1px solid #eee;
-  padding: 8px 0 12px;
-  z-index: 20;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.08);
+  padding: 0.4rem 0;
+  z-index: 100;
 }
 
-.tab-item {
+nav button {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.75rem;
+  text-align: center;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 12px;
-  color: #444;
 }
 
-.tab-item img {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
+nav button i {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
 }
 
-/* FAB 버튼 */
-.fab-btn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  background: #5569f2;
-  color: white;
-  font-size: 32px;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  z-index: 25;
-}
-
-/* 공통 제목 */
-.section-title {
+nav button.active {
+  color: #5c6eff;
   font-weight: bold;
-  font-size: 16px;
-  margin: 0 0 12px 0;
-}
-
-/* 미디어 쿼리 */
-@media screen and (max-width: 480px) {
-  .slide {
-    min-width: 92%;
-  }
 }
