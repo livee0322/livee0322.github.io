@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 | Livee</title>
+  <link rel="stylesheet" href="/main.css?v=1.01" />
+  <link rel="stylesheet" href="/login.css?v=1.01" />
+</head>
+<body>
+
+  <header class="login-header">
+    <a href="javascript:history.back()" class="back-btn">←</a>
+    <h1>로그인</h1>
+  </header>
+
+  <main class="login-container">
+    <div class="logo-area">
+      <img src="/logo.svg" alt="Livee 로고" />
+    </div>
+
+    <form class="login-form">
+      <input type="text" placeholder="아이디" required />
+      <input type="password" placeholder="비밀번호" required />
+      <button type="submit" class="login-btn">로그인</button>
+      <div class="login-options">
+        <label><input type="checkbox" /> 자동 로그인</label>
+        <div>
+          <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a>
+        </div>
+      </div>
+    </form>
+
+    <div class="social-login">
+      <button class="naver-btn">네이버 아이디로 로그인</button>
+      <button class="apple-btn">Apple로 로그인</button>
+    </div>
+
+    <div class="signup-link">
+      <a href="#">회원가입</a>
+    </div>
+  </main>
+
+  <nav class="bottom-tab">
+    <a href="/index.html" class="">홈</a>
+    <a href="/recruitlist.html">라이브</a>
+    <a href="/recruitform.html">구직</a>
+    <a href="/login.html" class="active">마이</a>
+  </nav>
+
+</body>
+</html>
