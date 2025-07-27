@@ -3,68 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Livee 공고 리스트</title>
-  <link rel="stylesheet" href="recrultlist.css?v=1.08" />
-  <script defer src="main.js"></script>
+  <title>쇼핑라이브 공고 리스트</title>
+  <link rel="stylesheet" href="recruitlist.css" />
 </head>
 <body>
-  <header class="header">
+  <header>
     <h1>Livee</h1>
-    <div class="header-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
   </header>
 
-  <main class="container">
-    <div class="category-filter">
-      <button class="active">전체</button>
-      <button>패션</button>
-      <button>뷰티</button>
-      <button>식품</button>
-      <button>디지털</button>
-      <button>기타</button>
+  <!-- 카테고리 필터 -->
+  <div class="category-filters">
+    <button class="active">전체</button>
+    <button>패션</button>
+    <button>뷰티</button>
+    <button>식품</button>
+    <button>디지털</button>
+    <button>기타</button>
+  </div>
+
+  <!-- 공고 리스트 -->
+  <div class="recruit-list">
+    <div class="recruit-card">
+      <img src="https://via.placeholder.com/300x150/ffccc7/000?text=공고1" alt="공고1" />
+      <div class="title">여름 패션 신상 소개 라이브</div>
+      <div class="brand">브랜드 A</div>
+      <div class="date">방송일: 2025-08-10 | 오후 8시</div>
+      <button class="apply-btn">지원하기</button>
     </div>
-
-    <section class="recruit-list">
-      <h2>쇼핑라이브 공고 리스트</h2>
-
-      <div class="recruit-card">
-        <img src="공고1.jpg" alt="공고1" />
-        <h3>여름 패션 신상 소개 라이브</h3>
-        <p class="brand">브랜드 A</p>
-        <p class="datetime">방송일: 2025-08-10 | 오후 8시</p>
-        <button class="apply-btn">지원하기</button>
-      </div>
-
-      <div class="recruit-card">
-        <img src="공고2.jpg" alt="공고2" />
-        <h3>신제품 화장품 런칭 라이브</h3>
-        <p class="brand">브랜드 B</p>
-        <p class="datetime">방송일: 2025-08-15 | 오후 6시</p>
-        <button class="apply-btn">지원하기</button>
-      </div>
-
-      <div class="recruit-card">
-        <img src="공고3.jpg" alt="공고3" />
-        <h3>식품 브랜드 콜라보 라이브</h3>
-        <p class="brand">브랜드 C</p>
-        <p class="datetime">방송일: 2025-08-20 | 오후 7시</p>
-        <button class="apply-btn">지원하기</button>
-      </div>
-    </section>
-  </main>
+    <div class="recruit-card">
+      <img src="https://via.placeholder.com/300x150/bae7ff/000?text=공고2" alt="공고2" />
+      <div class="title">신제품 화장품 런칭 라이브</div>
+      <div class="brand">브랜드 B</div>
+      <div class="date">방송일: 2025-08-15 | 오후 6시</div>
+      <button class="apply-btn">지원하기</button>
+    </div>
+  </div>
 
   <!-- FAB 버튼 -->
   <a href="recruitform.html" class="fab">+</a>
 
-  <!-- 하단탭 -->
-  <nav class="tab-bar">
-    <a href="index.html" class="tab-item"><i class="ri-home-line"></i><span>홈</span></a>
-    <a href="recruitlist.html" class="tab-item active"><i class="ri-live-line"></i><span>라이브</span></a>
-    <a href="#" class="tab-item"><i class="ri-briefcase-line"></i><span>구직</span></a>
-    <a href="#" class="tab-item"><i class="ri-user-line"></i><span>마이</span></a>
-  </nav>
+  <!-- 하단 탭 -->
+  <div class="bottom-tab">
+    <a href="index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="recruitlist.html" class="active"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="#"><i class="ri-briefcase-line"></i><div>구직</div></a>
+    <a href="#"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </div>
 </body>
 </html>
