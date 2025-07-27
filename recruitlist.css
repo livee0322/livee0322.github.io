@@ -1,23 +1,4 @@
-/* 기본 설정 */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  background: #f8f8f8;
-  color: #222;
-  line-height: 1.5;
-}
-
-/* 헤더 */
-header {
-  background: #fff;
-  padding: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
+/* recruitlist.css - 공고리스트 전용 스타일 */
 
 /* 카테고리 필터 */
 .category-filters {
@@ -102,31 +83,4 @@ header {
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-}
-
-/* 하단 탭 */
-.bottom-tab {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  background: #fff;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
-  padding: 0.5rem 0;
-  z-index: 100;
-}
-
-.bottom-tab a {
-  color: #555;
-  font-size: 0.85rem;
-  text-align: center;
-  text-decoration: none;
-  flex: 1;
-}
-
-.bottom-tab a.active {
-  color: #5c6eff;
-  font-weight: bold;
 }
