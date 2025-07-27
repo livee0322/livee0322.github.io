@@ -12,6 +12,25 @@ body {
   padding-bottom: 80px; /* 하단탭 가리지 않도록 */
   overflow-x: hidden;
 }
+/* ===== 인사이트박스 ===== */
+.insight-box {
+  background: #f1f5ff;
+  margin: 1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+.insight-box h3 {
+  margin-bottom: 0.4rem;
+  color: #364fc7;
+}
+.insight-box ul {
+  padding-left: 1.2rem;
+}
+.insight-box li {
+  margin-bottom: 0.3rem;
+}
 
 /* ===== 헤더 ===== */
 .header {
