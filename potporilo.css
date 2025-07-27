@@ -1,0 +1,71 @@
+/* portfolio.css */
+
+body {
+  background: #f9f9f9;
+}
+
+/* 포트폴리오 전체 영역 */
+.portfolio-wrapper {
+  padding: 1rem;
+  padding-bottom: 100px; /* 하단탭 가리지 않게 */
+}
+
+/* 개별 카드 */
+.portfolio-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+
+/* 프로필 정보 */
+.profile-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.profile-info img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+}
+
+.profile-info .name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.profile-info .desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* 스킬 해시태그 */
+.skills {
+  font-size: 0.85rem;
+  color: #6366f1;
+  margin-bottom: 0.75rem;
+}
+
+/* 제안 버튼 */
+.btn-primary {
+  background: #5c6eff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #4752d1;
+}
