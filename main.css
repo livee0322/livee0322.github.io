@@ -4,17 +4,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Arial', sans-serif;
   background: #f9f9f9;
   color: #222;
   line-height: 1.5;
-  padding-bottom: 80px; /* 하단탭 영역 확보 */
+  padding-bottom: 80px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ===== 헤더 ===== */
-.header {
+header {
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   padding: 0.75rem 1rem;
@@ -25,27 +25,23 @@ body {
   top: 0;
   z-index: 999;
 }
-
-.logo {
+h1 {
   font-size: 1.4rem;
-  font-weight: bold;
 }
-
-.right-icons i {
+.icons i {
   margin-left: 1rem;
   font-size: 1.2rem;
   cursor: pointer;
 }
 
-/* ===== 배너 슬라이드 ===== */
-.banner-section {
+/* ===== 배너 ===== */
+.banner-container {
   background: linear-gradient(to right, #ffe17f, #ffd36b, #ffc0cb);
   padding: 2rem 1rem 3rem;
   text-align: center;
   height: 220px;
   overflow: hidden;
 }
-
 .banner-slide {
   display: flex;
   overflow: hidden;
@@ -54,7 +50,6 @@ body {
   height: 100%;
   transition: transform 0.3s ease;
 }
-
 .banner {
   min-width: 100%;
   font-size: 1.2rem;
@@ -63,13 +58,11 @@ body {
   text-align: center;
   padding: 1rem;
 }
-
 .slide-dots {
   display: flex;
   justify-content: center;
   margin-top: 0.5rem;
 }
-
 .dot {
   width: 8px;
   height: 8px;
@@ -78,72 +71,63 @@ body {
   margin: 0 4px;
   cursor: pointer;
 }
-
 .dot.active {
   background: #5c6eff;
 }
 
-/* ===== 섹션 공통 ===== */
-.recruit-section {
-  padding: 1rem;
-}
-
+/* ===== 공통 섹션 ===== */
 .section-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin: 1rem 1rem 0.5rem;
 }
-
 .section-head h2 {
   font-size: 1.1rem;
   font-weight: bold;
 }
-
 .section-head .more {
   font-size: 0.85rem;
   color: #5c6eff;
   text-decoration: none;
 }
 
-/* ===== 카드 공통 ===== */
+/* ===== 쇼핑라이브 공고 ===== */
 .card-grid {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem 1rem;
+  scrollbar-width: none;
 }
-
+.card-grid::-webkit-scrollbar {
+  display: none;
+}
 .live-card {
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  min-width: 200px;
+  min-width: 220px;
   flex-shrink: 0;
   overflow: hidden;
 }
-
 .live-card img {
   width: 100%;
   height: 100px;
   object-fit: cover;
 }
-
 .live-card .info {
   padding: 0.75rem;
 }
-
 .live-card .title {
   font-weight: bold;
   margin-bottom: 0.25rem;
 }
-
 .live-card .brand {
   font-size: 0.85rem;
   color: #777;
 }
-
-.apply-btn {
+.live-card button {
   background: #5c6eff;
   color: #fff;
   border: none;
@@ -154,14 +138,17 @@ body {
   cursor: pointer;
 }
 
-/* ===== 호스트 카드 ===== */
+/* ===== 인기 쇼호스트 ===== */
 .host-list {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem;
+  scrollbar-width: none;
 }
-
+.host-list::-webkit-scrollbar {
+  display: none;
+}
 .host-card {
   background: #fff;
   border-radius: 1rem;
@@ -171,7 +158,6 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   flex-shrink: 0;
 }
-
 .avatar {
   width: 48px;
   height: 48px;
@@ -181,41 +167,48 @@ body {
 }
 
 /* ===== 후기 카드 ===== */
-.review-card {
+.review-list {
   display: flex;
-  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0 1rem 1rem;
+  scrollbar-width: none;
+}
+.review-list::-webkit-scrollbar {
+  display: none;
+}
+.review-card {
+  flex: 0 0 auto;
   background: #fff;
   padding: 1rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  min-width: 220px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
-
 .review-card img {
   width: 60px;
   height: 60px;
   border-radius: 0.5rem;
   object-fit: cover;
-  margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
-
 .review-info .stars {
   color: #fadb14;
   font-size: 0.85rem;
 }
-
 .review-info p {
   margin: 0.2rem 0;
   font-size: 0.9rem;
 }
-
 .review-info .author {
   font-size: 0.75rem;
   color: #888;
 }
 
-/* ===== 하단탭 공통 ===== */
-.bottom-tab {
+/* ===== 하단탭 ===== */
+nav {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -227,23 +220,21 @@ body {
   padding: 0.4rem 0;
   z-index: 100;
 }
-
-.bottom-tab a {
+nav button {
   color: #555;
   font-size: 0.75rem;
   text-align: center;
-  text-decoration: none;
+  background: none;
+  border: none;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.bottom-tab a i {
+nav button i {
   font-size: 1.2rem;
 }
-
-.bottom-tab a.active {
+nav button.active {
   color: #5c6eff;
   font-weight: bold;
 }
