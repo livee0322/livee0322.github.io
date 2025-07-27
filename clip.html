@@ -2,12 +2,75 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>숏클립</title>
-  <link rel="stylesheet" href="/main.css?v=82.01" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/main.css?v=1.01" />
+  <style>
+    .shorts-container {
+      padding: 16px;
+    }
+    .shorts-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .shorts-card iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 12px;
+    }
+    .add-button {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #4F6DF5;
+      color: #fff;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 24px;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .popup {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 999;
+    }
+    .popup input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .popup button {
+      background: #4F6DF5;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+    }
+    .popup-close {
+      text-align: right;
+      cursor: pointer;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -17,26 +80,71 @@
     </div>
   </header>
 
-  <main style="padding: 1rem;">
-    <h2 style="margin-bottom: 1rem;">🔥 인기 숏클립</h2>
+  <!-- 상단 탭 -->
+  <div class="top-tabs">
+    <a href="/index.html">홈</a>
+    <a href="/clip.html" class="active">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html">대행서비스</a>
+  </div>
 
-    <div style="position: relative; padding-top: 56.25%; height: 0; overflow: hidden; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <iframe 
-        src="https://www.youtube.com/embed/wzaUeHDAZGc" 
-        frameborder="0" 
-        allowfullscreen 
-        style="position: absolute; top:0; left:0; width:100%; height:100%; border: none;">
-      </iframe>
+  <!-- 숏클립 영역 -->
+  <main class="shorts-container">
+    <h2>🔥 인기 숏클립</h2>
+    
+    <div class="shorts-list" id="shortsList">
+      <div class="shorts-card">
+        <iframe src="https://www.youtube.com/embed/wzaUeHDAZGc" allowfullscreen></iframe>
+      </div>
     </div>
 
+    <!-- 등록 버튼 -->
+    <button class="add-button" onclick="openPopup()">등록하기</button>
   </main>
 
+  <!-- 등록 팝업 -->
+  <div class="popup" id="popup">
+    <div class="popup-close" onclick="closePopup()">✖</div>
+    <input type="text" id="youtubeUrl" placeholder="YouTube 링크를 붙여넣기">
+    <button onclick="addShort()">추가</button>
+  </div>
+
+  <!-- 하단탭 -->
   <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
     <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>구직</div></a>
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
+
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "block";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+    function addShort() {
+      const url = document.getElementById("youtubeUrl").value;
+      const videoId = url.split("shorts/")[1]?.split("?")[0];
+      if (videoId) {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.allowFullscreen = true;
+
+        const card = document.createElement("div");
+        card.className = "shorts-card";
+        card.appendChild(iframe);
+
+        document.getElementById("shortsList").appendChild(card);
+        closePopup();
+      } else {
+        alert("유효한 YouTube Shorts 링크를 넣어주세요.");
+      }
+    }
+  </script>
 
 </body>
 </html>
