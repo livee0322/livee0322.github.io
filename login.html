@@ -2,68 +2,39 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>로그인 | Livee</title>
-  <link rel="stylesheet" href="/main.css?v=1.01" />
-  <link rel="stylesheet" href="/login.css?v=1.01" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>로그인 - Livee</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/main.css?v=82.01" />
+  <link rel="stylesheet" href="/login.css" />
 </head>
 <body>
 
-  <!-- 상단 헤더 -->
-  <header class="login-header">
-    <a href="javascript:history.back()" class="back-btn">←</a>
-    로그인
-  </header>
+  <!-- LOGIN SECTION -->
+  <main class="login-container">
+    <h1 class="login-logo-text">Livee</h1>
 
-  <!-- 로고 -->
-  <div class="logo-area">
-    <img src="/logo.png" alt="Livee 로고" />
-  </div>
-
-  <!-- 로그인 입력창 -->
-  <div class="login-container">
     <form class="login-form">
-      <input type="text" placeholder="아이디" />
-      <input type="password" placeholder="비밀번호" />
-      <button type="submit" class="login-btn">로그인</button>
+      <label for="email">이메일</label>
+      <input type="email" id="email" placeholder="이메일을 입력하세요" required />
+
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" placeholder="비밀번호를 입력하세요" required />
+
+      <button type="submit" class="btn-login">로그인</button>
     </form>
 
-    <div class="login-options">
-      <label><input type="checkbox" /> 자동 로그인</label>
-      <div>
-        <a href="#">아이디</a> | <a href="#">비밀번호 찾기</a>
-      </div>
+    <div class="login-links">
+      <a href="#">비밀번호 찾기</a> | <a href="#">회원가입</a>
     </div>
+  </main>
 
-    <!-- 소셜 로그인 -->
-    <div class="social-login">
-      <button class="naver-btn">네이버 아이디로 로그인</button>
-      <button class="apple-btn">Apple로 로그인</button>
-    </div>
-
-    <div class="signup-link">
-      <a href="#">회원가입</a>
-    </div>
-  </div>
-
-  <!-- 하단 탭 -->
+  <!-- NAV (메인 하단탭 동일) -->
   <nav class="bottom-tab">
-    <a href="/index.html">
-      <div>🏠</div>
-      <div>홈</div>
-    </a>
-    <a href="/recruitlist.html">
-      <div>📺</div>
-      <div>라이브</div>
-    </a>
-    <a href="/recruitform.html">
-      <div>💼</div>
-      <div>구직</div>
-    </a>
-    <a href="/login.html" class="active">
-      <div>👤</div>
-      <div>마이</div>
-    </a>
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="#"><i class="ri-briefcase-line"></i><div>구직</div></a>
+    <a href="/login.html" class="active"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
 </body>
