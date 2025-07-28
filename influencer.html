@@ -4,61 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>인플루언서</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/main.css?v=1.03" />
-  <style>
-    body {
-      background: #f8f6ff;
-    }
-    .influencer-wrapper {
-      padding: 1rem 1rem 5rem;
-    }
-    .swiper {
-      overflow: visible;
-      padding: 2rem 0;
-    }
-    .swiper-slide {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 1rem;
-      transition: transform 0.3s;
-      opacity: 0.6;
-      transform: scale(0.9);
-    }
-    .swiper-slide-active {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .influencer-slide img {
-      width: 100%;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-    }
-    .influencer-slide .name {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    .influencer-slide .desc {
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 0.3rem;
-    }
-    .btn-invite {
-      display: block;
-      width: 90%;
-      margin: 2rem auto;
-      background: #6e60ff;
-      color: #fff;
-      text-align: center;
-      padding: 0.75rem;
-      border-radius: 1rem;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/influencer.css?v=1.0" />
 </head>
 <body>
 
@@ -86,27 +34,30 @@
   <!-- 콘텐츠 -->
   <main class="influencer-wrapper">
     <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide influencer-slide">
-          <img src="/sample1.jpg" alt="쇼호스트 1">
-          <div class="name">한유진 쇼호스트</div>
-          <div class="desc">패션/뷰티 전문 | 풍부한 소통 경험</div>
+      <div class="slide-card">
+        <img src="/sample1.jpg" alt="인플루언서1" />
+        <div class="info">
+          <h3>이하윤 쇼호스트</h3>
+          <p>패션 브랜드 라이브 누적 300회</p>
         </div>
-        <div class="swiper-slide influencer-slide">
-          <img src="/sample2.jpg" alt="쇼호스트 2">
-          <div class="name">이서준 쇼호스트</div>
-          <div class="desc">리빙 전문 | 실시간 매출 2위 경력</div>
+      </div>
+      <div class="slide-card">
+        <img src="/sample2.jpg" alt="인플루언서2" />
+        <div class="info">
+          <h3>정시우 쇼호스트</h3>
+          <p>건강식품 라이브 전문 진행자</p>
         </div>
-        <div class="swiper-slide influencer-slide">
-          <img src="/sample3.jpg" alt="쇼호스트 3">
-          <div class="name">정가은 쇼호스트</div>
-          <div class="desc">식품/건강식품 특화 | 3년차 베테랑</div>
+      </div>
+      <div class="slide-card">
+        <img src="/sample3.jpg" alt="인플루언서3" />
+        <div class="info">
+          <h3>박은채 쇼호스트</h3>
+          <p>홈리빙 · 키친용품 강자</p>
         </div>
       </div>
     </div>
 
-    <!-- 섭외 요청 버튼 -->
-    <a href="/influencer-request.html" class="btn-invite">섭외 요청하기</a>
+    <a href="#" class="btn-invite">섭외 요청하기</a>
   </main>
 
   <!-- 하단탭 -->
@@ -118,14 +69,6 @@
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    new Swiper('.swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      centeredSlides: true,
-      loop: true
-    });
-  </script>
+  <script defer src="/influencer.js?v=1.0"></script>
 </body>
 </html>
