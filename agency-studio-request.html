@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>스튜디오 등록 요청</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/main.css?v=1.03" />
+  <style>
+    .form-container {
+      padding: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+    .form-group input[type="file"] {
+      padding: 0.4rem;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: #5c6eff;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Livee</div>
+    <div class="right-icons">
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+      <i class="ri-user-line"></i>
+    </div>
+  </header>
+
+  <!-- 상단탭 -->
+  <nav class="top-tabs">
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html" class="active">대행서비스</a>
+    <a href="/news.html">뉴스</a>
+  </nav>
+
+  <main class="form-container">
+    <h2 style="margin-bottom: 1rem;">스튜디오 등록 요청</h2>
+
+    <div class="form-group">
+      <label for="studioName">스튜디오 이름</label>
+      <input type="text" id="studioName" placeholder="예: 아워플레이스 스튜디오" />
+    </div>
+
+    <div class="form-group">
+      <label for="location">위치</label>
+      <input type="text" id="location" placeholder="예: 서울시 성수동 123-45" />
+    </div>
+
+    <div class="form-group">
+      <label for="price">가격 (원)</label>
+      <input type="number" id="price" placeholder="예: 100000" />
+    </div>
+
+    <div class="form-group">
+      <label for="desc">설명</label>
+      <textarea id="desc" rows="4" placeholder="스튜디오 특장점, 대여 가능 시간 등을 적어주세요"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">대표 이미지</label>
+      <input type="file" id="image" accept="image/*" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">이메일 (연락용)</label>
+      <input type="email" id="email" placeholder="example@email.com" />
+    </div>
+
+    <button class="submit-btn">등록 요청하기</button>
+  </main>
+
+  <!-- 하단탭 -->
+  <nav class="bottom-tab">
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </nav>
+
+</body>
+</html>
