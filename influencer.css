@@ -1,0 +1,29 @@
+.influencer-slider {
+  padding: 1rem 0;
+  background: #fff;
+}
+
+.swiper {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.swiper-slide img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.btn-request {
+  display: block;
+  width: 90%;
+  margin: 1rem auto 4rem;
+  padding: 0.75rem;
+  background: #5c6eff;
+  color: #fff;
+  text-align: center;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
