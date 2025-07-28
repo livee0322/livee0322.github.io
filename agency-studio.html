@@ -3,12 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>스튜디오 | 대행서비스</title>
+  <title>스튜디오 대행 서비스 | Livee</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css" />
-  <link rel="stylesheet" href="/agency.css" />
+  <link rel="stylesheet" href="/main.css?v=1.03" />
+  <style>
+    .studio-wrapper {
+      padding: 1rem;
+    }
+
+    .studio-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .studio-card img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .studio-info div {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .studio-info .label {
+      font-weight: bold;
+      color: #5c6eff;
+      margin-right: 0.5rem;
+    }
+
+    .btn-request {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #5c6eff;
+      color: #fff;
+      text-align: center;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Livee</div>
+    <div class="right-icons">
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+      <i class="ri-user-line"></i>
+    </div>
+  </header>
 
   <!-- 상단탭 -->
   <nav class="top-tabs">
@@ -21,28 +73,18 @@
     <a href="/news.html">뉴스</a>
   </nav>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
+  <!-- 콘텐츠 -->
+  <main class="studio-wrapper">
+    <div class="studio-card">
+      <img src="https://via.placeholder.com/600x300?text=스튜디오+이미지" alt="스튜디오 썸네일">
+      <div class="studio-info">
+        <div><span class="label">업체명:</span>아워플레이스</div>
+        <div><span class="label">위치:</span>서울시 성동구 성수동 00길 00</div>
+        <div><span class="label">가격:</span>2시간 기준 150,000원</div>
+        <div><span class="label">촬영 가능 일자:</span>2025년 8월 3일, 6일, 8일</div>
+      </div>
+      <a href="/agency-request.html" class="btn-request">추가 요청하기</a>
     </div>
-  </header>
-
-  <!-- CONTENT -->
-  <main class="agency-detail">
-    <img src="https://via.placeholder.com/600x300" alt="스튜디오 썸네일" class="thumbnail" />
-
-    <div class="info">
-      <h2>서울 성수동 스튜디오</h2>
-      <p><strong>위치:</strong> 서울 성동구 성수동</p>
-      <p><strong>가격:</strong> 90,000원/시간</p>
-      <p><strong>촬영 가능일자:</strong> 2025년 8월 5일 ~ 8월 30일</p>
-    </div>
-
-    <button class="btn-request" onclick="location.href='/agency-request.html'">추가 요청하기</button>
   </main>
 
   <!-- 하단탭 -->
@@ -54,6 +96,5 @@
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <script defer src="/main.js"></script>
 </body>
 </html>
