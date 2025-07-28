@@ -1,0 +1,61 @@
+/* 뉴스 리스트 전체 래퍼 */
+.news-wrapper {
+  padding: 1rem;
+}
+
+/* 뉴스 카드 스타일 */
+.news-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.news-info {
+  padding: 1rem;
+}
+
+.news-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.news-summary {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.more-link {
+  font-size: 0.85rem;
+  color: #5c6eff;
+  text-decoration: none;
+}
+
+/* 홍보요청 버튼 */
+.news-actions {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 6rem;
+}
+
+.btn-request {
+  background: #5c6eff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
