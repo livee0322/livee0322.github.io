@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>스튜디오 상세 - 거래요청</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>스튜디오 상세</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/main.css?v=1.03" />
   <style>
     .studio-detail {
       padding: 1rem;
     }
-    .studio-image {
+    .thumbnail {
       width: 100%;
       border-radius: 1rem;
       margin-bottom: 1rem;
     }
-    .info-box {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 1rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .info-box h2 {
+    .info {
+      font-size: 0.95rem;
       margin-bottom: 0.5rem;
-      font-size: 1.1rem;
     }
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      gap: 6px;
-      font-size: 0.85rem;
+      gap: 0.3rem;
+      margin: 1rem 0;
     }
-    .calendar div {
-      background: #eee;
-      padding: 0.6rem 0;
+    .day {
+      padding: 0.5rem;
       text-align: center;
       border-radius: 0.5rem;
+      background: #eee;
       cursor: pointer;
     }
-    .calendar div.selected {
+    .day.selected {
       background: #5c6eff;
-      color: white;
+      color: #fff;
       font-weight: bold;
     }
-    .selected-range {
-      margin-top: 1rem;
-      font-size: 0.9rem;
+    .time-input {
+      margin: 1rem 0;
     }
-    .estimate-box {
-      margin-top: 1.5rem;
-    }
-    .estimate-box input {
+    .time-input input {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
+      padding: 0.6rem;
       border: 1px solid #ccc;
       border-radius: 0.5rem;
     }
+    .estimated {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
     .btn-request {
-      margin-top: 2rem;
-      width: 100%;
       background: #5c6eff;
-      color: white;
+      color: #fff;
       border: none;
-      border-radius: 0.5rem;
-      padding: 0.75rem;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.8rem;
       font-size: 1rem;
       cursor: pointer;
     }
@@ -73,6 +64,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -82,118 +74,80 @@
     </div>
   </header>
 
+  <!-- 상단탭 -->
+  <nav class="top-tabs">
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html" class="active">대행서비스</a>
+    <a href="/news.html">뉴스</a>
+  </nav>
+
+  <!-- 콘텐츠 -->
   <div class="studio-detail">
-    <img src="https://via.placeholder.com/600x300?text=스튜디오" alt="스튜디오" class="studio-image">
-    
-    <div class="info-box">
-      <h2>📍 위치</h2>
-      <p>서울 강남구 도산대로 123</p>
-    </div>
-    <div class="info-box">
-      <h2>💰 기본 단가</h2>
-      <p>시간당 5만원</p>
+    <img src="https://via.placeholder.com/600x300?text=스튜디오+썸네일" alt="스튜디오" class="thumbnail" />
+    <div class="info">📍 위치: 서울 강남구 언주로 123</div>
+    <div class="info">💰 단가: 시간당 50,000원</div>
+
+    <h4>📅 가능한 날짜 선택</h4>
+    <div class="calendar" id="calendar"></div>
+
+    <div class="time-input">
+      <label for="hours">⏰ 촬영 희망 시간 (시간 단위):</label>
+      <input type="number" id="hours" placeholder="예: 2" />
     </div>
 
-    <div class="info-box">
-      <h2>🗓️ 가능한 날짜 선택</h2>
-      <div class="calendar" id="calendar"></div>
-      <div class="selected-range" id="selectedRange"></div>
-    </div>
-
-    <div class="info-box estimate-box">
-      <h2>⏱️ 희망 촬영 시간 (시간 단위)</h2>
-      <input type="number" id="hours" min="1" max="24" value="2" onchange="calculateTotal()">
-      <p style="margin-top: 0.8rem">💵 예상 금액: <span id="price">100,000</span>원</p>
-    </div>
+    <div class="estimated" id="estimate">예상 비용: - 원</div>
 
     <button class="btn-request">거래 요청하기</button>
   </div>
 
+  <!-- 하단탭 -->
+  <nav class="bottom-tab">
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </nav>
+
+  <!-- JS -->
   <script>
-    const calendar = document.getElementById("calendar");
-    const selectedRange = document.getElementById("selectedRange");
-    const priceEl = document.getElementById("price");
+    const calendarEl = document.getElementById("calendar");
+    const estimateEl = document.getElementById("estimate");
+    const hoursInput = document.getElementById("hours");
 
-    let selected = [];
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth();
     const unitPrice = 50000;
+    const selectedDates = new Set();
 
-    function generateCalendar() {
-      const firstDay = new Date(year, month, 1).getDay();
-      const lastDate = new Date(year, month + 1, 0).getDate();
-
-      for (let i = 0; i < firstDay; i++) {
-        const empty = document.createElement("div");
-        calendar.appendChild(empty);
-      }
-
-      for (let i = 1; i <= lastDate; i++) {
-        const cell = document.createElement("div");
-        cell.textContent = i;
-        cell.addEventListener("click", () => toggleDate(i));
-        calendar.appendChild(cell);
-      }
-    }
-
-    function toggleDate(day) {
-      const index = selected.indexOf(day);
-      if (index > -1) {
-        selected.splice(index, 1);
-      } else {
-        selected.push(day);
-      }
-      selected.sort((a, b) => a - b);
-      updateUI();
-    }
-
-    function updateUI() {
-      document.querySelectorAll(".calendar div").forEach(el => {
-        if (!el.textContent) return;
-        const num = parseInt(el.textContent);
-        el.classList.toggle("selected", selected.includes(num));
-      });
-
-      selectedRange.innerHTML = formatRanges(selected).join('<br>');
-    }
-
-    function formatRanges(days) {
-      const ranges = [];
-      let start = null;
-      let end = null;
-
-      for (let i = 0; i < days.length; i++) {
-        if (start === null) {
-          start = days[i];
-          end = days[i];
-        } else if (days[i] === end + 1) {
-          end = days[i];
+    // 간단한 1~31일까지 달력
+    for (let i = 1; i <= 31; i++) {
+      const day = document.createElement("div");
+      day.className = "day";
+      day.textContent = i;
+      day.onclick = () => {
+        if (selectedDates.has(i)) {
+          selectedDates.delete(i);
+          day.classList.remove("selected");
         } else {
-          ranges.push(rangeText(start, end));
-          start = days[i];
-          end = days[i];
+          selectedDates.add(i);
+          day.classList.add("selected");
         }
+      };
+      calendarEl.appendChild(day);
+    }
+
+    hoursInput.addEventListener("input", () => {
+      const hours = parseInt(hoursInput.value);
+      if (!isNaN(hours) && hours > 0) {
+        const total = unitPrice * hours;
+        estimateEl.textContent = `예상 비용: ${total.toLocaleString()} 원`;
+      } else {
+        estimateEl.textContent = `예상 비용: - 원`;
       }
-      if (start !== null) {
-        ranges.push(rangeText(start, end));
-      }
-      return ranges;
-    }
-
-    function rangeText(start, end) {
-      if (start === end) return `${year}-${month+1}-${start}`;
-      return `${year}-${month+1}-${start} ~ ${year}-${month+1}-${end}`;
-    }
-
-    function calculateTotal() {
-      const hours = parseInt(document.getElementById("hours").value) || 0;
-      const total = hours * unitPrice;
-      priceEl.textContent = total.toLocaleString();
-    }
-
-    generateCalendar();
-    calculateTotal();
+    });
   </script>
 </body>
 </html>
