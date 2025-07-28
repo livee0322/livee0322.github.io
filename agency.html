@@ -2,94 +2,76 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>대행서비스 - Livee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>대행서비스</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.03" />
-  <style>
-    .agency-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .agency-card {
-      background: #fff;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-    }
-    .agency-card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-    .agency-card .title {
-      padding: 0.8rem;
-      font-size: 1rem;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="/agency.css?v=1.0" />
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo">Livee</div>
-  <div class="right-icons">
-    <i class="ri-search-line"></i>
-    <i class="ri-notification-3-line"></i>
-    <i class="ri-user-line"></i>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Livee</div>
+    <div class="right-icons">
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+      <i class="ri-user-line"></i>
+    </div>
+  </header>
 
-<!-- 상단탭 -->
-<nav class="top-tabs">
-  <a href="/index.html">홈</a>
-  <a href="/clip.html">숏클립</a>
-  <a href="/event.html">이벤트</a>
-  <a href="/live.html">라이브</a>
-  <a href="/influencer.html">인플루언서</a>
-  <a href="/agency.html" class="active">대행서비스</a>
-  <a href="/news.html">뉴스</a>
-</nav>
+  <!-- 상단탭 -->
+  <nav class="top-tabs">
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html" class="active">대행서비스</a>
+    <a href="/news.html">뉴스</a>
+  </nav>
 
-<!-- 카드 리스트 -->
-<div class="agency-grid">
-  <a href="/agency-photo.html" class="agency-card">
-    <img src="https://via.placeholder.com/400x200?text=촬영" alt="촬영">
-    <div class="title">촬영</div>
-  </a>
-  <a href="/agency-studio.html" class="agency-card">
-    <img src="https://via.placeholder.com/400x200?text=스튜디오" alt="스튜디오">
-    <div class="title">스튜디오</div>
-  </a>
-  <a href="/agency-assist.html" class="agency-card">
-    <img src="https://via.placeholder.com/400x200?text=촬영보조" alt="촬영보조">
-    <div class="title">촬영보조</div>
-  </a>
-  <a href="/agency-script.html" class="agency-card">
-    <img src="https://via.placeholder.com/400x200?text=대본+작성" alt="대본 작성">
-    <div class="title">대본 작성</div>
-  </a>
-  <a href="/agency-etc.html" class="agency-card">
-    <img src="https://via.placeholder.com/400x200?text=기타+세팅" alt="기타 세팅">
-    <div class="title">기타 세팅</div>
-  </a>
-</div>
+  <!-- 콘텐츠 -->
+  <main class="agency-wrapper">
+    <div class="agency-card">
+      <img src="https://via.placeholder.com/400x200?text=촬영" alt="촬영">
+      <div class="title">촬영</div>
+      <a href="/agency-shooting.html" class="btn-primary">자세히 보기</a>
+    </div>
 
-<!-- 하단탭 -->
-<nav class="bottom-tab">
-  <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-  <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-  <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-  <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-  <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-</nav>
+    <div class="agency-card">
+      <img src="https://via.placeholder.com/400x200?text=스튜디오" alt="스튜디오">
+      <div class="title">스튜디오</div>
+      <a href="/agency-studio.html" class="btn-primary">자세히 보기</a>
+    </div>
+
+    <div class="agency-card">
+      <img src="https://via.placeholder.com/400x200?text=촬영보조" alt="촬영보조">
+      <div class="title">촬영보조</div>
+      <a href="/agency-assist.html" class="btn-primary">자세히 보기</a>
+    </div>
+
+    <div class="agency-card">
+      <img src="https://via.placeholder.com/400x200?text=대본작성" alt="대본작성">
+      <div class="title">대본 작성</div>
+      <a href="/agency-script.html" class="btn-primary">자세히 보기</a>
+    </div>
+
+    <div class="agency-card">
+      <img src="https://via.placeholder.com/400x200?text=기타세팅" alt="기타세팅">
+      <div class="title">기타 세팅</div>
+      <a href="/agency-etc.html" class="btn-primary">자세히 보기</a>
+    </div>
+  </main>
+
+  <!-- 하단탭 -->
+  <nav class="bottom-tab">
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </nav>
 
 </body>
 </html>
