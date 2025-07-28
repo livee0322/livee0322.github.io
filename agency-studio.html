@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>스튜디오 대행 서비스 | Livee</title>
+  <title>스튜디오 대행서비스</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.03" />
+  <link rel="stylesheet" href="/agency.css?v=1.81" />
   <style>
     .studio-wrapper {
       padding: 1rem;
     }
-
     .studio-card {
       background: #fff;
       border-radius: 1rem;
@@ -18,36 +18,53 @@
       padding: 1rem;
       margin-bottom: 1.5rem;
     }
-
     .studio-card img {
       width: 100%;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
+      border-radius: 0.75rem;
+      margin-bottom: 0.75rem;
     }
-
-    .studio-info div {
-      margin-bottom: 0.4rem;
-      font-size: 0.95rem;
-    }
-
-    .studio-info .label {
+    .studio-card .name {
+      font-size: 1.1rem;
       font-weight: bold;
-      color: #5c6eff;
-      margin-right: 0.5rem;
+      margin-bottom: 0.4rem;
     }
-
-    .btn-request-bottom {
+    .studio-card .info {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 0.3rem;
+    }
+    .studio-card .tag {
+      background: #eef0ff;
+      color: #5c6eff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .btn-detail {
       display: block;
-      width: 100%;
-      margin-top: 2rem;
-      margin-bottom: 5rem;
-      padding: 0.75rem;
+      margin-top: 1rem;
       background: #5c6eff;
       color: #fff;
       text-align: center;
-      border-radius: 0.5rem;
+      padding: 0.5rem 0;
+      border-radius: 0.75rem;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 0.95rem;
+    }
+    .btn-request {
+      display: block;
+      margin: 2rem auto 6rem;
+      width: 90%;
+      background: #5c6eff;
+      color: #fff;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -77,17 +94,17 @@
   <!-- 콘텐츠 -->
   <main class="studio-wrapper">
     <div class="studio-card">
-      <img src="https://via.placeholder.com/600x300?text=스튜디오+이미지" alt="스튜디오 썸네일">
-      <div class="studio-info">
-        <div><span class="label">업체명:</span>아워플레이스</div>
-        <div><span class="label">위치:</span>서울시 성동구 성수동 00길 00</div>
-        <div><span class="label">가격:</span>2시간 기준 150,000원</div>
-        <div><span class="label">촬영 가능 일자:</span>2025년 8월 3일, 6일, 8일</div>
-      </div>
+      <img src="https://via.placeholder.com/600x300?text=스튜디오+사진" alt="스튜디오 썸네일">
+      <div class="name">아워플레이스 스튜디오</div>
+      <div class="info">📍 서울 마포구 연남동</div>
+      <div class="info">💰 1시간 5만원 (기본 2시간)</div>
+      <div class="info">📅 촬영 가능일자: 8/5, 8/8, 8/12</div>
+      <div class="tag">뷰티/패션 촬영 적합</div>
+      <a href="/agency-studio-detail.html" class="btn-detail">자세히 보기</a>
     </div>
 
-    <!-- 추가 요청 버튼 (페이지 하단) -->
-    <a href="/agency-request.html" class="btn-request-bottom">스튜디오 등록 요청하기</a>
+    <!-- 추가요청 버튼 -->
+    <a href="/agency-request.html" class="btn-request">내 스튜디오 등록 요청하기</a>
   </main>
 
   <!-- 하단탭 -->
