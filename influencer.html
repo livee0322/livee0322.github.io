@@ -1,81 +1,79 @@
-<!DOCTYPE html><html lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>인플루언서</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="/main.css?v=1.03">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/main.css?v=1.03" />
   <style>
     body {
-      background: #f9f9ff;
+      background: #f8f6ff;
     }
-    .influencer-container {
-      padding: 1rem;
+    .influencer-wrapper {
+      padding: 1rem 1rem 5rem;
     }
     .swiper {
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-    .swiper-wrapper {
-      display: flex;
-      transition: transform 0.4s ease;
+      overflow: visible;
+      padding: 2rem 0;
     }
     .swiper-slide {
-      flex: 0 0 80%;
-      margin: 0 10px;
-      border-radius: 1rem;
-      overflow: hidden;
       background: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      opacity: 0.5;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.3s;
+      opacity: 0.6;
       transform: scale(0.9);
-      transition: all 0.3s ease;
     }
-    .swiper-slide.active {
+    .swiper-slide-active {
       opacity: 1;
       transform: scale(1);
     }
-    .slide-image {
+    .influencer-slide img {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
     }
-    .slide-info {
-      padding: 1rem;
+    .influencer-slide .name {
+      font-size: 1.1rem;
+      font-weight: bold;
     }
-    .slide-info h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: #333;
-    }
-    .slide-info p {
+    .influencer-slide .desc {
       font-size: 0.9rem;
-      color: #777;
-      margin-top: 0.4rem;
+      color: #555;
+      margin-top: 0.3rem;
     }
-    .btn-hire {
+    .btn-invite {
       display: block;
       width: 90%;
-      margin: 0 auto 5rem;
-      background: #7c6fff;
+      margin: 2rem auto;
+      background: #6e60ff;
       color: #fff;
       text-align: center;
       padding: 0.75rem;
-      font-size: 1rem;
       border-radius: 1rem;
+      font-size: 1rem;
       text-decoration: none;
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
-<body>  <!-- 헤더 -->  <header class="header">
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
       <i class="ri-search-line"></i>
       <i class="ri-notification-3-line"></i>
       <i class="ri-user-line"></i>
     </div>
-  </header>  <!-- 상단탭 -->  <nav class="top-tabs">
+  </header>
+
+  <!-- 상단탭 -->
+  <nav class="top-tabs">
     <a href="/index.html">홈</a>
     <a href="/clip.html">숏클립</a>
     <a href="/event.html">이벤트</a>
@@ -83,52 +81,51 @@
     <a href="/influencer.html" class="active">인플루언서</a>
     <a href="/agency.html">대행서비스</a>
     <a href="/news.html">뉴스</a>
-  </nav>  <!-- 콘텐츠 -->  <main class="influencer-container">
+  </nav>
+
+  <!-- 콘텐츠 -->
+  <main class="influencer-wrapper">
     <div class="swiper">
-      <div class="swiper-wrapper" id="slideWrapper">
-        <div class="swiper-slide active">
-          <img src="https://source.unsplash.com/600x400/?woman,portrait" class="slide-image" alt="Influencer 1">
-          <div class="slide-info">
-            <h3>한유리</h3>
-            <p>뷰티 쇼핑라이브 전문, Iz브랜드 전속 활동 경력</p>
-          </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide influencer-slide">
+          <img src="/sample1.jpg" alt="쇼호스트 1">
+          <div class="name">한유진 쇼호스트</div>
+          <div class="desc">패션/뷰티 전문 | 풍부한 소통 경험</div>
         </div>
-        <div class="swiper-slide">
-          <img src="https://source.unsplash.com/600x400/?man,portrait" class="slide-image" alt="Influencer 2">
-          <div class="slide-info">
-            <h3>강태우</h3>
-            <p>패션/라이프 전반 인기 쇼호스트</p>
-          </div>
+        <div class="swiper-slide influencer-slide">
+          <img src="/sample2.jpg" alt="쇼호스트 2">
+          <div class="name">이서준 쇼호스트</div>
+          <div class="desc">리빙 전문 | 실시간 매출 2위 경력</div>
         </div>
-        <div class="swiper-slide">
-          <img src="https://source.unsplash.com/600x400/?model,portrait" class="slide-image" alt="Influencer 3">
-          <div class="slide-info">
-            <h3>이소현</h3>
-            <p>푸드/리빙 제품 소통 전문 쇼호스트</p>
-          </div>
+        <div class="swiper-slide influencer-slide">
+          <img src="/sample3.jpg" alt="쇼호스트 3">
+          <div class="name">정가은 쇼호스트</div>
+          <div class="desc">식품/건강식품 특화 | 3년차 베테랑</div>
         </div>
       </div>
     </div>
-    <a href="/influencer-request.html" class="btn-hire">섭외 요청하기</a>
-  </main>  <!-- 하단탭 -->  <nav class="bottom-tab">
+
+    <!-- 섭외 요청 버튼 -->
+    <a href="/influencer-request.html" class="btn-invite">섭외 요청하기</a>
+  </main>
+
+  <!-- 하단탭 -->
+  <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
     <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
     <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>  <!-- 슬라이드 JS -->  <script>
-    const slides = document.querySelectorAll('.swiper-slide');
-    let current = 0;
-    function updateSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-      });
-    }
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      document.getElementById('slideWrapper').style.transform = `translateX(-${current * 100}%)`;
-      updateSlide(current);
-    }, 3000);
-  </script></body>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      centeredSlides: true,
+      loop: true
+    });
+  </script>
+</body>
 </html>
