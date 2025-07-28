@@ -3,13 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>스튜디오 상세보기</title>
+  <title>스튜디오 대행서비스</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.03" />
-  <link rel="stylesheet" href="/studio-detail.css?v=1.0" />
+  <link rel="stylesheet" href="/agency.css?v=1.81" />
+  <style>
+    .studio-wrapper {
+      padding: 1rem;
+    }
+    .studio-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .studio-card img {
+      width: 100%;
+      border-radius: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .studio-card .name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+    .studio-card .info {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 0.3rem;
+    }
+    .studio-card .tag {
+      background: #eef0ff;
+      color: #5c6eff;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .btn-detail {
+      display: block;
+      margin-top: 1rem;
+      background: #5c6eff;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem 0;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .btn-request {
+      display: block;
+      margin: 2rem auto 6rem;
+      width: 90%;
+      background: #5c6eff;
+      color: #fff;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 1rem;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -19,6 +80,7 @@
     </div>
   </header>
 
+  <!-- 상단탭 -->
   <nav class="top-tabs">
     <a href="/index.html">홈</a>
     <a href="/clip.html">숏클립</a>
@@ -29,25 +91,23 @@
     <a href="/news.html">뉴스</a>
   </nav>
 
-  <main class="studio-detail">
-    <img src="https://via.placeholder.com/600x300.png?text=스튜디오+사진" alt="스튜디오 썸네일" class="thumbnail" />
-
-    <div class="info">
-      <h2>아워플레이스 스튜디오</h2>
-      <p>위치: 서울 강남구 신사동</p>
-      <p>가격: 시간당 55,000원</p>
+  <!-- 콘텐츠 -->
+  <main class="studio-wrapper">
+    <div class="studio-card">
+      <img src="https://via.placeholder.com/600x300?text=스튜디오+사진" alt="스튜디오 썸네일">
+      <div class="name">아워플레이스 스튜디오</div>
+      <div class="info">📍 서울 마포구 연남동</div>
+      <div class="info">💰 1시간 5만원 (기본 2시간)</div>
+      <div class="info">📅 촬영 가능일자: 8/5, 8/8, 8/12</div>
+      <div class="tag">뷰티/패션 촬영 적합</div>
+      <a href="/agency-studio-detail.html" class="btn-detail">자세히 보기</a>
     </div>
 
-    <h3 class="calendar-title">📅 촬영 가능일 선택</h3>
-    <div class="calendar" id="calendar"></div>
-
-    <div class="selected-dates" id="selectedDates">
-      <strong>선택된 날짜:</strong> <span>(없음)</span>
-    </div>
-
-    <a href="/agency-request.html" class="btn-request">추가요청하기</a>
+    <!-- 추가요청 버튼 -->
+    <a href="/agency-request.html" class="btn-request">내 스튜디오 등록 요청하기</a>
   </main>
 
+  <!-- 하단탭 -->
   <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
@@ -56,6 +116,5 @@
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <script src="/studio-detail.js?v=1.0"></script>
 </body>
 </html>
