@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>홍보 요청 | Livee</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/main.css?v=1.03" />
+  <style>
+    .promo-wrapper {
+      padding: 1.5rem;
+    }
+    .promo-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .promo-desc {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .promo-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .promo-form input,
+    .promo-form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    .promo-form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    .promo-form button {
+      background: #5c6eff;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 0.6rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Livee</div>
+    <div class="right-icons">
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+      <i class="ri-user-line"></i>
+    </div>
+  </header>
+
+  <!-- 상단탭 -->
+  <nav class="top-tabs">
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html">대행서비스</a>
+    <a href="/news.html">뉴스</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="promo-wrapper">
+    <div class="promo-title">홍보 요청하기</div>
+    <div class="promo-desc">
+      쇼핑라이브, 쇼호스트, 브랜드 소식 등을 Livee 뉴스에 홍보하고 싶으신가요?<br/>
+      아래 양식을 작성해주시면 운영진이 검토 후 연락드릴 예정입니다.<br/>
+      ※ 유료 홍보 콘텐츠로 처리되며, 심사 기준에 따라 반려될 수 있습니다.
+    </div>
+
+    <form class="promo-form">
+      <label for="name">담당자 성함</label>
+      <input type="text" id="name" placeholder="홍길동" required />
+
+      <label for="brand">브랜드/회사명</label>
+      <input type="text" id="brand" placeholder="라이비코퍼레이션" required />
+
+      <label for="contact">연락처 (이메일 또는 전화번호)</label>
+      <input type="text" id="contact" placeholder="contact@livee.kr / 010-1234-5678" required />
+
+      <label for="content">홍보 요청 내용</label>
+      <textarea id="content" placeholder="어떤 내용의 홍보를 원하시나요?" required></textarea>
+
+      <button type="submit">요청 제출하기</button>
+    </form>
+  </main>
+
+  <!-- 하단탭 -->
+  <nav class="bottom-tab">
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>구직</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </nav>
+
+</body>
+</html>
