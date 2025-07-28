@@ -28,7 +28,7 @@ body {
 }
 
 .influencer-swiper .swiper-slide .info {
-  padding: 16px;
+  padding: 8px 12px; /* 좌우 살리고 위아래 줄이기 */
 }
 
 .influencer-swiper .name {
