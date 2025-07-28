@@ -1,0 +1,54 @@
+.studio-detail {
+  padding: 1rem;
+}
+.thumbnail {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.info p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+.calendar-title {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1rem;
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+.calendar div {
+  padding: 0.75rem;
+  background: #f2f2f2;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.calendar div.selected {
+  background: #5c6eff;
+  color: white;
+  font-weight: bold;
+}
+.selected-dates {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.btn-request {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #5c6eff;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+}
