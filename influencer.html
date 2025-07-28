@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>인플루언서 | Livee</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css?v=82.01" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="/main.css?v=1.03">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/influencer.css?v=1.0">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
@@ -19,32 +20,50 @@
     </div>
   </header>
 
-  <!-- 상단 탭 네비게이션 -->
   <nav class="top-tabs">
-  <a href="/index.html">홈</a>
-  <a href="/clip.html">숏클립</a>
-  <a href="/event.html">이벤트</a>
-  <a href="/live.html">라이브</a>
-  <a href="/influencer.html" class="active">인플루언서</a>
-  <a href="/agency.html">대행서비스</a>
-  <a href="/news.html">뉴스</a>
-</nav>
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html" class="active">인플루언서</a>
+    <a href="/agency.html">대행서비스</a>
+    <a href="/news.html">뉴스</a>
+  </nav>
 
-  <!-- 콘텐츠 -->
-  <main class="recruit-section">
-    <h2>인플루언서 페이지</h2>
-    <p>여기에는 인플루언서들의 활동 정보, 제휴 제안 등을 담을 수 있어요.</p>
-  </main>
+  <section class="influencer-slider">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="${'https://source.unsplash.com/random?portrait1'}" alt="인플루언서1"></div>
+        <div class="swiper-slide"><img src="${'https://source.unsplash.com/random?portrait2'}" alt="인플루언서2"></div>
+        <div class="swiper-slide"><img src="${'https://source.unsplash.com/random?portrait3'}" alt="인플루언서3"></div>
+        <div class="swiper-slide"><img src="${'https://source.unsplash.com/random?portrait4'}" alt="인플루언서4"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
 
-  <!-- 하단탭 -->
+  <a href="/influencer-request.html" class="btn-request">섭외 요청하기</a>
+
   <nav class="bottom-tab">
     <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
     <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-<a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
     <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <script defer src="/main.js?v=1.01"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
+
 </body>
 </html>
