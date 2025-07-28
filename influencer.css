@@ -1,61 +1,59 @@
 body {
-  background: #f8f6ff; /* 화이트+보라 느낌 */
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  background: #faf9fd;
+  color: #333;
 }
 
 .influencer-wrapper {
-  padding: 1rem 0 5rem;
+  padding-bottom: 100px; /* 하단탭 여백 확보 */
 }
 
 .influencer-swiper {
   width: 100%;
-  padding: 0 1rem;
+  padding: 2rem 0;
   box-sizing: border-box;
 }
 
 .influencer-swiper .swiper-slide {
-  background: #fff;
-  border-radius: 1rem;
+  background: white;
+  border-radius: 1.2rem;
   overflow: hidden;
-  height: 75vh; /* 세로 길게 */
+  transition: transform 0.3s, opacity 0.3s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  height: 72vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: transform 0.3s, opacity 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* 슬라이드 이미지 */
-.influencer-swiper img {
+.influencer-swiper .swiper-slide img {
   width: 100%;
-  height: 70%;
+  height: 65%;
   object-fit: cover;
+  border-bottom: 1px solid #eee;
 }
 
-/* 정보 텍스트 */
 .influencer-swiper .info {
   padding: 1rem;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .influencer-swiper .info .name {
-  font-weight: 600;
   font-size: 1.1rem;
-  margin-bottom: 0.4rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
 }
 
 .influencer-swiper .info .desc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
-/* 가운데 카드 강조 */
+/* 중심 카드 강조 */
 .swiper-slide-prev,
 .swiper-slide-next {
-  opacity: 0.3;
-  transform: scale(0.9);
+  opacity: 0.4;
+  transform: scale(0.92);
 }
 
 .swiper-slide-active {
@@ -63,17 +61,19 @@ body {
   transform: scale(1);
 }
 
-/* 섭외요청 버튼 */
+/* 섭외 요청 버튼 */
 .btn-request {
   display: block;
-  width: calc(100% - 2rem);
-  margin: 2rem auto 0;
-  padding: 1rem;
-  background: #7c4dff;
-  color: #fff;
-  font-weight: bold;
+  margin: 1rem auto 2rem;
+  width: 90%;
+  max-width: 400px;
+  background: #7b61ff;
+  color: white;
   text-align: center;
-  border-radius: 999px;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: bold;
   font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(123, 97, 255, 0.3);
 }
