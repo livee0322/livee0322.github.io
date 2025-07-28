@@ -1,5 +1,8 @@
-const swiper = new Swiper('.influencer-swiper', {
-  slidesPerView: 1.2,
+const swiper = new Swiper(".influencer-swiper", {
+  loop: true,
+  slidesPerView: 'auto',
   centeredSlides: true,
-  spaceBetween: 20,
+  spaceBetween: 16,
+  grabCursor: true,
+  allowTouchMove: true,
 });
