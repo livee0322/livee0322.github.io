@@ -2,30 +2,31 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Livee 메인</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <link rel="stylesheet" href="/main.css?v=1.05" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
+
+  <!-- 베타 안내 -->
   <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
 
- <!-- ✅ 헤더 -->
-<header class="header">
-  <a href="/index.html" class="logo">Livee</a> <!-- 로고 클릭 시 홈 이동 -->
-  <div class="right-icons">
-    <span id="welcomeMsg" style="font-size: 0.9rem; margin-right: 10px;"></span>
-    <button id="logoutBtn" style="display: none; background: none; border: none; color: #6A4DF4; cursor: pointer;">로그아웃</button>
-    <i class="ri-search-line"></i>
-    <i class="ri-notification-3-line"></i>
-    <i class="ri-user-line"></i>
-  </div>
-</header>
+  <!-- ✅ 헤더 -->
+  <header class="header">
+    <a href="/index.html" class="logo">Livee</a>
+    <div class="right-icons">
+      <span id="welcomeMsg" style="font-size: 0.9rem; margin-right: 10px;"></span>
+      <button id="logoutBtn" style="display: none; background: none; border: none; color: #6A4DF4; cursor: pointer;">로그아웃</button>
+      <i class="ri-search-line"></i>
+      <i class="ri-notification-3-line"></i>
+    </div>
+  </header>
 
-  <!-- ✅ 상단탭 -->
+  <!-- ✅ 상단 탭 -->
   <nav class="top-tabs">
-    <a href="/index.html" class="active">홈</a>
+    <a href="/index.html">홈</a>
     <a href="/clip.html">숏클립</a>
     <a href="/event.html">이벤트</a>
     <a href="/live.html">라이브</a>
@@ -41,21 +42,21 @@
         <div class="swiper-slide banner-card" style="background-color: #6A4DF4">
           <div class="text-group">
             <p class="sub">쇼호스트의 꿈을 현실로</p>
-            <h2>Livee에서 <br />브랜드와 연결되세요</h2>
+            <h2>Livee에서 <br/>브랜드와 연결되세요</h2>
             <p class="desc">지금 프로필을 등록해보세요!</p>
           </div>
         </div>
         <div class="swiper-slide banner-card" style="background-color: #FF6F61">
           <div class="text-group">
             <p class="sub">실시간 매출 향상의 비결</p>
-            <h2>쇼핑라이브 공고를 <br />매일 확인하세요</h2>
+            <h2>쇼핑라이브 공고를 <br/>매일 확인하세요</h2>
             <p class="desc">당신에게 맞는 기회가 기다리고 있어요</p>
           </div>
         </div>
         <div class="swiper-slide banner-card" style="background-color: #00C4B4">
           <div class="text-group">
             <p class="sub">이제는 셀프 PR 시대</p>
-            <h2>포트폴리오를 등록하고 <br />주목받으세요</h2>
+            <h2>포트폴리오를 등록하고 <br/>주목받으세요</h2>
             <p class="desc">브랜드가 먼저 제안합니다</p>
           </div>
         </div>
@@ -63,16 +64,18 @@
     </div>
   </section>
 
-  <!-- ✅ 콘텐츠 -->
+  <!-- ✅ 주요 콘텐츠 -->
   <main>
+    <!-- 쇼핑라이브 공고 -->
     <section class="recruit-section">
       <div class="section-head">
         <h2>쇼핑라이브 공고</h2>
         <a href="/recruitlist.html" class="more">더보기</a>
       </div>
       <div class="card-grid">
+        <!-- 카드 예시 -->
         <div class="live-card">
-          <img src="https://via.placeholder.com/200x100/ffccc7/000?text=공고1" alt="공고1" />
+          <img src="https://via.placeholder.com/200x100/ffccc7/000?text=공고1" alt="공고1">
           <div class="info">
             <div class="title">신규 화장품 라이브</div>
             <div class="brand">브랜드 A</div>
@@ -80,7 +83,7 @@
           </div>
         </div>
         <div class="live-card">
-          <img src="https://via.placeholder.com/200x100/bae7ff/000?text=공고2" alt="공고2" />
+          <img src="https://via.placeholder.com/200x100/bae7ff/000?text=공고2" alt="공고2">
           <div class="info">
             <div class="title">패션 신상 라이브</div>
             <div class="brand">브랜드 B</div>
@@ -90,6 +93,7 @@
       </div>
     </section>
 
+    <!-- 인기 쇼호스트 -->
     <section class="recruit-section">
       <div class="section-head">
         <h2>인기 쇼호스트</h2>
@@ -102,13 +106,14 @@
       </div>
     </section>
 
+    <!-- 후기 -->
     <section class="recruit-section">
       <div class="section-head">
         <h2>실시간 후기</h2>
         <a href="#" class="more">더보기</a>
       </div>
       <div class="review-card">
-        <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1" />
+        <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1">
         <div class="review-info">
           <div class="stars">★★★★★</div>
           <p>"라이브 덕분에 매출이 늘었어요!"</p>
@@ -116,7 +121,7 @@
         </div>
       </div>
       <div class="review-card">
-        <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2" />
+        <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2">
         <div class="review-info">
           <div class="stars">★★★★☆</div>
           <p>"쇼호스트 진행이 너무 좋아요."</p>
@@ -135,50 +140,14 @@
     <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <!-- ✅ 스크립트 -->
+  <!-- ✅ JS -->
+  <script defer src="/main.js?v=1.05"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
     new Swiper(".banner-swiper", {
       loop: true,
       autoplay: { delay: 4000 },
     });
-
-    window.onload = async function () {
-      const token = localStorage.getItem("liveeToken");
-      const myTab = document.getElementById("myTab");
-      const welcomeMsg = document.getElementById("welcomeMsg");
-      const logoutBtn = document.getElementById("logoutBtn");
-
-      if (token) {
-        try {
-          const res = await fetch("https://livee-server-dev.onrender.com/profile", {
-            headers: { Authorization: `Bearer ${token}` }
-          });
-
-          if (res.ok) {
-            const data = await res.json();
-            welcomeMsg.textContent = `${data.email}님`;
-            logoutBtn.style.display = "inline";
-
-            if (myTab) {
-              myTab.setAttribute("href", "/mypage.html");
-            }
-          } else {
-            localStorage.removeItem("liveeToken");
-          }
-        } catch (e) {
-          console.error("프로필 불러오기 실패", e);
-        }
-      }
-
-      if (logoutBtn) {
-        logoutBtn.onclick = () => {
-          localStorage.removeItem("liveeToken");
-          alert("로그아웃 되었습니다");
-          window.location.reload();
-        };
-      }
-    };
   </script>
 </body>
 </html>
