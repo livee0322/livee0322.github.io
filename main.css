@@ -1,4 +1,4 @@
-/* main.css v1.03 - 최종 승인본 기준 + 슬라이드 수정 + 회색바 제거 + 하단탭 가림 방지 */
+/* main.css v1.04 - 슬라이드 개선 + 레이아웃 안정화 */
 
 /* 기본 설정 */
 body {
@@ -65,27 +65,39 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #f5f6fc;
-  padding: 2rem 0;
+  padding: 0;
 }
-.banner-slide {
+.banner-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
   width: 300%;
 }
-.banner {
+.banner-card {
   flex: 1 0 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #333;
-  min-height: 120px;
+  color: #fff;
+  min-height: 180px;
+  text-align: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.banner-card:nth-child(1) {
+  background-color: #6a4df4;
+}
+.banner-card:nth-child(2) {
+  background-color: #ff7675;
+}
+.banner-card:nth-child(3) {
+  background-color: #00b894;
 }
 .slide-dots {
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  margin: 10px 0;
   gap: 6px;
 }
 .dot {
@@ -93,10 +105,10 @@ body {
   height: 8px;
   border-radius: 50%;
   background-color: #ccc;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 .dot.active {
-  background-color: #6755f5;
+  background-color: #333;
 }
 
 /* ✅ 공통 섹션 스타일 */
