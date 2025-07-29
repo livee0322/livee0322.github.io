@@ -9,7 +9,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const content = document.querySelector("textarea").value;
   const link = document.querySelector('input[type="url"]').value;
 
-  // ✅ Cloudinary로 이미지 업로드
+  // ✅ Cloudinary 업로드
   const formData = new FormData();
   formData.append("file", imageFile);
   formData.append("upload_preset", "livee_unsigned");
@@ -20,6 +20,13 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   });
 
   const data = await res.json();
+  console.log("Cloudinary 응답:", data);
+
+  if (!data || !data.secure_url) {
+    alert("이미지 업로드 실패 😢 다시 시도해주세요!");
+    return;
+  }
+
   const imageUrl = data.secure_url;
 
   // ✅ 공고 데이터 구성
