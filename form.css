@@ -1,69 +1,39 @@
-/* 공통 초기화 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background: #f8f8f8;
-  color: #222;
-  line-height: 1.5;
-  padding-bottom: 100px;
-}
-
-/* 헤더 */
-.header {
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 폼 래퍼 */
+/* ✅ 공통 폼 레이아웃 */
 .form-wrapper {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 24px 16px 120px;
+  background: #f9f9fb;
 }
 
-/* 폼 타이틀 */
 .form-wrapper h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
-/* 입력 필드 */
+/* ✅ 입력폼 스타일 */
 .form label {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   font-size: 0.95rem;
+  font-weight: 500;
   color: #333;
 }
 
-.form input[type="text"],
-.form input[type="url"],
-.form input[type="datetime-local"],
-.form input[type="file"],
-.form select,
-.form textarea {
-  display: block;
+.form input,
+.form textarea,
+.form select {
   width: 100%;
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  padding: 12px;
   font-size: 1rem;
-  margin-top: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 8px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.form input[type="file"] {
+  padding: 10px;
+  background: #fff;
 }
 
 .form textarea {
@@ -71,19 +41,27 @@ body {
   min-height: 100px;
 }
 
-/* 제출 버튼 */
-.btn-submit {
-  background: #5c6eff;
-  color: #fff;
-  padding: 0.8rem;
+/* ✅ 등록 버튼 */
+.btn-primary.full {
+  width: 100%;
+  background-color: #6A4DF4;
+  color: white;
   border: none;
-  border-radius: 0.5rem;
+  padding: 14px 0;
+  border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
-  width: 100%;
-  margin-top: 1rem;
+  margin-top: 20px;
 }
 
-.btn-submit:hover {
-  background: #4758d6;
+.btn-primary.full:hover {
+  background-color: #5538e6;
+}
+
+/* ✅ 반응형 */
+@media (min-width: 768px) {
+  .form-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+  }
 }
