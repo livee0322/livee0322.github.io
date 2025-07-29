@@ -300,6 +300,12 @@ body::-webkit-scrollbar,
   margin-bottom: 4px;
 }
 
+.right-icons i {
+  margin-left: 12px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
 /* ✅ 콘텐츠 여백 확보 */
 main {
   padding-bottom: 80px;
