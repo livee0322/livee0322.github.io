@@ -1,25 +1,31 @@
-const login = async () => {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+async function handleLogin(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
   try {
-    const response = await fetch('https://livee-server-dev.onrender.com/login', {
-      method: 'POST',
+    const response = await fetch("https://livee-server-dev.onrender.com/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({
+        username: email,
+        password: password,
+      }),
     });
 
-    const data = await response.json();
+    const result = await response.json();
 
-    if (data.success) {
-      alert('✅ 로그인 성공!');
-      // 이후 페이지 이동 등 처리
+    if (response.ok) {
+      alert("로그인 성공!");
+      localStorage.setItem("loggedInUser", email);
+      window.location.href = "/index.html";
     } else {
-      alert('❌ 로그인 실패: ' + data.message);
+      alert(result.message || "로그인 실패");
     }
   } catch (error) {
-    alert('⚠️ 서버 오류: ' + error.message);
+    alert("서버 연결 실패: " + error.message);
   }
-};
+}
