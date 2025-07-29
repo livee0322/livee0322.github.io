@@ -17,9 +17,10 @@ function nextSlide() {
   updateSlide();
 }
 
-setInterval(nextSlide, 3500);
+setInterval(nextSlide, 3500); // 3.5초마다 자동 슬라이드
 updateSlide();
 
+// ✅ 슬라이드 dot 클릭으로 이동
 dots.forEach((dot, idx) => {
   dot.addEventListener('click', () => {
     currentIndex = idx;
@@ -30,7 +31,6 @@ dots.forEach((dot, idx) => {
 // ✅ 로그인 상태에 따라 "마이" 탭 링크 변경
 const isLoggedIn = !!localStorage.getItem("loggedInUser");
 const myTab = document.getElementById("myTab");
-
 if (myTab) {
   myTab.setAttribute("href", isLoggedIn ? "/mypage.html" : "/login.html");
 }
@@ -48,12 +48,9 @@ const loggedInUser = localStorage.getItem("loggedInUser");
 const welcomeMsg = document.getElementById("welcomeMsg");
 const logoutBtn = document.getElementById("logoutBtn");
 
-if (welcomeMsg && logoutBtn) {
-  if (loggedInUser) {
-    welcomeMsg.textContent = `${loggedInUser} 님`;
-    logoutBtn.style.display = "inline";
-  }
-
+if (loggedInUser && welcomeMsg && logoutBtn) {
+  welcomeMsg.textContent = `${loggedInUser} 님`;
+  logoutBtn.style.display = "inline";
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("loggedInUser");
     alert("로그아웃 되었습니다.");
