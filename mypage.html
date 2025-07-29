@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>마이페이지 - Livee</title>
+  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <style>
+    .mypage-container {
+      padding: 20px 16px 100px;
+      background: #f9f9fb;
+    }
+
+    .mypage-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    .mypage-section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .mypage-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .mypage-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+
+    .mypage-item:first-child {
+      border-top: none;
+    }
+
+    .mypage-item a {
+      text-decoration: none;
+      color: #6755f5;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Livee</div>
+    <div class="right-icons">
+      <i class="ri-user-3-line"></i>
+    </div>
+  </header>
+
+  <div class="mypage-container">
+    <div class="mypage-title">마이페이지</div>
+
+    <div class="mypage-section">
+      <h3>개인 정보</h3>
+      <div class="mypage-item"><span>비밀번호 변경</span> <a href="#">변경하기</a></div>
+    </div>
+
+    <div class="mypage-section">
+      <h3>활동</h3>
+      <div class="mypage-item"><span>내 포트폴리오</span> <a href="/portfolio.html">등록/보기</a></div>
+      <div class="mypage-item"><span>지원한 공고</span> <a href="#">확인</a></div>
+      <div class="mypage-item"><span>찜한 공고</span> <a href="#">확인</a></div>
+      <div class="mypage-item"><span>나에게 온 제안</span> <a href="#">확인</a></div>
+    </div>
+
+    <div class="mypage-section">
+      <h3>혜택</h3>
+      <div class="mypage-item"><span>보유 러비</span> <strong>💜 1,200 LUVEE</strong></div>
+      <div class="mypage-item"><span>이벤트 참여 내역</span> <a href="#">보기</a></div>
+    </div>
+  </div>
+
+  <nav class="bottom-tab">
+    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
+    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
+    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
+    <a href="/mypage.html" class="active"><i class="ri-user-3-line"></i><div>마이</div></a>
+  </nav>
+
+</body>
+</html>
