@@ -58,6 +58,18 @@ body {
   border-bottom: 2px solid #6755f5;
 }
 
+/* 스크롤바 제거 */
+body, .top-tabs, .bottom-tab {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar,
+.top-tabs::-webkit-scrollbar,
+.bottom-tab::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* ✅ 메인 슬라이드 */
 .main-banner-slide {
   width: 100%;
