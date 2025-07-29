@@ -28,14 +28,14 @@ dots.forEach((dot, idx) => {
   });
 });
 
-// ✅ 로그인 상태에 따라 "마이" 탭 링크 변경
+// ✅ 로그인 상태에 따라 마이탭 변경
 const isLoggedIn = !!localStorage.getItem("loggedInUser");
 const myTab = document.getElementById("myTab");
 if (myTab) {
   myTab.setAttribute("href", isLoggedIn ? "/mypage.html" : "/login.html");
 }
 
-// ✅ 현재 경로에 따라 탭에 active 클래스 자동 지정
+// ✅ 탭 active 자동 지정
 const currentPath = window.location.pathname;
 document.querySelectorAll(".top-tabs a, .bottom-tab a").forEach(link => {
   if (link.getAttribute("href") === currentPath) {
@@ -43,15 +43,12 @@ document.querySelectorAll(".top-tabs a, .bottom-tab a").forEach(link => {
   }
 });
 
-// ✅ 로그인 사용자 정보 및 로그아웃 처리
-const loggedInUser = localStorage.getItem("loggedInUser");
-const welcomeMsg = document.getElementById("welcomeMsg");
-const logoutBtn = document.getElementById("logoutBtn");
-
-if (loggedInUser && welcomeMsg && logoutBtn) {
-  welcomeMsg.textContent = `${loggedInUser} 님`;
-  logoutBtn.style.display = "inline";
-  logoutBtn.addEventListener("click", () => {
+// ✅ 로그아웃 처리
+const logoutIcon = document.getElementById("logoutIcon");
+if (isLoggedIn && logoutIcon) {
+  logoutIcon.style.display = "inline";
+  logoutIcon.style.cursor = "pointer";
+  logoutIcon.addEventListener("click", () => {
     localStorage.removeItem("loggedInUser");
     alert("로그아웃 되었습니다.");
     location.href = "/login.html";
