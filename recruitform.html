@@ -19,7 +19,7 @@
     <div class="right-icons">
       <i class="ri-search-line"></i>
       <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
+      <i class="ri-logout-box-r-line" id="logoutBtn" title="로그아웃" style="display: none; cursor: pointer;"></i>
     </div>
   </header>
 
@@ -38,10 +38,10 @@
   <main class="form-wrapper">
     <h2>쇼핑라이브 공고 작성</h2>
     <form class="form">
-      <label>공고 제목<input type="text" placeholder="예: 여름 신상 소개 라이브" required></label>
-      <label>브랜드명<input type="text" placeholder="예: 브랜드 A" required></label>
+      <label>공고 제목<input type="text" id="title" placeholder="예: 여름 신상 소개 라이브" required></label>
+      <label>브랜드명<input type="text" id="brand" placeholder="예: 브랜드 A" required></label>
       <label>카테고리
-        <select required>
+        <select id="category" required>
           <option value="">카테고리 선택</option>
           <option>패션</option>
           <option>뷰티</option>
@@ -50,12 +50,12 @@
           <option>기타</option>
         </select>
       </label>
-      <label>방송일시<input type="datetime-local" required></label>
-      <label>썸네일 이미지<input type="file" accept="image/*" required></label>
+      <label>방송일시<input type="datetime-local" id="date" required></label>
+      <label>썸네일 이미지<input type="file" id="thumbnail" accept="image/*" required></label>
       <label>공고 상세 내용
-        <textarea placeholder="라이브 방송의 소개 및 모집 조건 등을 입력해주세요" rows="5" required></textarea>
+        <textarea id="description" placeholder="라이브 방송의 소개 및 모집 조건 등을 입력해주세요" rows="5" required></textarea>
       </label>
-      <label>지원 링크<input type="url" placeholder="예: https://brand.com/apply" required></label>
+      <label>지원 링크<input type="url" id="applyLink" placeholder="예: https://brand.com/apply" required></label>
       <button type="submit" class="btn-primary full">등록하기</button>
     </form>
   </main>
@@ -69,8 +69,58 @@
     <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
   </nav>
 
-  <!-- ✅ 로그인 상태 반영 스크립트 -->
+  <!-- ✅ 공통 스크립트 -->
   <script defer src="/main.js?v=1.09"></script>
 
+  <!-- ✅ 이미지 업로드 & 공고 등록 스크립트 -->
+  <script>
+    document.querySelector('.form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value.trim();
+      const brand = document.getElementById("brand").value.trim();
+      const category = document.getElementById("category").value;
+      const date = document.getElementById("date").value;
+      const imageFile = document.getElementById("thumbnail").files[0];
+      const description = document.getElementById("description").value.trim();
+      const applyLink = document.getElementById("applyLink").value.trim();
+
+      if (!imageFile) {
+        alert("썸네일 이미지를 선택해주세요.");
+        return;
+      }
+
+      try {
+        // ✅ 1. Cloudinary 업로드
+        const formData = new FormData();
+        formData.append("file", imageFile);
+        formData.append("upload_preset", "livee_unsigned"); // 대표님 preset
+        const cloudRes = await fetch("https://api.cloudinary.com/v1_1/dis1og9uq/image/upload", {
+          method: "POST",
+          body: formData
+        });
+        const cloudData = await cloudRes.json();
+        const imageUrl = cloudData.secure_url;
+
+        // ✅ 2. 백엔드에 전송
+        const res = await fetch("https://livee-server-dev.onrender.com/post-recruit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, brand, category, date, imageUrl, description, applyLink })
+        });
+
+        if (res.ok) {
+          alert("공고가 성공적으로 등록되었습니다!");
+          window.location.href = "/recruitlist.html";
+        } else {
+          const err = await res.json();
+          alert("등록 실패: " + err.message);
+        }
+
+      } catch (err) {
+        alert("에러 발생: " + err.message);
+      }
+    });
+  </script>
 </body>
 </html>
