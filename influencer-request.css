@@ -1,27 +1,33 @@
 /* influencer-request.css - 인플루언서 섭외 제안서 전용 스타일 */
 
+/* ✅ 전체 래퍼 */
 .proposal-wrapper {
-  padding: 1.5rem;
-  max-width: 600px;
+  padding: 1.5rem 1rem;
+  max-width: 640px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* ✅ 타이틀 */
 .proposal-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #111;
 }
 
+/* ✅ 안내문 */
 .proposal-guide {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: #666;
-  margin-bottom: 2rem;
-  line-height: 1.4;
-  background: #f4f4f4;
+  line-height: 1.5;
+  background: #f5f5f5;
   padding: 1rem;
   border-radius: 0.75rem;
+  margin-bottom: 2rem;
 }
 
+/* ✅ 폼 그룹 */
 .form-group {
   margin-bottom: 1.2rem;
 }
@@ -29,25 +35,34 @@
 .form-group label {
   display: block;
   margin-bottom: 0.4rem;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #5c6eff;
+  outline: none;
 }
 
 .form-group textarea {
   resize: vertical;
-  height: 100px;
+  min-height: 100px;
 }
 
+/* ✅ 제출 버튼 */
 .submit-btn {
-  display: block;
   width: 100%;
   padding: 0.9rem;
   background-color: #5c6eff;
@@ -55,11 +70,33 @@
   border: none;
   border-radius: 0.75rem;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 1.5rem;
+  transition: background 0.2s;
 }
 
-/* ✅ 하단탭 가림 방지용 여백 */
+.submit-btn:hover {
+  background-color: #4a59db;
+}
+
+/* ✅ 하단탭 여백 확보 */
 main {
-  padding-bottom: 100px;
+  padding-bottom: 110px;
+}
+
+/* ✅ 반응형 대응 */
+@media (min-width: 768px) {
+  .proposal-wrapper {
+    padding: 2rem;
+  }
+  .proposal-title {
+    font-size: 1.6rem;
+  }
+  .proposal-guide {
+    font-size: 1rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
 }
