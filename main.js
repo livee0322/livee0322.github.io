@@ -37,3 +37,18 @@ const myTab = document.getElementById("myTab");
 if (isLoggedIn && myTab) {
   myTab.setAttribute("href", "/mypage.html");
 }
+
+// 현재 경로에 따라 active 클래스 자동 지정
+const currentPath = window.location.pathname;
+document.querySelectorAll(".top-tabs a, .bottom-tab a").forEach(link => {
+  if (link.getAttribute("href") === currentPath) {
+    link.classList.add("active");
+  }
+});
+
+// 로그인 시 마이탭 경로 변경
+const isLoggedIn = !!localStorage.getItem("loggedInUser");
+const myTab = document.getElementById("myTab");
+if (isLoggedIn && myTab) {
+  myTab.setAttribute("href", "/mypage.html");
+}
