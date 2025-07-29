@@ -3,35 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>쇼핑라이브 공고 리스트</title>
+  <title>Livee 쇼핑라이브 공고 리스트</title>
   <link rel="stylesheet" href="/main.css" />
   <link rel="stylesheet" href="/recruitlist.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- ✅ 헤더 -->
+  <!-- 상단 알림 배너 -->
+  <div class="banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
+
+  <!-- 헤더 -->
   <header class="header">
-    <div class="logo" onclick="location.href='index.html'">Livee</div>
-    <div class="right-icons">
+    <h1 class="logo" onclick="location.href='index.html'">Livee</h1>
+    <div class="header-icons">
       <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
+      <i class="ri-notification-line"></i>
+      <i class="ri-user-line" onclick="handleMyPage()"></i>
     </div>
   </header>
 
-  <!-- ✅ 상단 탭 -->
+  <!-- 상단탭 -->
   <nav class="top-tabs">
-    <a href="index.html">홈</a>
-    <a href="clip.html">숏클립</a>
-    <a href="event.html">이벤트</a>
-    <a href="live.html">라이브</a>
-    <a href="influencer.html">인플루언서</a>
-    <a href="agency.html">대행서비스</a>
-    <a href="news.html">뉴스</a>
+    <a href="/index.html">홈</a>
+    <a href="/clip.html">숏클립</a>
+    <a href="/event.html">이벤트</a>
+    <a href="/live.html">라이브</a>
+    <a href="/influencer.html">인플루언서</a>
+    <a href="/agency.html">대행서비스</a>
   </nav>
 
-  <!-- ✅ 카테고리 필터 -->
-  <div class="category-filter">
+  <!-- 카테고리 필터 -->
+  <div class="category-scroll">
     <button class="active">전체</button>
     <button>패션</button>
     <button>뷰티</button>
@@ -40,59 +42,76 @@
     <button>기타</button>
   </div>
 
-  <!-- ✅ 공고 리스트 -->
-  <section class="recruit-list" id="recruitListContainer">
-    <!-- JS에서 렌더링됨 -->
-  </section>
+  <!-- 공고 리스트 -->
+  <section id="recruit-list" class="recruit-list"></section>
 
-  <!-- ✅ FAB 버튼 -->
-  <button class="fab" id="writeBtn">＋</button>
+  <!-- 등록 버튼 -->
+  <button class="fab" onclick="handleFabClick()">+</button>
 
-  <!-- ✅ 하단 탭 -->
+  <!-- 하단탭 -->
   <nav class="bottom-tab">
-    <a href="index.html"><i class="ri-home-line"></i><span>홈</span></a>
-    <a href="live.html"><i class="ri-video-line"></i><span>라이브</span></a>
-    <a href="recruitlist.html" class="active"><i class="ri-briefcase-line"></i><span>쇼호스트</span></a>
-    <a href="liveschedule.html"><i class="ri-calendar-line"></i><span>일정</span></a>
-    <a href="#" id="myPageTab"><i class="ri-user-line"></i><span>마이</span></a>
+    <a href="/index.html"><i class="ri-home-4-line"></i>홈</a>
+    <a href="/live.html"><i class="ri-live-line"></i>라이브</a>
+    <a href="/recruitlist.html" class="active"><i class="ri-briefcase-line"></i>쇼호스트</a>
+    <a href="/liveschedule.html"><i class="ri-calendar-line"></i>일정</a>
+    <a href="#" onclick="handleMyPage()"><i class="ri-user-line"></i>마이</a>
   </nav>
 
   <script>
-    // ✅ 로그인 상태 반영
-    const token = localStorage.getItem("token");
-    const myPageTab = document.getElementById("myPageTab");
-    if (myPageTab) {
-      myPageTab.href = token ? "/mypage.html" : "/login.html";
+    // 로그인 상태 확인 후 마이페이지 연결
+    function handleMyPage() {
+      const user = localStorage.getItem("loginUser");
+      location.href = user ? "/mypage.html" : "/login.html";
     }
 
-    // ✅ FAB 버튼 처리
-    document.getElementById("writeBtn").addEventListener("click", function () {
-      if (!token) {
+    // 로그인 여부 확인 후 공고작성 이동
+    function handleFabClick() {
+      const user = localStorage.getItem("loginUser");
+      if (!user) {
         alert("로그인이 필요합니다.");
         location.href = "/login.html";
-      } else {
-        location.href = "/recruitform.html";
+        return;
       }
-    });
+      location.href = "/recruitform.html";
+    }
 
-    // ✅ 공고 불러오기
-    const container = document.getElementById("recruitListContainer");
-    const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
+    // 공고 데이터 렌더링
+    function renderPosts() {
+      const container = document.getElementById("recruit-list");
+      const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
 
-    posts.forEach((post) => {
-      const card = document.createElement("div");
-      card.className = "recruit-card";
-      card.innerHTML = `
-        <img src="${post.imageUrl}" alt="${post.title}" />
-        <div class="recruit-info">
-          <strong>${post.title}</strong>
-          <p>${post.brand}</p>
-          <small>${new Date(post.datetime).toLocaleString()}</small>
-          <a class="apply-link" href="${post.link}" target="_blank">지원하기</a>
-        </div>
-      `;
-      container.appendChild(card);
-    });
+      if (posts.length === 0) {
+        container.innerHTML = "<p class='empty'>등록된 공고가 없습니다.</p>";
+        return;
+      }
+
+      container.innerHTML = posts
+        .map((post) => {
+          const date = new Date(post.datetime);
+          const dateText = isNaN(date.getTime())
+            ? "방송일 미정"
+            : date.toLocaleString("ko-KR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              });
+
+          return `
+          <div class="recruit-card">
+            <img src="${post.imageUrl}" alt="${post.title}" />
+            <h3>${post.title}</h3>
+            <p>${post.brand}</p>
+            <small>${dateText}</small>
+            <a href="${post.link}" target="_blank">지원하기</a>
+          </div>
+        `;
+        })
+        .join("");
+    }
+
+    renderPosts();
   </script>
 </body>
 </html>
