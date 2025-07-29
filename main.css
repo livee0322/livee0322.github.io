@@ -60,14 +60,14 @@ body {
 }
 
 /* ✅ 메인 슬라이드 배너 */
-.banner-section {
+.main-banner-slide {
   width: 100%;
   overflow: hidden;
   position: relative;
   background-color: #f5f6fc;
   padding: 0;
 }
-.banner-track {
+.banner-slide {
   display: flex;
   transition: transform 0.4s ease-in-out;
   width: 300%;
@@ -94,10 +94,30 @@ body {
 .banner-card:nth-child(3) {
   background-color: #00b894;
 }
+.text-group .sub {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.text-group h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.text-group .desc {
+  font-size: 13px;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
 .slide-dots {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin-top: 8px;
   gap: 6px;
 }
 .dot {
