@@ -1,39 +1,40 @@
-// main.js v1.02
-
-const bannerSlide = document.getElementById('bannerSlide');
+// ✅ 메인 슬라이드 자동 넘김
+const bannerTrack = document.querySelector('.banner-track');
 const dots = document.querySelectorAll('.dot');
-let current = 0;
-const total = dots.length;
 
-// 배너 이동 함수
-function moveTo(index) {
-  current = index;
-  bannerSlide.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
+let currentIndex = 0;
+let totalSlides = dots.length;
+
+function updateSlide() {
+  if (!bannerTrack) return;
+
+  bannerTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentIndex);
+  });
 }
 
-// Dot 클릭 이벤트
-dots.forEach(dot => {
-  dot.addEventListener('click', () => moveTo(Number(dot.dataset.index)));
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlide();
+}
+
+setInterval(nextSlide, 3500); // 3.5초 간격 자동 슬라이드
+updateSlide();
+
+// ✅ 슬라이드 dot 클릭으로 이동
+dots.forEach((dot, idx) => {
+  dot.addEventListener('click', () => {
+    currentIndex = idx;
+    updateSlide();
+  });
 });
 
-// 터치 스와이프 이벤트
-let startX = 0;
-bannerSlide.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-});
+// ✅ 로그인 상태에 따라 "마이" 탭 링크 변경
+const isLoggedIn = !!localStorage.getItem("loggedInUser");
+const myTab = document.getElementById("myTab");
 
-bannerSlide.addEventListener('touchend', (e) => {
-  let diff = e.changedTouches[0].clientX - startX;
-  if (diff > 50) {
-    moveTo((current - 1 + total) % total);  // 이전 배너
-  } else if (diff < -50) {
-    moveTo((current + 1) % total);  // 다음 배너
-  }
-});
-
-// 자동 슬라이드 (3초 간격)
-setInterval(() => {
-  moveTo((current + 1) % total);
-}, 3000);
+if (isLoggedIn && myTab) {
+  myTab.setAttribute("href", "/mypage.html");
+}
