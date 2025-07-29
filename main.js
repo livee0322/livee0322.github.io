@@ -1,14 +1,13 @@
 // ✅ 메인 슬라이드 자동 넘김
-const bannerTrack = document.querySelector('.banner-track');
+const bannerSlide = document.querySelector('.banner-slide');
 const dots = document.querySelectorAll('.dot');
 
 let currentIndex = 0;
 let totalSlides = dots.length;
 
 function updateSlide() {
-  if (!bannerTrack) return;
-
-  bannerTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+  if (!bannerSlide) return;
+  bannerSlide.style.transform = `translateX(-${currentIndex * 100}%)`;
 
   dots.forEach((dot, idx) => {
     dot.classList.toggle('active', idx === currentIndex);
