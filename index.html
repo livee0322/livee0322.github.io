@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!DOCTYPE html><html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,20 +6,14 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.04" />
 </head>
-<body>
-
-  <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
-
-  <header class="header">
+<body>  <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>  <header class="header">
     <div class="logo">Livee</div>
     <div class="right-icons">
       <i class="ri-search-line"></i>
       <i class="ri-notification-3-line"></i>
       <i class="ri-user-line"></i>
     </div>
-  </header>
-
-  <nav class="top-tabs">
+  </header>  <nav class="top-tabs">
     <a href="/index.html" class="active">홈</a>
     <a href="/clip.html">숏클립</a>
     <a href="/event.html">이벤트</a>
@@ -28,24 +21,35 @@
     <a href="/influencer.html">인플루언서</a>
     <a href="/agency.html">대행서비스</a>
     <a href="/news.html">뉴스</a>
-  </nav>
-
-  <!-- ✅ 메인 슬라이드 -->
-  <section class="banner-section">
-    <div class="banner-slide" id="bannerSlide">
-      <div class="banner">나의 방송 경력으로 기회를 만들어보세요</div>
-      <div class="banner">지금 바로 프로필을 등록하세요</div>
-      <div class="banner">쇼핑라이브로 성장하세요</div>
+  </nav>  <!-- ✅ 메인 슬라이드 (신규 디자인) -->  <section class="main-banner-slide">
+    <div class="banner-slide">
+      <!-- Slide 1 -->
+      <div class="banner-card" style="background-color: #6A4DF4;">
+        <div class="text-group">
+          <p class="sub">쇼호스트의 꿈을 현실로</p>
+          <h2>Livee에서 <br/>브랜드와 연결되세요</h2>
+          <p class="desc">지금 프로필을 등록해보세요!</p>
+        </div>
+      </div><!-- Slide 2 -->
+  <div class="banner-card" style="background-color: #FF6F61;">
+    <div class="text-group">
+      <p class="sub">실시간 매출 향상의 비결</p>
+      <h2>쇼핑라이브 공고를 <br/>매일 확인하세요</h2>
+      <p class="desc">당신에게 맞는 기회가 기다리고 있어요</p>
     </div>
-    <div class="slide-dots" id="dots">
-      <div class="dot active" data-index="0"></div>
-      <div class="dot" data-index="1"></div>
-      <div class="dot" data-index="2"></div>
-    </div>
-  </section>
+  </div>
 
-  <!-- 쇼핑라이브 공고 -->
-  <main>
+  <!-- Slide 3 -->
+  <div class="banner-card" style="background-color: #00C4B4;">
+    <div class="text-group">
+      <p class="sub">이제는 셀프 PR 시대</p>
+      <h2>포트폴리오를 등록하고 <br/>주목받으세요</h2>
+      <p class="desc">브랜드가 먼저 제안합니다</p>
+    </div>
+  </div>
+</div>
+
+  </section>  <!-- 쇼핑라이브 공고 -->  <main>
     <section class="recruit-section">
       <div class="section-head">
         <h2>쇼핑라이브 공고</h2>
@@ -69,63 +73,54 @@
           </div>
         </div>
       </div>
-    </section>
+    </section><!-- 인기 쇼호스트 -->
+<section class="recruit-section">
+  <div class="section-head">
+    <h2>인기 쇼호스트</h2>
+    <a href="#" class="more">더보기</a>
+  </div>
+  <div class="host-list">
+    <div class="host-card"><div class="avatar"></div>쇼호스트 1</div>
+    <div class="host-card"><div class="avatar"></div>쇼호스트 2</div>
+    <div class="host-card"><div class="avatar"></div>쇼호스트 3</div>
+  </div>
+</section>
 
-    <!-- 인기 쇼호스트 -->
-    <section class="recruit-section">
-      <div class="section-head">
-        <h2>인기 쇼호스트</h2>
-        <a href="#" class="more">더보기</a>
-      </div>
-      <div class="host-list">
-        <div class="host-card"><div class="avatar"></div>쇼호스트 1</div>
-        <div class="host-card"><div class="avatar"></div>쇼호스트 2</div>
-        <div class="host-card"><div class="avatar"></div>쇼호스트 3</div>
-      </div>
-    </section>
+<!-- 실시간 후기 -->
+<section class="recruit-section">
+  <div class="section-head">
+    <h2>실시간 후기</h2>
+    <a href="#" class="more">더보기</a>
+  </div>
+  <div class="review-card">
+    <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1">
+    <div class="review-info">
+      <div class="stars">★★★★★</div>
+      <p>"라이브 덕분에 매출이 늘었어요!"</p>
+      <span class="author">- 쇼핑몰 A</span>
+    </div>
+  </div>
+  <div class="review-card">
+    <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2">
+    <div class="review-info">
+      <div class="stars">★★★★☆</div>
+      <p>"쇼호스트 진행이 너무 좋아요."</p>
+      <span class="author">- 브랜드 B</span>
+    </div>
+  </div>
+</section>
 
-    <!-- 실시간 후기 -->
-    <section class="recruit-section">
-      <div class="section-head">
-        <h2>실시간 후기</h2>
-        <a href="#" class="more">더보기</a>
-      </div>
-      <div class="review-card">
-        <img src="https://via.placeholder.com/80x80/bae7ff/000?text=후기1" alt="후기1">
-        <div class="review-info">
-          <div class="stars">★★★★★</div>
-          <p>"라이브 덕분에 매출이 늘었어요!"</p>
-          <span class="author">- 쇼핑몰 A</span>
-        </div>
-      </div>
-      <div class="review-card">
-        <img src="https://via.placeholder.com/80x80/ffccc7/000?text=후기2" alt="후기2">
-        <div class="review-info">
-          <div class="stars">★★★★☆</div>
-          <p>"쇼호스트 진행이 너무 좋아요."</p>
-          <span class="author">- 브랜드 B</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ✅ 하단탭 -->
-  <nav class="bottom-tab">
+  </main>  <!-- ✅ 하단탭 -->  <nav class="bottom-tab">
     <a href="/index.html" class="active"><i class="ri-home-line"></i><div>홈</div></a>
     <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
     <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
     <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
     <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
-
-  <!-- ✅ JS: 슬라이드 및 로그인 상태에 따른 마이탭 처리 -->
-  <script defer src="/main.js?v=1.04"></script>
-  <script>
+  </nav>  <!-- ✅ JS: 슬라이드 및 로그인 상태에 따른 마이탭 처리 -->  <script defer src="/main.js?v=1.04"></script>  <script>
     const isLoggedIn = !!localStorage.getItem("loggedInUser");
     const myTab = document.getElementById("myTab");
     if (isLoggedIn && myTab) {
       myTab.setAttribute("href", "/mypage.html");
     }
-  </script>
-</body>
+  </script></body>
 </html>
