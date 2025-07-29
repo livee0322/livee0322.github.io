@@ -1,98 +1,95 @@
-/* ✅ 카테고리 필터 */
-.category-filters {
+/* 공고리스트 전용 CSS */
+
+/* 카테고리 스크롤 */
+.category-scroll {
   display: flex;
-  gap: 10px;
   overflow-x: auto;
-  padding: 16px;
+  padding: 10px;
+  gap: 8px;
   white-space: nowrap;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
 }
-
-.category-filters::-webkit-scrollbar {
-  display: none;
+.category-scroll::-webkit-scrollbar {
+  display: none; /* Chrome */
 }
-
-.category-filters button {
-  padding: 8px 14px;
-  border: none;
+.category-scroll button {
+  border: 1px solid #ccc;
+  background: #fff;
   border-radius: 20px;
-  font-size: 0.95rem;
-  background-color: #eee;
-  color: #333;
+  padding: 6px 14px;
+  font-size: 0.9rem;
   cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background-color 0.3s;
 }
-
-.category-filters button.active,
-.category-filters button:hover {
+.category-scroll button.active {
   background-color: #6a4df4;
   color: #fff;
+  border: none;
 }
 
-/* ✅ 공고 리스트 */
+/* 공고 리스트 */
 .recruit-list {
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 .recruit-card {
   background: #fff;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-
 .recruit-card img {
   width: 100%;
-  height: auto;
-  display: block;
-}
-
-.recruit-card .title {
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 10px 16px 4px;
-}
-
-.recruit-card .brand,
-.recruit-card .date {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0 16px 6px;
-}
-
-.recruit-card .apply-btn {
-  margin: 10px 16px 16px;
-  padding: 10px;
-  width: calc(100% - 32px);
-  background-color: #6a4df4;
-  color: white;
-  border: none;
+  height: 160px;
   border-radius: 8px;
+  object-fit: cover;
+}
+.recruit-card h3 {
+  font-size: 1.1rem;
+  margin: 4px 0 0;
+}
+.recruit-card p {
   font-size: 0.95rem;
-  cursor: pointer;
+  color: #444;
+  margin: 0;
+}
+.recruit-card small {
+  color: #888;
+  font-size: 0.85rem;
+}
+.recruit-card a {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #4a2ff4;
+  text-decoration: underline;
 }
 
-/* ✅ FAB 버튼 */
+/* 비어있을 때 */
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 60px 0;
+  font-size: 1rem;
+}
+
+/* 플로팅 버튼 */
 .fab {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
   background-color: #6a4df4;
   color: white;
+  border-radius: 50%;
+  border: none;
   font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
   z-index: 999;
 }
