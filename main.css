@@ -22,19 +22,31 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
-  background-color: #fff;
+  background: #fff;
   border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
-.header .logo {
-  font-size: 1.4rem;
+
+.logo {
+  font-size: 1.2rem;
   font-weight: bold;
+  color: #6A4DF4;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.header .right-icons i {
-  margin-left: 14px;
-  font-size: 1.3rem;
+
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#welcomeMsg {
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ✅ 상단 탭 */
