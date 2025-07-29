@@ -1,6 +1,6 @@
-/* main.css v1.04 - 슬라이드 개선 + 레이아웃 안정화 */
+/* main.css v1.04 최신 수정본 */
 
-/* 기본 설정 */
+/* ✅ 기본 설정 */
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
@@ -37,13 +37,12 @@ body {
   font-size: 1.3rem;
 }
 
-/* ✅ 상단 탭 네비게이션 */
+/* ✅ 상단 탭 */
 .top-tabs {
   display: flex;
   overflow-x: auto;
   background-color: #fff;
   white-space: nowrap;
-  border-bottom: none;
 }
 .top-tabs a {
   flex: 1;
@@ -59,64 +58,51 @@ body {
   border-bottom: 2px solid #6755f5;
 }
 
-/* ✅ 메인 슬라이드 배너 */
+/* ✅ 메인 슬라이드 */
 .main-banner-slide {
   width: 100%;
   overflow: hidden;
   position: relative;
   background-color: #f5f6fc;
-  padding: 0;
 }
-
 .banner-slide {
   display: flex;
   transition: transform 0.4s ease-in-out;
   width: 300%;
 }
-
 .banner-card {
   flex: 1 0 100%;
   display: flex;
-  align-items: flex-start;     /* 위쪽 정렬 */
-  justify-content: flex-start; /* 왼쪽 정렬 */
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: 1.4rem;
   font-weight: bold;
   color: #fff;
-  min-height: 220px;           /* 슬라이드 높이 통일 */
-  text-align: left;            /* 텍스트 왼쪽 정렬 */
+  min-height: 220px;
+  text-align: left;
   padding: 1.5rem 1.2rem;
   box-sizing: border-box;
 }
-
-.banner-card:nth-child(1) {
-  background-color: #6a4df4;
-}
-.banner-card:nth-child(2) {
-  background-color: #ff7675;
-}
-.banner-card:nth-child(3) {
-  background-color: #00b894;
-}
+.banner-card:nth-child(1) { background-color: #6a4df4; }
+.banner-card:nth-child(2) { background-color: #ff7675; }
+.banner-card:nth-child(3) { background-color: #00b894; }
 
 .text-group {
   max-width: 85%;
 }
-
 .text-group .sub {
   font-size: 13px;
   opacity: 0.85;
   margin-bottom: 8px;
   font-weight: 400;
 }
-
 .text-group h2 {
   font-size: 20px;
   line-height: 1.4;
   margin-bottom: 8px;
   font-weight: 700;
 }
-
 .text-group .desc {
   font-size: 13px;
   opacity: 0.85;
@@ -140,7 +126,7 @@ body {
   background-color: #333;
 }
 
-/* ✅ 공통 섹션 스타일 */
+/* ✅ 섹션 공통 */
 .recruit-section {
   margin: 28px 16px 0;
 }
@@ -160,7 +146,7 @@ body {
   text-decoration: none;
 }
 
-/* ✅ 공고 카드 (카드 그리드) */
+/* ✅ 공고 카드 */
 .card-grid {
   display: flex;
   overflow-x: auto;
@@ -168,9 +154,7 @@ body {
   padding-bottom: 10px;
   scrollbar-width: none;
 }
-.card-grid::-webkit-scrollbar {
-  display: none;
-}
+.card-grid::-webkit-scrollbar { display: none; }
 .live-card {
   min-width: 160px;
   background: #fff;
@@ -206,7 +190,7 @@ body {
   cursor: pointer;
 }
 
-/* ✅ 인기 쇼호스트 리스트 */
+/* ✅ 인기 쇼호스트 */
 .host-list {
   display: flex;
   overflow-x: auto;
@@ -214,9 +198,7 @@ body {
   padding-bottom: 10px;
   scrollbar-width: none;
 }
-.host-list::-webkit-scrollbar {
-  display: none;
-}
+.host-list::-webkit-scrollbar { display: none; }
 .host-card {
   background-color: #fff;
   border-radius: 12px;
@@ -235,7 +217,7 @@ body {
   margin: 0 auto 6px;
 }
 
-/* ✅ 실시간 후기 카드 */
+/* ✅ 후기 카드 */
 .review-card {
   display: flex;
   align-items: center;
@@ -265,7 +247,7 @@ body {
   color: #888;
 }
 
-/* ✅ 하단탭 (Bottom Tab) */
+/* ✅ 하단탭 */
 .bottom-tab {
   position: fixed;
   bottom: 0;
@@ -294,7 +276,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* ✅ 메인 콘텐츠 여백 확보 (하단탭 가림 방지) */
+/* ✅ 콘텐츠 여백 확보 */
 main {
   padding-bottom: 80px;
 }
