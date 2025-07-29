@@ -1,7 +1,7 @@
 async function handleLogin(e) {
   e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
+  const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
   try {
@@ -10,17 +10,18 @@ async function handleLogin(e) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email: email, // ✅ 변경됨: username → email
-        password: password,
-      }),
+      body: JSON.stringify({ email, password }),
     });
 
     const result = await response.json();
 
-    if (response.ok && result.success) {
+    if (response.ok) {
       alert("로그인 성공!");
-      localStorage.setItem("loggedInUser", email); // ✅ 저장 키명 유지
+
+      // 토큰 저장 (localStorage)
+      localStorage.setItem("liveeToken", result.token);
+
+      // 메인 페이지로 이동
       window.location.href = "/index.html";
     } else {
       alert(result.message || "로그인 실패");
