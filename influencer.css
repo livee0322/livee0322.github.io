@@ -2,7 +2,7 @@
 
 .influencer-wrapper {
   padding: 20px 0 80px;
-  background: linear-gradient(to bottom, #ffffff 0%, #f4f0ff 100%);
+  background-color: #f9f9fb; /* 다른 페이지들과 통일된 배경 */
 }
 
 .influencer-swiper {
@@ -51,7 +51,7 @@
 
 .btn-request {
   display: block;
-  margin: 0 auto;
+  margin: 24px auto 0; /* 버튼 위에 여백 추가 */
   padding: 14px 20px;
   background-color: #6a4df4;
   color: white;
