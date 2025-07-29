@@ -67,24 +67,28 @@ body {
   background-color: #f5f6fc;
   padding: 0;
 }
+
 .banner-slide {
   display: flex;
   transition: transform 0.4s ease-in-out;
   width: 300%;
 }
+
 .banner-card {
   flex: 1 0 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;     /* 위쪽 정렬 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  flex-direction: column;
   font-size: 1.4rem;
   font-weight: bold;
   color: #fff;
-  min-height: 180px;
-  text-align: center;
-  padding: 1.5rem;
+  min-height: 220px;           /* 슬라이드 높이 통일 */
+  text-align: left;            /* 텍스트 왼쪽 정렬 */
+  padding: 1.5rem 1.2rem;
   box-sizing: border-box;
 }
+
 .banner-card:nth-child(1) {
   background-color: #6a4df4;
 }
@@ -94,17 +98,22 @@ body {
 .banner-card:nth-child(3) {
   background-color: #00b894;
 }
+
+.text-group {
+  max-width: 85%;
+}
+
 .text-group .sub {
   font-size: 13px;
   opacity: 0.85;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-weight: 400;
 }
 
 .text-group h2 {
   font-size: 20px;
   line-height: 1.4;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-weight: 700;
 }
 
