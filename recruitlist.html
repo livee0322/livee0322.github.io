@@ -114,6 +114,24 @@
         link.classList.add("active");
       }
     });
+
+window.addEventListener("DOMContentLoaded", () => {
+  const list = document.querySelector(".recruit-list");
+  const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
+
+  if (posts.length === 0) return;
+
+  // 리스트 비우고 로컬 데이터로 재생성
+  list.innerHTML = posts.map(post => `
+    <div class="recruit-card">
+      <img src="${post.imageUrl}" alt="${post.title}" />
+      <div class="title">${post.title}</div>
+      <div class="brand">${post.brand}</div>
+      <div class="date">${post.date}</div>
+      <a href="${post.link}" target="_blank" class="apply-btn">지원하기</a>
+    </div>
+  `).join("");
+});
   </script>
 </body>
 </html>
