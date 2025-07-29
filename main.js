@@ -52,3 +52,19 @@ const myTab = document.getElementById("myTab");
 if (isLoggedIn && myTab) {
   myTab.setAttribute("href", "/mypage.html");
 }
+
+// 로그인 상태 환영 메시지 + 로그아웃 처리
+const loggedInUser = localStorage.getItem("loggedInUser");
+const welcomeMsg = document.getElementById("welcomeMsg");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (loggedInUser) {
+  welcomeMsg.textContent = `${loggedInUser} 님`;
+  logoutBtn.style.display = "inline";
+}
+
+logoutBtn?.addEventListener("click", () => {
+  localStorage.removeItem("loggedInUser");
+  alert("로그아웃 되었습니다.");
+  location.href = "/login.html";
+});
