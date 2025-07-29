@@ -1,86 +1,98 @@
-/* recruitlist.css - 공고리스트 전용 스타일 */
-
-/* 카테고리 필터 */
+/* ✅ 카테고리 필터 */
 .category-filters {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
   overflow-x: auto;
-  padding: 1rem;
+  padding: 16px;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.category-filters::-webkit-scrollbar {
+  display: none;
 }
 
 .category-filters button {
-  padding: 0.5rem 1rem;
-  border-radius: 1.5rem;
+  padding: 8px 14px;
   border: none;
-  background: #eee;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  background-color: #eee;
   color: #333;
-  font-size: 0.9rem;
+  cursor: pointer;
   white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.3s;
 }
 
-.category-filters .active {
-  background: #6366f1;
+.category-filters button.active,
+.category-filters button:hover {
+  background-color: #6a4df4;
   color: #fff;
-  font-weight: bold;
 }
 
-/* 공고 리스트 */
+/* ✅ 공고 리스트 */
 .recruit-list {
-  padding: 1rem;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .recruit-card {
   background: #fff;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .recruit-card img {
   width: 100%;
-  border-radius: 0.5rem;
+  height: auto;
+  display: block;
 }
 
 .recruit-card .title {
   font-weight: bold;
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin: 10px 16px 4px;
 }
 
 .recruit-card .brand,
 .recruit-card .date {
   font-size: 0.9rem;
   color: #666;
+  margin: 0 16px 6px;
 }
 
 .recruit-card .apply-btn {
-  background: #5c6eff;
+  margin: 10px 16px 16px;
+  padding: 10px;
+  width: calc(100% - 32px);
+  background-color: #6a4df4;
   color: white;
-  padding: 0.6rem;
-  margin-top: 0.8rem;
-  text-align: center;
   border: none;
-  border-radius: 0.5rem;
-  width: 100%;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
-/* FAB 버튼 */
+/* ✅ FAB 버튼 */
 .fab {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 56px;
-  height: 56px;
-  background-color: #6366f1;
-  color: white;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  font-size: 32px;
-  text-align: center;
-  line-height: 56px;
+  background-color: #6a4df4;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
