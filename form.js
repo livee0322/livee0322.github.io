@@ -1,43 +1,43 @@
-<script>
-document.querySelector('.form').addEventListener('submit', async function(e) {
+document.querySelector("form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const title = this.querySelector('input[type="text"]').value;
-  const brand = this.querySelectorAll('input[type="text"]')[1].value;
-  const category = this.querySelector('select').value;
-  const date = this.querySelector('input[type="datetime-local"]').value;
-  const imageFile = this.querySelector('input[type="file"]').files[0];
-  const detail = this.querySelector('textarea').value;
-  const link = this.querySelector('input[type="url"]').value;
+  const title = document.querySelector('input[placeholder*="제목"]').value;
+  const brand = document.querySelector('input[placeholder*="브랜드"]').value;
+  const category = document.querySelector("select").value;
+  const datetime = document.querySelector('input[type="datetime-local"]').value;
+  const imageFile = document.querySelector('input[type="file"]').files[0];
+  const content = document.querySelector("textarea").value;
+  const link = document.querySelector('input[type="url"]').value;
 
-  // ✅ Cloudinary 업로드
+  // ✅ Cloudinary로 이미지 업로드
   const formData = new FormData();
-  formData.append('file', imageFile);
-  formData.append('upload_preset', 'livee_unsigned'); // 대표님 설정한 preset
-  const res = await fetch('https://api.cloudinary.com/v1_1/dis1og9uq/image/upload', {
-    method: 'POST',
-    body: formData
+  formData.append("file", imageFile);
+  formData.append("upload_preset", "livee_unsigned");
+
+  const res = await fetch("https://api.cloudinary.com/v1_1/dis1og9uq/image/upload", {
+    method: "POST",
+    body: formData,
   });
+
   const data = await res.json();
   const imageUrl = data.secure_url;
 
-  // ✅ 공고 객체 만들기
+  // ✅ 공고 데이터 구성
   const newPost = {
     title,
     brand,
     category,
-    date,
+    datetime,
     imageUrl,
-    detail,
-    link
+    content,
+    link,
   };
 
-  // ✅ 기존 공고 리스트 불러오기 & 추가
-  const postList = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
-  postList.unshift(newPost); // 최신 글이 위로
-  localStorage.setItem("recruitPosts", JSON.stringify(postList));
+  // ✅ 기존 공고에 추가 저장
+  const saved = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
+  saved.unshift(newPost);
+  localStorage.setItem("recruitPosts", JSON.stringify(saved));
 
   alert("공고가 등록되었습니다!");
-  location.href = "/recruitlist.html";
+  window.location.href = "/recruitlist.html";
 });
-</script>
