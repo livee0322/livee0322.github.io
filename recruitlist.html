@@ -3,30 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>공고리스트 - Livee</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <title>쇼핑라이브 공고 리스트</title>
+  <link rel="stylesheet" href="/main.css" />
   <link rel="stylesheet" href="/recruitlist.css" />
-  <style>
-    .scroll-x {
-      overflow-x: auto;
-      white-space: nowrap;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .scroll-x::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- 띠배너 -->
-  <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
-
-  <!-- 상단 헤더 -->
+  <!-- ✅ 헤더 -->
   <header class="header">
-    <div class="logo" onclick="location.href='/index.html'">Livee</div>
+    <div class="logo" onclick="location.href='index.html'">Livee</div>
     <div class="right-icons">
       <i class="ri-search-line"></i>
       <i class="ri-notification-3-line"></i>
@@ -34,19 +19,19 @@
     </div>
   </header>
 
-  <!-- 상단탭 -->
+  <!-- ✅ 상단 탭 -->
   <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-    <a href="/news.html">뉴스</a>
+    <a href="index.html">홈</a>
+    <a href="clip.html">숏클립</a>
+    <a href="event.html">이벤트</a>
+    <a href="live.html">라이브</a>
+    <a href="influencer.html">인플루언서</a>
+    <a href="agency.html">대행서비스</a>
+    <a href="news.html">뉴스</a>
   </nav>
 
-  <!-- CATEGORY FILTER -->
-  <div class="category-filters scroll-x">
+  <!-- ✅ 카테고리 필터 -->
+  <div class="category-filter">
     <button class="active">전체</button>
     <button>패션</button>
     <button>뷰티</button>
@@ -55,83 +40,59 @@
     <button>기타</button>
   </div>
 
-  <!-- 공고 리스트 -->
-  <div class="recruit-list">
-    <div class="recruit-card">
-      <img src="https://via.placeholder.com/400x200/ffe0e0/000?text=공고1" alt="공고1" />
-      <div class="title">[뷰티] 신제품 라이브</div>
-      <div class="brand">브랜드 A</div>
-      <div class="date">2025.08.10 방송 예정</div>
-      <button class="apply-btn">지원하기</button>
-    </div>
-    <div class="recruit-card">
-      <img src="https://via.placeholder.com/400x200/e0f7ff/000?text=공고2" alt="공고2" />
-      <div class="title">[패션] 여름 신상 소개</div>
-      <div class="brand">브랜드 B</div>
-      <div class="date">2025.08.15 방송 예정</div>
-      <button class="apply-btn">지원하기</button>
-    </div>
-  </div>
+  <!-- ✅ 공고 리스트 -->
+  <section class="recruit-list" id="recruitListContainer">
+    <!-- JS에서 렌더링됨 -->
+  </section>
 
-  <!-- FAB 버튼 -->
-  <a href="#" class="fab" id="fabBtn">+</a>
+  <!-- ✅ FAB 버튼 -->
+  <button class="fab" id="writeBtn">＋</button>
 
-  <!-- 하단탭 -->
+  <!-- ✅ 하단 탭 -->
   <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html" class="active"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
+    <a href="index.html"><i class="ri-home-line"></i><span>홈</span></a>
+    <a href="live.html"><i class="ri-video-line"></i><span>라이브</span></a>
+    <a href="recruitlist.html" class="active"><i class="ri-briefcase-line"></i><span>쇼호스트</span></a>
+    <a href="liveschedule.html"><i class="ri-calendar-line"></i><span>일정</span></a>
+    <a href="#" id="myPageTab"><i class="ri-user-line"></i><span>마이</span></a>
   </nav>
 
   <script>
-    // 로그인 상태에 따라 마이탭 경로 설정
-    const isLoggedIn = !!localStorage.getItem("loggedInUser");
-    const myTab = document.getElementById("myTab");
-    if (myTab) {
-      myTab.setAttribute("href", isLoggedIn ? "/mypage.html" : "/login.html");
+    // ✅ 로그인 상태 반영
+    const token = localStorage.getItem("token");
+    const myPageTab = document.getElementById("myPageTab");
+    if (myPageTab) {
+      myPageTab.href = token ? "/mypage.html" : "/login.html";
     }
 
-    // FAB 버튼 클릭 시 로그인 확인
-    const fabBtn = document.getElementById("fabBtn");
-    if (fabBtn) {
-      fabBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (isLoggedIn) {
-          location.href = "/recruitform.html";
-        } else {
-          alert("로그인이 필요합니다.");
-          location.href = "/login.html";
-        }
-      });
-    }
-
-    // 현재 경로에 따라 상단/하단탭 active 처리
-    const currentPath = window.location.pathname;
-    document.querySelectorAll(".top-tabs a, .bottom-tab a").forEach(link => {
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("active");
+    // ✅ FAB 버튼 처리
+    document.getElementById("writeBtn").addEventListener("click", function () {
+      if (!token) {
+        alert("로그인이 필요합니다.");
+        location.href = "/login.html";
+      } else {
+        location.href = "/recruitform.html";
       }
     });
 
-window.addEventListener("DOMContentLoaded", () => {
-  const list = document.querySelector(".recruit-list");
-  const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
+    // ✅ 공고 불러오기
+    const container = document.getElementById("recruitListContainer");
+    const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
 
-  if (posts.length === 0) return;
-
-  // 리스트 비우고 로컬 데이터로 재생성
-  list.innerHTML = posts.map(post => `
-    <div class="recruit-card">
-      <img src="${post.imageUrl}" alt="${post.title}" />
-      <div class="title">${post.title}</div>
-      <div class="brand">${post.brand}</div>
-      <div class="date">${post.date}</div>
-      <a href="${post.link}" target="_blank" class="apply-btn">지원하기</a>
-    </div>
-  `).join("");
-});
+    posts.forEach((post) => {
+      const card = document.createElement("div");
+      card.className = "recruit-card";
+      card.innerHTML = `
+        <img src="${post.imageUrl}" alt="${post.title}" />
+        <div class="recruit-info">
+          <strong>${post.title}</strong>
+          <p>${post.brand}</p>
+          <small>${new Date(post.datetime).toLocaleString()}</small>
+          <a class="apply-link" href="${post.link}" target="_blank">지원하기</a>
+        </div>
+      `;
+      container.appendChild(card);
+    });
   </script>
 </body>
 </html>
