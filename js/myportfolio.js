@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const safePhoto = data.photo && data.photo !== '' ? data.photo : '/images/default-profile.png';
     portfolioContent.innerHTML = `
       <div class="portfolio-card">
-        <img src="${safePhoto}" alt="프로필 이미지" />
+        <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
         <h3>${data.title}</h3>
         <p><strong>이름:</strong> ${data.name}</p>
         <p><strong>경력:</strong> ${data.career}</p>
