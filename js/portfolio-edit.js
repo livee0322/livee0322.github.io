@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('portfolioForm');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // 🔒 새로고침 방지
+    e.preventDefault(); // 새로고침 방지
 
     const formData = new FormData(form);
     const portfolioData = {};
 
-    // ✅ 체크박스와 인풋 데이터 수집
+    // 🔍 체크박스 및 입력값 수집
     for (const [key, value] of formData.entries()) {
       if (key.startsWith('public_')) {
         portfolioData[key] = true;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ✅ 이미지 업로드 처리 (Cloudinary)
+    // ✅ 이미지 업로드 (Cloudinary)
     const photoFile = formData.get('photo');
     if (photoFile && photoFile.size > 0) {
       const cloudinaryData = new FormData();
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ✅ 로그인 토큰 확인
+    // ✅ 로그인 확인
     const token = localStorage.getItem('liveeToken');
     if (!token) {
       alert('로그인이 필요합니다.');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // ✅ 서버 전송
+    // ✅ 서버에 전송
     try {
       const res = await fetch('https://livee-server-dev.onrender.com/portfolio', {
         method: 'POST',
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!res.ok) {
-        const errorText = await res.text();
-        throw new Error(errorText || '서버 오류');
+        const errText = await res.text();
+        throw new Error(errText || '서버 오류');
       }
 
       alert('포트폴리오가 등록되었습니다!');
