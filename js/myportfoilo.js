@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const res = await fetch('https://livee-backend-url.onrender.com/portfolio/mine', {
+    const res = await fetch('https://livee-server-dev.onrender.com/portfolio/mine', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
