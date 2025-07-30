@@ -1,0 +1,70 @@
+/* 포트폴리오 작성 전용 스타일 */
+.portfolio-form {
+  padding: 20px 16px 100px;
+  background: #f9f9fb;
+}
+
+.portfolio-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.portfolio-form label {
+  font-weight: 600;
+  margin: 10px 0 5px;
+  display: block;
+}
+
+.portfolio-form input,
+.portfolio-form textarea,
+.portfolio-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.portfolio-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.portfolio-form .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio-form .checkbox-group label {
+  background: #eee;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.portfolio-form .checkbox-group input {
+  display: none;
+}
+
+.portfolio-form .toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio-form .btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
