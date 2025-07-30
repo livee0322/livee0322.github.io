@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ✅ 서버 전송
     try {
-      const res = await fetch('https://livee-backend-url.onrender.com/portfolio', {
+      const res = await fetch('https://livee-server-dev.onrender.com/portfolio', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
