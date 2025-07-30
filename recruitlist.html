@@ -4,35 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Livee 쇼핑라이브 공고 리스트</title>
-  <link rel="stylesheet" href="/main.css" />
-  <link rel="stylesheet" href="/recruitlist.css" />
+  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <link rel="stylesheet" href="/recruitlist.css?v=1.01" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-  <!-- 상단 알림 배너 -->
+
+  <!-- ✅ 베타 배너 -->
   <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
 
-  <!-- 헤더 -->
-  <header class="header">
-    <h1 class="logo" onclick="location.href='index.html'">Livee</h1>
-    <div class="header-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-line"></i>
-      <i class="ri-user-line" onclick="handleMyPage()"></i>
-    </div>
-  </header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- 상단탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-  </nav>
+  <!-- ✅ 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
-  <!-- 카테고리 필터 -->
+  <!-- ✅ 카테고리 필터 -->
   <div class="category-scroll">
     <button class="active">전체</button>
     <button>패션</button>
@@ -42,29 +29,27 @@
     <button>기타</button>
   </div>
 
-  <!-- 공고 리스트 -->
+  <!-- ✅ 공고 리스트 -->
   <section id="recruit-list" class="recruit-list"></section>
 
-  <!-- 등록 버튼 -->
+  <!-- ✅ 등록 FAB 버튼 -->
   <button class="fab" onclick="handleFabClick()">+</button>
 
- <!-- ✅ 하단탭 (공통) -->
-<nav class="bottom-tab">
-  <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-  <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-  <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-  <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-  <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
-</nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
+  <!-- ✅ 공통 JS -->
+  <script defer src="/js/header.js"></script>
+  <script defer src="/js/top-tab.js"></script>
+  <script defer src="/js/bottom-tab.js"></script>
+
+  <!-- ✅ 공고 렌더링 스크립트 -->
   <script>
-    // 로그인 상태 확인 후 마이페이지 연결
     function handleMyPage() {
       const user = localStorage.getItem("loginUser");
       location.href = user ? "/mypage.html" : "/login.html";
     }
 
-    // 로그인 여부 확인 후 공고작성 이동
     function handleFabClick() {
       const user = localStorage.getItem("loginUser");
       if (!user) {
@@ -75,7 +60,6 @@
       location.href = "/recruitform.html";
     }
 
-    // 공고 데이터 렌더링
     function renderPosts() {
       const container = document.getElementById("recruit-list");
       const posts = JSON.parse(localStorage.getItem("recruitPosts") || "[]");
@@ -99,14 +83,14 @@
               });
 
           return `
-          <div class="recruit-card">
-            <img src="${post.imageUrl}" alt="${post.title}" />
-            <h3>${post.title}</h3>
-            <p>${post.brand}</p>
-            <small>${dateText}</small>
-            <a href="${post.link}" target="_blank">지원하기</a>
-          </div>
-        `;
+            <div class="recruit-card">
+              <img src="${post.imageUrl}" alt="${post.title}" />
+              <h3>${post.title}</h3>
+              <p>${post.brand}</p>
+              <small>${dateText}</small>
+              <a href="${post.link}" target="_blank">지원하기</a>
+            </div>
+          `;
         })
         .join("");
     }
