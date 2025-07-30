@@ -43,27 +43,12 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
+  <!-- 공통 HEADER -->
+  <div id="header-container"></div>
+  <!-- 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
-  <!-- 상단탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html" class="active">대행서비스</a>
-    <a href="/news.html">뉴스</a>
-  </nav>
-
+  <!-- 본문 -->
   <main class="form-container">
     <h2 style="margin-bottom: 1rem;">스튜디오 등록 요청</h2>
 
@@ -100,14 +85,24 @@
     <button class="submit-btn">등록 요청하기</button>
   </main>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
+  <!-- 공통 스크립트 삽입 -->
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
+  <script>
+    // 로그인 여부 확인해서 마이탭 링크 조정
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    const myTab = document.querySelector('.bottom-tab a:last-child i');
+    const myTabLink = document.querySelector('.bottom-tab a:last-child');
+
+    if (isLoggedIn) {
+      myTabLink.href = "/mypage.html";
+    } else {
+      myTabLink.href = "/login.html";
+    }
+  </script>
 </body>
 </html>
