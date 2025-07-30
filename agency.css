@@ -1,5 +1,6 @@
-/* agency.css */
+/* agency.css v1.01 - 대행서비스 전용 스타일 */
 
+/* ✅ 대행서비스 카드 레이아웃 */
 .agency-wrapper {
   padding: 1rem;
 }
@@ -14,6 +15,11 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.agency-card:hover {
+  transform: translateY(-2px);
 }
 
 .agency-card img {
@@ -30,11 +36,53 @@
 
 .agency-card .info .title {
   font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
 }
 
 .agency-card .info .desc {
   font-size: 0.85rem;
   color: #777;
+  line-height: 1.4;
+}
+
+/* ✅ 상세 페이지용 섹션 여백 */
+.agency-detail-section {
+  padding: 1.2rem;
+}
+
+/* ✅ 버튼 공통 스타일 (추가요청 등) */
+.agency-btn {
+  display: inline-block;
+  background-color: #6755f5;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+.agency-btn:hover {
+  background-color: #5743d4;
+}
+
+/* ✅ 반응형 대비 */
+@media (max-width: 480px) {
+  .agency-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .agency-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+  }
+
+  .agency-card .info {
+    margin-top: 0.5rem;
+  }
 }
