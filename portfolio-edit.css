@@ -19,19 +19,40 @@ body {
   font-weight: 600;
 }
 
+/* 📌 폼 그룹 */
 .form-group {
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
 }
 
-.form-group label {
+/* 📌 라벨 + 체크박스 한 줄 정렬 */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label-row label {
   font-size: 0.95rem;
   font-weight: 500;
-  margin-bottom: 6px;
   color: #333;
 }
 
+/* 📌 공개 체크박스 스타일 */
+.label-row .public-checkbox {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.label-row .public-checkbox input[type="checkbox"] {
+  margin-left: 4px;
+}
+
+/* 📌 input, textarea 스타일 */
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="file"],
@@ -48,15 +69,7 @@ body {
   height: 72px;
 }
 
-.form-group input[type="checkbox"] {
-  margin-right: 6px;
-}
-
-.form-group label input[type="checkbox"] {
-  display: inline-block;
-  margin-top: 8px;
-}
-
+/* ✅ 버튼 */
 button.submit-btn {
   width: 100%;
   padding: 14px;
