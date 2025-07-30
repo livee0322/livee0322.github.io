@@ -2,59 +2,84 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>내 포트폴리오</title>
   <link rel="stylesheet" href="/main.css?v=1.06" />
   <link rel="stylesheet" href="/portfolio-preview.css?v=1.0" />
 </head>
 <body>
-  <!-- 공통 헤더 -->
+  <!-- ✅ 공통 헤더 -->
   <div id="header-container"></div>
   <nav class="top-tabs" id="top-tab-container"></nav>
 
   <main class="portfolio-preview">
-    <div class="profile-header">
-      <img src="/sample1.jpg" alt="프로필 사진" class="profile-photo" />
-      <div>
-        <h2 class="profile-title">성실한 쇼호스트 김라이브입니다.</h2>
-        <p class="profile-name">김라이브</p>
-      </div>
-    </div>
-
-    <div class="info-card">
-      <h3>경력</h3>
-      <p>5년차 쇼호스트, 300회 이상 라이브 진행</p>
-    </div>
-
-    <div class="info-card">
-      <h3>주요 활동</h3>
-      <p>쿠팡 라이브 전속 진행, 뷰티/푸드 전문</p>
-    </div>
-
-    <div class="info-card">
-      <h3>성격</h3>
-      <p>명랑하고 꼼꼼한 진행 스타일</p>
-    </div>
-
-    <div class="info-card">
-      <h3>출연료</h3>
-      <p>시급 50,000원</p>
-    </div>
-
-    <div class="info-card">
-      <h3>조건</h3>
-      <p>사전미팅 1회 필수</p>
-    </div>
-
-    <div class="info-card">
-      <h3>판매 직군</h3>
-      <p>뷰티, 패션</p>
+    <h2>내 포트폴리오</h2>
+    <div id="portfolioContent">
+      <p>로딩 중입니다...</p>
     </div>
   </main>
 
+  <!-- ✅ 공통 하단탭 -->
   <nav class="bottom-tab" id="bottom-tab-container"></nav>
+
   <script src="/js/header.js"></script>
   <script src="/js/top-tab.js"></script>
   <script src="/js/bottom-tab.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const portfolioContent = document.getElementById('portfolioContent');
+      const token = localStorage.getItem('liveeToken');
+
+      if (!token) {
+        portfolioContent.innerHTML = `
+          <p>로그인이 필요합니다.</p>
+          <button onclick="location.href='/login.html'">로그인하러 가기</button>
+        `;
+        return;
+      }
+
+      try {
+        const res = await fetch('https://livee-server-dev.onrender.com/portfolio/mine', {
+          headers: {
+            Authorization: \`Bearer \${token}\`,
+          },
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          throw new Error(errText || '불러오기 실패');
+        }
+
+        const data = await res.json();
+
+        if (!data || !data._id) {
+          portfolioContent.innerHTML = `
+            <p>작성된 포트폴리오가 없습니다.</p>
+            <button onclick="location.href='/portfolio-edit.html'">+ 포트폴리오 등록</button>
+          `;
+          return;
+        }
+
+        portfolioContent.innerHTML = `
+          <div class="portfolio-card">
+            <img src="\${data.photo || '/default-profile.png'}" alt="프로필 이미지" />
+            <h3>\${data.title}</h3>
+            <p><strong>이름:</strong> \${data.name}</p>
+            <p><strong>경력:</strong> \${data.career}</p>
+            <p><strong>활동:</strong> \${data.activity}</p>
+            <p><strong>성격:</strong> \${data.character}</p>
+            <p><strong>희망 출연료:</strong> \${data.fee}</p>
+            <p><strong>출연 조건:</strong> \${data.condition}</p>
+            <p><strong>카테고리:</strong> \${data.category}</p>
+            <button onclick="location.href='/portfolio-edit.html?id=\${data._id}'">수정하기</button>
+          </div>
+        `;
+      } catch (err) {
+        console.error('❌ 포트폴리오 불러오기 오류:', err);
+        portfolioContent.innerHTML = `<p>포트폴리오 불러오는 중 오류가 발생했어요. 😢</p>`;
+      }
+    });
+  </script>
 </body>
 </html>
