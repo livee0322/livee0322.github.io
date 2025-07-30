@@ -1,71 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('portfolioForm');
+  const portfolioList = document.getElementById('portfolio-list');
+  const registerBtn = document.getElementById('register-btn');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  const userEmail = localStorage.getItem('liveeToken');
+  const API_URL = 'https://livee-server.onrender.com';
 
-    const token = localStorage.getItem('liveeToken');
-    if (!token) {
-      alert('로그인이 필요합니다.');
-      location.href = '/login.html';
-      return;
-    }
+  // ✅ 로그인 확인
+  if (!userEmail) {
+    alert('로그인이 필요합니다.');
+    window.location.href = '/login.html';
+    return;
+  }
 
-    // 1. form 값 수집
-    const formData = new FormData(form);
-    const data = {};
-
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
-    // 2. 이미지 업로드 (Cloudinary)
-    const fileInput = document.getElementById('photo');
-    const file = fileInput.files[0];
-
-    let uploadedUrl = '';
-    if (file) {
-      const cloudData = new FormData();
-      cloudData.append('file', file);
-      cloudData.append('upload_preset', 'livee_unsigned'); // ✅ 대표님 Cloudinary preset
-      cloudData.append('folder', 'livee'); // ✅ 폴더명
-
-      try {
-        const cloudRes = await fetch('https://api.cloudinary.com/v1_1/dis1og9uq/image/upload', {
-          method: 'POST',
-          body: cloudData,
-        });
-
-        const cloudResult = await cloudRes.json();
-        uploadedUrl = cloudResult.secure_url;
-        data.photoUrl = uploadedUrl;
-      } catch (err) {
-        alert('이미지 업로드 실패: ' + err.message);
+  // ✅ 포트폴리오 불러오기
+  fetch(`${API_URL}/api/portfolios?email=${userEmail}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.length === 0) {
+        portfolioList.innerHTML = '<p>작성된 포트폴리오가 없습니다.</p>';
         return;
       }
-    }
 
-    // 3. 서버로 포트폴리오 등록 요청
-    try {
-      const res = await fetch('https://livee-server-dev.onrender.com/portfolio', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
-        },
-        body: JSON.stringify(data),
+      portfolioList.innerHTML = ''; // 기존 내용 제거
+
+      data.forEach((portfolio) => {
+        const item = document.createElement('div');
+        item.className = 'portfolio-item';
+        item.innerHTML = `
+          <img src="${portfolio.public_photo ? portfolio.photoUrl : '/default-profile.png'}" alt="프로필" class="portfolio-photo">
+          <h3>${portfolio.public_name ? portfolio.name : '이름 비공개'}</h3>
+          <p>${portfolio.public_title ? portfolio.title : ''}</p>
+          <p>${portfolio.public_career ? portfolio.career : ''}</p>
+        `;
+        portfolioList.appendChild(item);
       });
+    })
+    .catch(err => {
+      console.error('포트폴리오 불러오기 오류:', err);
+      portfolioList.innerHTML = '<p>포트폴리오를 불러오는 중 오류가 발생했습니다.</p>';
+    });
 
-      const result = await res.json();
-
-      if (res.ok) {
-        alert('포트폴리오가 성공적으로 등록되었습니다!');
-        location.href = '/myportfolio.html';
-      } else {
-        alert(result.message || '등록 실패');
-      }
-    } catch (error) {
-      alert('서버 오류: ' + error.message);
-    }
+  // ✅ 등록 버튼 클릭 시 이동
+  registerBtn.addEventListener('click', () => {
+    window.location.href = '/portfolio-edit.html';
   });
 });
