@@ -5,30 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Livee 숏클립</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-<link rel="stylesheet" href="/main.css?v=1.03" />
-<link rel="stylesheet" href="/clip.css?v=1.80" />
+  <link rel="stylesheet" href="/main.css?v=1.03" />
+  <link rel="stylesheet" href="/clip.css?v=1.80" />
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
 
-  <!-- 상단탭 -->
-<nav class="top-tabs">
-  <a href="/index.html">홈</a>
-  <a href="/clip.html" class="active">숏클립</a>
-  <a href="/event.html">이벤트</a>
-  <a href="/live.html">라이브</a>
-  <a href="/influencer.html">인플루언서</a>
-  <a href="/agency.html">대행서비스</a>
-  <a href="/news.html">뉴스</a>
-</nav>
+  <!-- 공통 HEADER -->
+  <div id="header-container"></div>
+
+  <!-- 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
   <div class="clip-header">인기 숏클립</div>
   <div class="clip-list" id="clipList"></div>
@@ -41,15 +27,22 @@
     <button onclick="addClip()">추가</button>
   </div>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-<a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
-  <script defer src="/clip.js?v=1.01"></script>
+  <!-- 스크립트 -->
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
+  <script src="/clip.js?v=1.01" defer></script>
+
+  <script>
+    // 로그인 여부에 따라 마이탭 경로 변경
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    const myTab = document.querySelector('.bottom-tab a:last-child');
+    if (myTab) {
+      myTab.href = isLoggedIn ? "/mypage.html" : "/login.html";
+    }
+  </script>
 </body>
 </html>
