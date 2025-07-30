@@ -30,9 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
           body: cloudinaryData,
         });
         const cloudResult = await cloudRes.json();
+
+        if (!cloudResult.secure_url) {
+          throw new Error('Cloudinary 업로드 실패');
+        }
+
         portfolioData.photo = cloudResult.secure_url;
       } catch (err) {
-        alert('이미지 업로드 실패 😢');
+        alert('이미지 업로드 실패 😢\n' + err.message);
         return;
       }
     }
@@ -45,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // ✅ 서버 전송
     try {
       const res = await fetch('https://livee-backend-url.onrender.com/portfolio', {
         method: 'POST',
