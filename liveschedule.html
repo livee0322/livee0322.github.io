@@ -10,32 +10,18 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- 상단탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-  </nav>
+  <!-- ✅ 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
-  <!-- 쇼핑라이브 일정 -->
+  <!-- ✅ 쇼핑라이브 일정 콘텐츠 -->
   <div class="schedule-header">쇼핑라이브 일정</div>
 
   <section class="schedule-list">
     <div class="schedule-card">
-      <img src="https://via.placeholder.com/80x80.png?text=상품A" alt="상품A">
+      <img src="https://via.placeholder.com/80x80.png?text=상품A" alt="상품A" />
       <div class="schedule-info">
         <div class="brand">브랜드 A</div>
         <div class="title">신상 화장품 런칭 라이브</div>
@@ -46,7 +32,7 @@
     </div>
 
     <div class="schedule-card">
-      <img src="https://via.placeholder.com/80x80.png?text=상품B" alt="상품B">
+      <img src="https://via.placeholder.com/80x80.png?text=상품B" alt="상품B" />
       <div class="schedule-info">
         <div class="brand">브랜드 B</div>
         <div class="title">여름 패션 베스트템 소개</div>
@@ -57,14 +43,13 @@
     </div>
   </section>
 
-  <!-- NAV -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-<a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
+
+  <!-- ✅ 공통 JS -->
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
 
 </body>
 </html>
