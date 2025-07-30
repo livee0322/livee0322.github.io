@@ -35,15 +35,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ✅ 포트폴리오 표시
     portfolioContent.innerHTML = `
       <div class="portfolio-card">
-        <img src="${data.photo || '/default-profile.png'}" alt="프로필 이미지" />
-        <h3>${data.title}</h3>
-        <p><strong>이름:</strong> ${data.name}</p>
-        <p><strong>경력:</strong> ${data.career}</p>
-        <p><strong>활동:</strong> ${data.activity}</p>
-        <p><strong>특성:</strong> ${data.character}</p>
-        <p><strong>희망 출연료:</strong> ${data.fee}</p>
-        <p><strong>출연조건:</strong> ${data.condition}</p>
-        <p><strong>카테고리:</strong> ${data.category}</p>
+        <div class="profile-info">
+          <img src="${data.photo || '/default-profile.png'}" alt="프로필 이미지" />
+          <div>
+            <div class="name">${data.name}</div>
+            <div class="desc">${data.title}</div>
+          </div>
+        </div>
+        <div class="skills">#${data.category || '카테고리 미지정'}</div>
+        <p><strong>경력:</strong> ${data.career || '-'}</p>
+        <p><strong>주요활동:</strong> ${data.activity || '-'}</p>
+        <p><strong>성격:</strong> ${data.character || '-'}</p>
+        <p><strong>출연료:</strong> ${data.fee || '-'}원</p>
+        <p><strong>조건:</strong> ${data.condition || '-'}</p>
         <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
       </div>
     `;
