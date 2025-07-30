@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>로그인 - Livee</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css?v=82.01" />
+  <link rel="stylesheet" href="/main.css?v=1.04" />
   <link rel="stylesheet" href="/login.css?v=1.01" />
 </head>
-<body style="background: #fff;">
+<body class="login-body">
 
   <main class="login-container">
     <h1 class="login-logo-text">Livee</h1>
 
-    <form class="login-form" onsubmit="handleLogin(event)">
+    <!-- ✅ 오류 메시지 영역 -->
+    <div id="login-error" style="color: #e74c3c; font-size: 0.9rem; margin-bottom: 10px;"></div>
+
+    <form id="login-form" class="login-form">
       <label for="email">이메일</label>
       <input type="email" id="email" placeholder="이메일을 입력하세요" required />
 
@@ -28,13 +31,41 @@
     </div>
   </main>
 
-  <!-- ✅ 통일된 하단탭 -->
+  <!-- ✅ 하단탭 -->
   <div id="bottom-tab-container"></div>
 
   <!-- ✅ 공통 스크립트 -->
   <script src="/js/bottom-tab.js"></script>
 
   <!-- ✅ 로그인 기능 -->
-  <script src="/login.js?v=1.01"></script>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const errorEl = document.getElementById("login-error");
+      errorEl.textContent = ""; // 초기화
+
+      try {
+        const response = await fetch("https://livee-server-dev.onrender.com/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.token) {
+          localStorage.setItem("liveeToken", result.token);
+          location.href = "/index.html";
+        } else {
+          errorEl.textContent = result.message || "이메일 또는 비밀번호가 올바르지 않습니다.";
+        }
+      } catch (err) {
+        errorEl.textContent = "서버 오류: " + err.message;
+      }
+    });
+  </script>
 </body>
 </html>
