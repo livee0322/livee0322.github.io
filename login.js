@@ -18,10 +18,13 @@ async function handleLogin(e) {
     if (response.ok) {
       alert("로그인 성공!");
 
-      // 토큰 저장 (localStorage)
+      // ✅ 토큰 저장
       localStorage.setItem("liveeToken", result.token);
 
-      // 메인 페이지로 이동
+      // ✅ 사용자 정보 저장 (다른 페이지에서 로그인 상태 확인용)
+      localStorage.setItem("loggedInUser", JSON.stringify(result.user));
+
+      // ✅ 메인 페이지로 이동
       window.location.href = "/index.html";
     } else {
       alert(result.message || "로그인 실패");
