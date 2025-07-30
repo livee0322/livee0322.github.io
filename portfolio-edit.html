@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 포트폴리오</title>
+  <link rel="stylesheet" href="/main.css?v=1.06">
+  <link rel="stylesheet" href="/portfolio.css?v=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <!-- 공통 헤더 -->
+  <div id="header-container"></div>
+  <nav class="top-tabs" id="top-tab-container"></nav>  <main class="portfolio-form">
+    <h2>내 포트폴리오 등록</h2><form id="portfolioForm">
+  <div class="form-group">
+    <label for="title">타이틀</label>
+    <input type="text" id="title" name="title" placeholder="성실한 쇼호스트 @@입니다." required>
+    <label><input type="checkbox" name="public_title"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="photo">사진</label>
+    <input type="file" id="photo" name="photo" accept="image/*">
+    <label><input type="checkbox" name="public_photo"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="name">이름</label>
+    <input type="text" id="name" name="name" required>
+    <label><input type="checkbox" name="public_name"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="career">경력</label>
+    <textarea id="career" name="career" rows="2"></textarea>
+    <label><input type="checkbox" name="public_career"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="activity">주요 활동</label>
+    <textarea id="activity" name="activity" rows="2"></textarea>
+    <label><input type="checkbox" name="public_activity"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="character">성격</label>
+    <input type="text" id="character" name="character">
+    <label><input type="checkbox" name="public_character"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="fee">출연료 (시급)</label>
+    <input type="number" id="fee" name="fee" placeholder="숫자만 입력">
+    <label><input type="checkbox" name="public_fee"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="condition">조건</label>
+    <input type="text" id="condition" name="condition" placeholder="예: 사전미팅 1회">
+    <label><input type="checkbox" name="public_condition"> 공개</label>
+  </div>
+
+  <div class="form-group">
+    <label for="category">판매 직군</label>
+    <input type="text" id="category" name="category" placeholder="예: 뷰티, 푸드, 패션 등">
+    <label><input type="checkbox" name="public_category"> 공개</label>
+  </div>
+
+  <button type="submit" class="submit-btn">저장하기</button>
+</form>
+
+  </main>  <!-- 공통 하단탭 -->  <nav class="bottom-tab" id="bottom-tab-container"></nav>  <script src="/js/header.js"></script>  <script src="/js/top-tab.js"></script>  <script src="/js/bottom-tab.js"></script>  <script src="/js/portfolio.js"></script></body>
+</html>
