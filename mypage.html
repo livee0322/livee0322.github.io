@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -17,48 +17,28 @@
 
   <!-- ✅ 마이페이지 본문 -->
   <main style="padding: 20px 16px 100px; background: #f9f9fb;">
-    <h2 style="font-size: 1.2rem; margin-bottom: 20px;">마이페이지</h2>
+    <h2 style="font-size: 1.2rem; margin-bottom: 12px;">마이페이지</h2>
 
-    <a href="/change-password.html" class="mypage-item">
-      <span>비밀번호 변경</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
+    <!-- ✅ 로그인 사용자 정보 표시 -->
+    <div id="userEmail" style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">로그인 정보를 불러오는 중...</div>
 
-    <a href="/myportfolio.html" class="mypage-item">
-      <span>내 포트폴리오</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
+    <!-- ✅ 메뉴 목록 -->
+    <a href="/change-password.html" class="mypage-item"><span>비밀번호 변경</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/myportfolio.html" class="mypage-item"><span>내 포트폴리오</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/my-luvies.html" class="mypage-item"><span>보유 러비</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/applied-jobs.html" class="mypage-item"><span>내가 지원한 공고</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/wishlist.html" class="mypage-item"><span>찜한 공고</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/my-benefits.html" class="mypage-item"><span>받은 혜택 / 이벤트</span><i class="ri-arrow-right-s-line"></i></a>
+    <a href="/suggestions.html" class="mypage-item"><span>나에게 온 제안</span><i class="ri-arrow-right-s-line"></i></a>
 
-    <a href="/my-luvies.html" class="mypage-item">
-      <span>보유 러비</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
-
-    <a href="/applied-jobs.html" class="mypage-item">
-      <span>내가 지원한 공고</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
-
-    <a href="/wishlist.html" class="mypage-item">
-      <span>찜한 공고</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
-
-    <a href="/my-benefits.html" class="mypage-item">
-      <span>받은 혜택 / 이벤트</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
-
-    <a href="/suggestions.html" class="mypage-item">
-      <span>나에게 온 제안</span>
-      <i class="ri-arrow-right-s-line"></i>
-    </a>
+    <!-- ✅ 로그아웃 버튼 -->
+    <button id="logoutBtn" style="display:none; margin-top: 30px; width: 100%; padding: 12px; font-size: 1rem; background: #f44336; color: white; border: none; border-radius: 8px; cursor: pointer;">로그아웃</button>
   </main>
 
   <!-- ✅ 공통 하단탭 -->
   <div id="bottom-tab-container"></div>
 
-  <!-- ✅ 스타일 유지 -->
+  <!-- ✅ 마이페이지 스타일 -->
   <style>
     .mypage-item {
       background: #fff;
@@ -102,8 +82,8 @@
 
         if (res.ok) {
           const data = await res.json();
-          if (userEmail) userEmail.textContent = `${data.email}님`;
-          if (logoutBtn) logoutBtn.style.display = "inline";
+          userEmail.textContent = `${data.email}님`;
+          logoutBtn.style.display = "inline-block";
         } else {
           localStorage.removeItem("liveeToken");
           alert("로그인 정보가 만료되었습니다.");
@@ -113,13 +93,11 @@
         alert("서버 오류로 로그인 확인 실패");
       }
 
-      if (logoutBtn) {
-        logoutBtn.onclick = () => {
-          localStorage.removeItem("liveeToken");
-          alert("로그아웃 되었습니다.");
-          window.location.href = "/login.html";
-        };
-      }
+      logoutBtn.onclick = () => {
+        localStorage.removeItem("liveeToken");
+        alert("로그아웃 되었습니다.");
+        window.location.href = "/login.html";
+      };
     };
   </script>
 
