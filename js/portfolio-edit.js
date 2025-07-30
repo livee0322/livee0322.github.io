@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formData = new FormData(form);
 
-    // ✅ Cloudinary 업로드 (사진 있을 때만)
     const fileInput = document.getElementById('photo');
     const file = fileInput.files[0];
 
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (file) {
       const cloudData = new FormData();
       cloudData.append('file', file);
-      cloudData.append('upload_preset', 'livee_unsigned'); // ✅ Cloudinary 설정값
+      cloudData.append('upload_preset', 'livee_unsigned');
       cloudData.append('folder', 'livee');
 
       try {
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // ✅ 전송할 데이터 구성
     const data = {
       title: form.title.value,
       name: form.name.value,
@@ -41,21 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
       fee: form.fee.value,
       condition: form.condition.value,
       category: form.category.value,
-      photo: imageUrl, // Cloudinary URL
-      public: {
-        title: form.public_title.checked,
-        photo: form.public_photo.checked,
-        name: form.public_name.checked,
-        career: form.public_career.checked,
-        activity: form.public_activity.checked,
-        character: form.public_character.checked,
-        fee: form.public_fee.checked,
-        condition: form.public_condition.checked,
-        category: form.public_category.checked,
-      },
+      photoUrl: imageUrl, // ✅ 필드명 수정
+      public_title: form.public_title.checked,
+      public_photo: form.public_photo.checked,
+      public_name: form.public_name.checked,
+      public_career: form.public_career.checked,
+      public_activity: form.public_activity.checked,
+      public_character: form.public_character.checked,
+      public_fee: form.public_fee.checked,
+      public_condition: form.public_condition.checked,
+      public_category: form.public_category.checked,
     };
 
-    // ✅ 백엔드로 저장 요청
     try {
       const response = await fetch('https://livee-server.onrender.com/portfolio', {
         method: 'POST',
@@ -68,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) throw new Error('서버 오류 발생');
 
       alert('포트폴리오가 성공적으로 저장되었습니다!');
-      window.location.href = '/portfolio.html'; // 저장 후 이동
+      window.location.href = '/portfolio.html';
     } catch (err) {
       console.error('❌ 서버 요청 실패:', err);
       alert('서버 오류: ' + err.message);
