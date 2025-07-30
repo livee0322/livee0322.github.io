@@ -64,26 +64,9 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
-
-  <!-- 상단탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html" class="active">대행서비스</a>
-    <a href="/news.html">뉴스</a>
-  </nav>
+  <!-- 공통 헤더 / 상단탭 / 하단탭 -->
+  <div id="header"></div>
+  <div id="top-tabs"></div>
 
   <!-- 콘텐츠 -->
   <div class="studio-detail">
@@ -104,16 +87,14 @@
     <button class="btn-request">거래 요청하기</button>
   </div>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <div id="bottom-tab"></div>
 
-  <!-- JS -->
+  <!-- 공통 탭 삽입 스크립트 -->
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
+
+  <!-- 페이지 개별 JS -->
   <script>
     const calendarEl = document.getElementById("calendar");
     const estimateEl = document.getElementById("estimate");
@@ -122,7 +103,6 @@
     const unitPrice = 50000;
     const selectedDates = new Set();
 
-    // 간단한 1~31일까지 달력
     for (let i = 1; i <= 31; i++) {
       const day = document.createElement("div");
       day.className = "day";
