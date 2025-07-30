@@ -1,59 +1,87 @@
-<!DOCTYPE html><html lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 포트폴리오</title>
-  <link rel="stylesheet" href="/main.css?v=1.06">
-  <link rel="stylesheet" href="/portfolio-edit.css?v=1.0">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 포트폴리오 등록</title>
+  <link rel="stylesheet" href="/main.css?v=1.06" />
+  <link rel="stylesheet" href="/portfolio-edit.css?v=1.0" />
 </head>
 <body>
   <div id="header-container"></div>
-  <nav class="top-tabs" id="top-tab-container"></nav>  <main class="portfolio-edit">
-    <section class="portfolio-intro">
-      <div class="intro-text">
-        <p class="sub-text">최신 이력서로</p>
-        <h2>이직에 도전해 보세요.</h2>
-        <p class="desc">성실한 디자이너 이태웅입니다.</p>
-      </div>
-      <div class="intro-photo">
-        <img src="/profile.jpg" alt="프로필" class="profile-image">
-        <button class="upload-btn"><i class="ri-camera-line"></i></button>
-      </div>
-    </section><section class="card-section">
-  <div class="card">
-    <div class="card-header">
-      <h3>인적사항</h3>
-      <i class="ri-settings-4-line"></i>
-    </div>
-    <ul class="info-list">
-      <li><i class="ri-user-line"></i> 1996년, 남</li>
-      <li><i class="ri-phone-line"></i> 010-3074-6564</li>
-      <li><i class="ri-mail-line"></i> dlxodnd6564@naver.com</li>
-      <li><i class="ri-map-pin-line"></i> 경기 화성시 봉담읍 왕림리</li>
-    </ul>
-  </div>
+  <nav class="top-tabs" id="top-tab-container"></nav>
 
-  <div class="card">
-    <div class="card-header">
-      <h3>희망직무</h3>
-      <i class="ri-add-line"></i>
-    </div>
-    <div class="tags">
-      <span class="tag">그래픽디자이너</span>
-      <span class="tag">광고디자이너</span>
-      <span class="tag">편집디자이너</span>
-    </div>
-  </div>
-</section>
+  <main class="portfolio-form">
+    <h2>내 포트폴리오 등록</h2>
+    <form id="portfolioForm">
+      <div class="form-group row">
+        <label for="title">타이틀</label>
+        <div class="row-input">
+          <input type="text" id="title" name="title" placeholder="성실한 쇼호스트 @@입니다." required />
+          <label class="checkbox-inline"><input type="checkbox" name="public_title" /> 공개</label>
+        </div>
+      </div>
 
-  </main>  <div class="bottom-fixed">
-    <button class="preview-btn">미리보기</button>
-    <button class="save-btn">저장</button>
-  </div>  <nav class="bottom-tab" id="bottom-tab-container"></nav>
+      <div class="form-group row">
+        <label for="photo">사진</label>
+        <div class="row-input">
+          <input type="file" id="photo" name="photo" accept="image/*" />
+          <label class="checkbox-inline"><input type="checkbox" name="public_photo" /> 공개</label>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="name">이름</label>
+        <div class="row-input">
+          <input type="text" id="name" name="name" required />
+          <label class="checkbox-inline"><input type="checkbox" name="public_name" /> 공개</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="career">경력</label>
+        <textarea id="career" name="career" rows="2"></textarea>
+        <label><input type="checkbox" name="public_career" /> 공개</label>
+      </div>
+
+      <div class="form-group">
+        <label for="activity">주요 활동</label>
+        <textarea id="activity" name="activity" rows="2"></textarea>
+        <label><input type="checkbox" name="public_activity" /> 공개</label>
+      </div>
+
+      <div class="form-group">
+        <label for="character">성격</label>
+        <input type="text" id="character" name="character" />
+        <label><input type="checkbox" name="public_character" /> 공개</label>
+      </div>
+
+      <div class="form-group">
+        <label for="fee">출연료 (시급)</label>
+        <input type="number" id="fee" name="fee" placeholder="숫자만 입력" />
+        <label><input type="checkbox" name="public_fee" /> 공개</label>
+      </div>
+
+      <div class="form-group">
+        <label for="condition">조건</label>
+        <input type="text" id="condition" name="condition" placeholder="예: 사전미팅 1회" />
+        <label><input type="checkbox" name="public_condition" /> 공개</label>
+      </div>
+
+      <div class="form-group">
+        <label for="category">판매 직군</label>
+        <input type="text" id="category" name="category" placeholder="예: 뷰티, 푸드, 패션 등" />
+        <label><input type="checkbox" name="public_category" /> 공개</label>
+      </div>
+
+      <button type="submit" class="submit-btn">저장하기</button>
+    </form>
+  </main>
+
+  <nav class="bottom-tab" id="bottom-tab-container"></nav>
   <script src="/js/header.js"></script>
   <script src="/js/top-tab.js"></script>
   <script src="/js/bottom-tab.js"></script>
-  <script src="/js/portfolio.js"></script>
+  <script src="/js/portfolio.js?v=1.0"></script>
 </body>
 </html>
