@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const portfolioContent = document.getElementById('portfolioContent');
   const token = localStorage.getItem('liveeToken');
 
+  // 🔐 로그인 체크
   if (!token) {
     portfolioContent.innerHTML = `
       <p>로그인이 필요합니다.</p>
@@ -11,19 +12,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
+    console.log('🔄 포트폴리오 요청 시작...');
+
     const res = await fetch('https://livee-server-dev.onrender.com/portfolio/mine', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
+    console.log('📦 응답 상태코드:', res.status);
+
     if (!res.ok) {
       const errText = await res.text();
+      console.error('❌ 서버 에러 응답 내용:', errText);
       throw new Error(errText || '불러오기 실패');
     }
 
     const data = await res.json();
+    console.log('✅ 포트폴리오 데이터:', data);
 
+    // 🔎 데이터 없음
     if (!data || !data._id) {
       portfolioContent.innerHTML = `
         <p>작성된 포트폴리오가 없습니다.</p>
@@ -33,16 +41,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // ✅ 포트폴리오 표시
+    const safePhoto = data.photo && data.photo !== '' ? data.photo : '/images/default-profile.png';
     portfolioContent.innerHTML = `
       <div class="portfolio-card">
-        <img src="${data.photo || '/default-profile.png'}" alt="프로필 이미지" />
+        <img src="${safePhoto}" alt="프로필 이미지" />
         <h3>${data.title}</h3>
         <p><strong>이름:</strong> ${data.name}</p>
         <p><strong>경력:</strong> ${data.career}</p>
         <p><strong>활동:</strong> ${data.activity}</p>
         <p><strong>특성:</strong> ${data.character}</p>
         <p><strong>희망 출연료:</strong> ${data.fee}</p>
-        <p><strong>출연조건:</strong> ${data.condition}</p>
+        <p><strong>출연 조건:</strong> ${data.condition}</p>
         <p><strong>카테고리:</strong> ${data.category}</p>
         <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
       </div>
