@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('portfolioForm');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 🔒 새로고침 방지
 
     const formData = new FormData(form);
     const portfolioData = {};
 
+    // ✅ 체크박스와 인풋 데이터 수집
     for (const [key, value] of formData.entries()) {
       if (key.startsWith('public_')) {
         portfolioData[key] = true;
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // ✅ 이미지 업로드 처리 (Cloudinary)
     const photoFile = formData.get('photo');
     if (photoFile && photoFile.size > 0) {
       const cloudinaryData = new FormData();
@@ -33,13 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error('Cloudinary 업로드 실패');
         }
 
-        portfolioData.photoUrl = cloudResult.secure_url; // ✅ 수정된 필드명
+        // ✅ 여기서 수정: photo → photoUrl 로 저장
+        portfolioData.photoUrl = cloudResult.secure_url;
       } catch (err) {
         alert('이미지 업로드 실패 😢\n' + err.message);
         return;
       }
     }
 
+    // ✅ 로그인 토큰 확인
     const token = localStorage.getItem('liveeToken');
     if (!token) {
       alert('로그인이 필요합니다.');
@@ -47,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // ✅ 서버 전송
     try {
       const res = await fetch('https://livee-server-dev.onrender.com/portfolio', {
         method: 'POST',
