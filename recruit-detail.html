@@ -3,52 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>공고 상세</title>
+  <title>공고 상세 | Livee</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/main.css?v=1.01" />
   <link rel="stylesheet" href="/detail.css?v=1.01" />
 </head>
 <body>
 
-  <!-- 헤더 -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- 썸네일 -->
+  <!-- ✅ 공통 상단탭 -->
+  <div id="top-tab-container"></div>
+
+  <!-- ✅ 썸네일 -->
   <img src="https://via.placeholder.com/800x300/bae7ff/000?text=라이브+공고+썸네일" alt="공고 썸네일" class="detail-thumbnail" />
 
-  <!-- 상세내용 -->
+  <!-- ✅ 상세내용 -->
   <div class="detail-wrapper">
     <h2 class="detail-title">패션 브랜드 라이브 진행자 모집</h2>
     <p class="detail-brand">브랜드명 A</p>
     <p class="detail-description">
-      📅 방송 일정: 2025년 8월 10일 오후 3시  
-      📍 플랫폼: 네이버 쇼핑라이브  
-      
-      👗 다양한 여름 신상을 소개할 예정입니다.  
-      💁‍♀️ 스타일링 가능한 쇼호스트를 찾고 있습니다!  
+      📅 방송 일정: 2025년 8월 10일 오후 3시<br />
+      📍 플랫폼: 네이버 쇼핑라이브<br /><br />
+      👗 다양한 여름 신상을 소개할 예정입니다.<br />
+      💁‍♀️ 스타일링 가능한 쇼호스트를 찾고 있습니다!<br />
       🔗 실시간 소통과 판매 경험이 있다면 더욱 좋아요!
     </p>
   </div>
 
-  <!-- 지원 버튼 -->
+  <!-- ✅ 지원 버튼 -->
   <div class="detail-apply">
     <button>지원하기</button>
   </div>
 
-  <!-- 하단 탭 -->
-  <nav class="bottom-tab">
-    <a href="index.html"><i class="ri-home-line"></i><span>홈</span></a>
-    <a href="recruitlist.html" class="active"><i class="ri-live-line"></i><span>라이브</span></a>
-    <a href="#"><i class="ri-briefcase-line"></i><span>구직</span></a>
-    <a href="#"><i class="ri-user-3-line"></i><span>마이</span></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
+
+  <!-- ✅ 공통 스크립트 -->
+  <script defer src="/js/header.js"></script>
+  <script defer src="/js/top-tab.js"></script>
+  <script defer src="/js/bottom-tab.js"></script>
 
 </body>
 </html>
