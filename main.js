@@ -29,7 +29,7 @@ dots.forEach((dot, idx) => {
 });
 
 // ✅ 로그인 상태에 따라 마이탭 변경
-const isLoggedIn = !!localStorage.getItem("loggedInUser");
+const isLoggedIn = !!localStorage.getItem("liveeToken");  // 기존 loginUser 아님!
 const myTab = document.getElementById("myTab");
 if (myTab) {
   myTab.setAttribute("href", isLoggedIn ? "/mypage.html" : "/login.html");
