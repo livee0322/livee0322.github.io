@@ -46,12 +46,12 @@
   <!-- ✅ 공고 렌더링 스크립트 -->
   <script>
     function handleMyPage() {
-      const user = localStorage.getItem("loginUser");
+      const user = localStorage.getItem("loggedInUser"); // 수정됨
       location.href = user ? "/mypage.html" : "/login.html";
     }
 
     function handleFabClick() {
-      const user = localStorage.getItem("loginUser");
+      const user = localStorage.getItem("loggedInUser"); // 수정됨
       if (!user) {
         alert("로그인이 필요합니다.");
         location.href = "/login.html";
