@@ -53,8 +53,10 @@ body {
 }
 
 /* ✅ 상단 탭 */
+/* ✅ 상단 탭 (2줄로 보이게 테스트용 변경) */
 #top-tab-container {
   display: flex;
+  flex-wrap: wrap; /* ← 여기 추가 */
   overflow-x: auto;
   background-color: #fff;
   white-space: nowrap;
