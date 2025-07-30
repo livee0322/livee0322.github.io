@@ -10,30 +10,14 @@
 </head>
 <body>
 
-  <!-- 베타 안내 -->
+  <!-- ✅ 베타 안내 -->
   <div class="beta-banner">현재 클로즈 베타 테스트 중입니다. 피드백을 환영합니다!</div>
 
-  <!-- ✅ 헤더 -->
-  <header class="header">
-  <a href="/index.html" class="logo">Livee</a>
-  <div class="right-icons">
-    <i class="ri-logout-box-r-line" id="logoutIcon" style="display: none;" title="로그아웃"></i>
-    <i class="ri-search-line"></i>
-    <i class="ri-notification-3-line"></i>
-    <i class="ri-user-line"></i>
-  </div>
-</header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- ✅ 상단 탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-    <a href="/news.html">뉴스</a>
-  </nav>
+  <!-- ✅ 공통 상단 탭 -->
+  <div id="top-tab-container"></div>
 
   <!-- ✅ 메인 슬라이드 -->
   <section class="main-banner-slide">
@@ -73,7 +57,6 @@
         <a href="/recruitlist.html" class="more">더보기</a>
       </div>
       <div class="card-grid">
-        <!-- 카드 예시 -->
         <div class="live-card">
           <img src="https://via.placeholder.com/200x100/ffccc7/000?text=공고1" alt="공고1">
           <div class="info">
@@ -131,18 +114,15 @@
     </section>
   </main>
 
-  <!-- ✅ 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html" class="active"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html" id="myTab"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
   <!-- ✅ JS -->
   <script defer src="/main.js?v=1.05"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
   <script>
     new Swiper(".banner-swiper", {
       loop: true,
