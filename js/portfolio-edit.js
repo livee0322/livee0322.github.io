@@ -2,70 +2,73 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('portfolioForm');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // 🔒 새로고침 방지
 
     const formData = new FormData(form);
+    const portfolioData = {};
 
-    const fileInput = document.getElementById('photo');
-    const file = fileInput.files[0];
+    // ✅ 체크박스와 인풋 데이터 수집
+    for (const [key, value] of formData.entries()) {
+      if (key.startsWith('public_')) {
+        portfolioData[key] = true;
+      } else {
+        portfolioData[key] = value;
+      }
+    }
 
-    let imageUrl = '';
-    if (file) {
-      const cloudData = new FormData();
-      cloudData.append('file', file);
-      cloudData.append('upload_preset', 'livee_unsigned');
-      cloudData.append('folder', 'livee');
+    // ✅ 이미지 업로드 처리 (Cloudinary)
+    const photoFile = formData.get('photo');
+    if (photoFile && photoFile.size > 0) {
+      const cloudinaryData = new FormData();
+      cloudinaryData.append('file', photoFile);
+      cloudinaryData.append('upload_preset', 'livee_unsigned');
+      cloudinaryData.append('folder', 'livee');
 
       try {
         const cloudRes = await fetch('https://api.cloudinary.com/v1_1/dis1og9uq/image/upload', {
           method: 'POST',
-          body: cloudData,
+          body: cloudinaryData,
         });
-        const cloudJson = await cloudRes.json();
-        imageUrl = cloudJson.secure_url;
+        const cloudResult = await cloudRes.json();
+
+        if (!cloudResult.secure_url) {
+          throw new Error('Cloudinary 업로드 실패');
+        }
+
+        portfolioData.photo = cloudResult.secure_url;
       } catch (err) {
-        console.error('❌ Cloudinary 업로드 실패:', err);
-        alert('이미지 업로드 중 오류가 발생했어요.');
+        alert('이미지 업로드 실패 😢\n' + err.message);
         return;
       }
     }
 
-    const data = {
-      title: form.title.value,
-      name: form.name.value,
-      career: form.career.value,
-      activity: form.activity.value,
-      character: form.character.value,
-      fee: form.fee.value,
-      condition: form.condition.value,
-      category: form.category.value,
-      photoUrl: imageUrl, // ✅ 필드명 수정
-      public_title: form.public_title.checked,
-      public_photo: form.public_photo.checked,
-      public_name: form.public_name.checked,
-      public_career: form.public_career.checked,
-      public_activity: form.public_activity.checked,
-      public_character: form.public_character.checked,
-      public_fee: form.public_fee.checked,
-      public_condition: form.public_condition.checked,
-      public_category: form.public_category.checked,
-    };
+    // ✅ 로그인 토큰 확인
+    const token = localStorage.getItem('liveeToken');
+    if (!token) {
+      alert('로그인이 필요합니다.');
+      location.href = '/login.html';
+      return;
+    }
 
+    // ✅ 서버 전송
     try {
-      const response = await fetch('https://livee-server.onrender.com/portfolio', {
+      const res = await fetch('https://livee-server-dev.onrender.com/portfolio', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(portfolioData),
       });
 
-      if (!response.ok) throw new Error('서버 오류 발생');
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText || '서버 오류');
+      }
 
-      alert('포트폴리오가 성공적으로 저장되었습니다!');
-      window.location.href = '/portfolio.html';
+      alert('포트폴리오가 등록되었습니다!');
+      location.href = '/portfolio.html';
     } catch (err) {
-      console.error('❌ 서버 요청 실패:', err);
       alert('서버 오류: ' + err.message);
     }
   });
