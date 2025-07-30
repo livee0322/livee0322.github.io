@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -9,29 +9,13 @@
 </head>
 <body>
 
-  <!-- 상단 헤더 -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <span id="userEmail" style="font-size: 0.9rem; margin-right: 10px;"></span>
-      <button id="logoutBtn" style="display: none; background: none; border: none; color: #6A4DF4; cursor: pointer;">로그아웃</button>
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-    </div>
-  </header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- 상단 탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-    <a href="/news.html">뉴스</a>
-  </nav>
+  <!-- ✅ 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
-  <!-- 마이페이지 본문 -->
+  <!-- ✅ 마이페이지 본문 -->
   <main style="padding: 20px 16px 100px; background: #f9f9fb;">
     <h2 style="font-size: 1.2rem; margin-bottom: 20px;">마이페이지</h2>
 
@@ -71,16 +55,10 @@
     </a>
   </main>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/mypage.html" class="active"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
-  <!-- ✅ 스타일 -->
+  <!-- ✅ 스타일 유지 -->
   <style>
     .mypage-item {
       background: #fff;
@@ -124,8 +102,8 @@
 
         if (res.ok) {
           const data = await res.json();
-          userEmail.textContent = `${data.email}님`;
-          logoutBtn.style.display = "inline";
+          if (userEmail) userEmail.textContent = `${data.email}님`;
+          if (logoutBtn) logoutBtn.style.display = "inline";
         } else {
           localStorage.removeItem("liveeToken");
           alert("로그인 정보가 만료되었습니다.");
@@ -135,13 +113,19 @@
         alert("서버 오류로 로그인 확인 실패");
       }
 
-      logoutBtn.onclick = () => {
-        localStorage.removeItem("liveeToken");
-        alert("로그아웃 되었습니다.");
-        window.location.href = "/login.html";
-      };
+      if (logoutBtn) {
+        logoutBtn.onclick = () => {
+          localStorage.removeItem("liveeToken");
+          alert("로그아웃 되었습니다.");
+          window.location.href = "/login.html";
+        };
+      }
     };
   </script>
 
+  <!-- ✅ 공통 스크립트 -->
+  <script src="/js/header.js"></script>
+  <script src="/js/top-tab.js"></script>
+  <script src="/js/bottom-tab.js"></script>
 </body>
 </html>
