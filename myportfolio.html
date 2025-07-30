@@ -4,27 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>내 포트폴리오</title>
-  <link rel="stylesheet" href="/main.css" />
-  <link rel="stylesheet" href="/portfolio-my.css" />
-  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/main.css?v=1.06" />
+  <link rel="stylesheet" href="/portfolio-preview.css" />
 </head>
 <body>
+  <!-- 공통 헤더 -->
   <div id="header-container"></div>
-  <div id="top-tab-container"></div>
+  <nav class="top-tabs" id="top-tab-container"></nav>
 
-  <main class="portfolio-my-container">
+  <main class="portfolio-preview">
     <h2>내 포트폴리오</h2>
     <div id="portfolioContent">
-      <p class="no-data">작성된 포트폴리오가 없습니다.</p>
-      <button onclick="location.href='/portfolio-edit.html'" class="btn-add">+ 등록하기</button>
+      <p>작성된 포트폴리오가 없습니다.</p>
+      <button onclick="location.href='/portfolio-edit.html'">+ 포트폴리오 등록</button>
     </div>
   </main>
 
-  <div id="bottom-tab-container"></div>
+  <!-- 공통 하단탭 -->
+  <nav class="bottom-tab" id="bottom-tab-container"></nav>
 
   <script src="/js/header.js"></script>
   <script src="/js/top-tab.js"></script>
   <script src="/js/bottom-tab.js"></script>
-  <script src="/portfolio-my.js"></script>
+  <script src="/js/myportfolio.js"></script>
 </body>
 </html>
