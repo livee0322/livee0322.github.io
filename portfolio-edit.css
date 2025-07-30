@@ -19,57 +19,48 @@ body {
   font-weight: 600;
 }
 
-/* 📌 폼 그룹 */
-.form-group {
-  margin-bottom: 18px;
+/* 가로정렬 가능한 row 클래스 */
+.form-group.row {
   display: flex;
-  flex-direction: column;
-}
-
-/* 📌 라벨 + 체크박스 한 줄 정렬 */
-.label-row {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
 }
 
-.label-row label {
+.form-group.row label {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #333;
+  min-width: 80px;
+  flex: 0 0 auto;
 }
 
-/* 📌 공개 체크박스 스타일 */
-.label-row .public-checkbox {
-  font-size: 0.85rem;
-  color: #666;
-  display: flex;
-  align-items: center;
-}
-
-.label-row .public-checkbox input[type="checkbox"] {
-  margin-left: 4px;
-}
-
-/* 📌 input, textarea 스타일 */
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group input[type="file"],
-.form-group textarea {
+.form-group.row input[type="text"],
+.form-group.row input[type="number"],
+.form-group.row input[type="file"],
+.form-group.row textarea {
+  flex: 1;
   padding: 10px 12px;
   font-size: 0.95rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
+  min-width: 0;
 }
 
-.form-group textarea {
+.form-group.row textarea {
   resize: none;
   height: 72px;
 }
 
-/* ✅ 버튼 */
+.checkbox-inline {
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 button.submit-btn {
   width: 100%;
   padding: 14px;
