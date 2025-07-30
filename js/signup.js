@@ -5,7 +5,6 @@ async function handleSignup(e) {
   const password = document.getElementById("password").value;
   const confirm = document.getElementById("confirm").value;
 
-  // 🔒 비밀번호 확인
   if (password !== confirm) {
     alert("❌ 비밀번호가 일치하지 않습니다.");
     return;
@@ -23,12 +22,12 @@ async function handleSignup(e) {
     const result = await response.json();
 
     if (response.ok) {
-      alert("🎉 회원가입이 완료되었습니다!");
-      window.location.href = "/login.html";
+      alert("🎉 회원가입 성공! 홈으로 이동합니다.");
+      window.location.href = "/index.html";
     } else {
-      alert("⚠️ " + (result.message || "회원가입에 실패했습니다."));
+      alert("⚠️ " + (result.message || "회원가입 실패"));
     }
   } catch (error) {
-    alert("🚨 서버 연결 오류: " + error.message);
+    alert("🚨 서버 오류: " + error.message);
   }
 }
