@@ -38,26 +38,21 @@
   <!-- ✅ 공통 하단탭 -->
   <div id="bottom-tab-container"></div>
 
-  <!-- ✅ 공통 JS -->
+  <!-- ✅ 공통 모듈 JS -->
   <script defer src="/js/header.js"></script>
   <script defer src="/js/top-tab.js"></script>
   <script defer src="/js/bottom-tab.js"></script>
 
-  <!-- ✅ 공고 렌더링 스크립트 -->
+  <!-- ✅ 공고 렌더링 및 FAB 제어 -->
   <script>
-    function handleMyPage() {
-      const user = localStorage.getItem("loggedInUser"); // 수정됨
-      location.href = user ? "/mypage.html" : "/login.html";
-    }
-
     function handleFabClick() {
-      const user = localStorage.getItem("loggedInUser"); // 수정됨
-      if (!user) {
+      const token = localStorage.getItem("liveeToken");
+      if (!token) {
         alert("로그인이 필요합니다.");
         location.href = "/login.html";
-        return;
+      } else {
+        location.href = "/recruitform.html";
       }
-      location.href = "/recruitform.html";
     }
 
     function renderPosts() {
