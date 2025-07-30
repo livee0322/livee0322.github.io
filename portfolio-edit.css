@@ -1,89 +1,77 @@
-/* 공통 */
+/* Remixicon 적용을 위해 꼭 필요한 CDN */
+@import url("https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css");
+
 body {
-  margin: 0;
   font-family: 'Pretendard', sans-serif;
-  background-color: #fff;
+  background-color: #f9f9fb;
+  margin: 0;
+  padding: 0;
   color: #222;
 }
 
-main {
-  padding: 20px 16px 100px;
-  background: #f9f9fb;
-}
-
-h2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 24px;
-}
-
-/* 폼 */
 .portfolio-form {
+  padding: 24px 16px 120px;
+}
+
+.portfolio-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
-.portfolio-form label {
-  font-weight: 600;
-  margin-bottom: 4px;
+.form-group label {
   font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-.portfolio-form input[type="text"],
-.portfolio-form input[type="number"],
-.portfolio-form input[type="file"],
-.portfolio-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+  padding: 10px 12px;
   font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   background-color: #fff;
 }
 
-.portfolio-form textarea {
-  resize: vertical;
-  min-height: 80px;
+.form-group textarea {
+  resize: none;
+  height: 72px;
 }
 
-.portfolio-form .form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.form-group input[type="checkbox"] {
+  margin-right: 6px;
 }
 
-/* 공개 체크박스 */
-.portfolio-form .visibility {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  color: #666;
+.form-group label input[type="checkbox"] {
+  display: inline-block;
+  margin-top: 8px;
 }
 
-.portfolio-form .visibility input[type="checkbox"] {
-  transform: scale(1.1);
-}
-
-/* 저장 버튼 */
-.save-btn {
-  margin-top: 24px;
-  padding: 12px;
-  background-color: #6c63ff;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
+button.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #6A4FE0;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: background 0.3s ease;
 }
 
-.save-btn:hover {
-  background-color: #554edc;
-}
-
-/* 하단탭 공간 확보 */
-.bottom-space {
-  height: 60px;
+button.submit-btn:hover {
+  background-color: #5639cb;
 }
