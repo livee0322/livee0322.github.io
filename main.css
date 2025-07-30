@@ -1,11 +1,16 @@
-/* main.css v1.06 - 안정버전 (공통 모듈 연동 대응) */
+/* main.css v1.07 - 공통 모듈 대응 안정버전 */
 
 /* ✅ 기본 설정 */
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
   background-color: #f9f9fb;
-  padding-bottom: 80px; /* 하단탭 안 가리도록 확보 */
+  padding-bottom: 80px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* ✅ 베타 띠배너 */
@@ -17,8 +22,8 @@ body {
   padding: 6px 0;
 }
 
-/* ✅ 헤더 */
-#header-container {
+/* ✅ 공통 헤더 */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,17 +57,21 @@ body {
   color: #333;
 }
 
-/* ✅ 상단 탭 */
-/* ✅ 상단 탭 (2줄로 보이게 테스트용 변경) */
-#top-tab-container {
+/* ✅ 상단탭 */
+.top-tabs {
   display: flex;
-  flex-wrap: wrap; /* ← 여기 추가 */
+  flex-wrap: wrap;
   overflow-x: auto;
   background-color: #fff;
   white-space: nowrap;
   border-bottom: 1px solid #eee;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-#top-tab-container a {
+.top-tabs::-webkit-scrollbar {
+  display: none;
+}
+.top-tabs a {
   flex: 0 0 auto;
   text-align: center;
   padding: 12px;
@@ -70,14 +79,14 @@ body {
   color: #666;
   text-decoration: none;
 }
-#top-tab-container a.active {
+.top-tabs a.active {
   color: #6755f5;
   font-weight: 600;
   border-bottom: 2px solid #6755f5;
 }
 
 /* ✅ 하단탭 */
-#bottom-tab-container {
+.bottom-tab {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -89,31 +98,21 @@ body {
   border-top: 1px solid #ddd;
   z-index: 999;
 }
-#bottom-tab-container a {
+.bottom-tab a {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.75rem;
   color: #999;
   text-decoration: none;
+  padding: 4px 0;
 }
-#bottom-tab-container a.active {
+.bottom-tab a.active {
   color: #6755f5;
 }
-#bottom-tab-container i {
-  font-size: 1.2rem;
+.bottom-tab i {
+  font-size: 1.3rem;
   margin-bottom: 4px;
-}
-
-/* ✅ 스크롤바 제거 */
-body, #top-tab-container, #bottom-tab-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-body::-webkit-scrollbar,
-#top-tab-container::-webkit-scrollbar,
-#bottom-tab-container::-webkit-scrollbar {
-  display: none;
 }
 
 /* ✅ 메인 슬라이드 */
@@ -133,6 +132,7 @@ body::-webkit-scrollbar,
   font-weight: bold;
   color: #fff;
   min-height: 220px;
+  height: 220px;
   text-align: left;
   padding: 1.5rem 1.2rem;
   box-sizing: border-box;
@@ -181,12 +181,13 @@ body::-webkit-scrollbar,
   text-decoration: none;
 }
 
-/* ✅ 카드 스타일 (공고/호스트/후기 등) */
+/* ✅ 카드 스타일 */
 .card-grid, .host-list {
   display: flex;
   overflow-x: auto;
   gap: 12px;
   padding-bottom: 10px;
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .card-grid::-webkit-scrollbar,
@@ -269,4 +270,14 @@ body::-webkit-scrollbar,
 .review-info .author {
   font-size: 0.75rem;
   color: #888;
+}
+
+/* ✅ 모바일 대응 */
+@media (max-width: 360px) {
+  .logo {
+    font-size: 1rem;
+  }
+  #welcomeMsg {
+    display: none;
+  }
 }
