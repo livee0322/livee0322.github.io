@@ -1,70 +1,89 @@
-/* 포트폴리오 작성 전용 스타일 */
-.portfolio-form {
+/* 공통 */
+body {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+main {
   padding: 20px 16px 100px;
   background: #f9f9fb;
 }
 
-.portfolio-form h2 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+/* 폼 */
+.portfolio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .portfolio-form label {
   font-weight: 600;
-  margin: 10px 0 5px;
-  display: block;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
 }
 
-.portfolio-form input,
-.portfolio-form textarea,
-.portfolio-form select {
-  width: 100%;
+.portfolio-form input[type="text"],
+.portfolio-form input[type="number"],
+.portfolio-form input[type="file"],
+.portfolio-form textarea {
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
 }
 
 .portfolio-form textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 80px;
 }
 
-.portfolio-form .checkbox-group {
+.portfolio-form .form-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.portfolio-form .checkbox-group label {
-  background: #eee;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.portfolio-form .checkbox-group input {
-  display: none;
-}
-
-.portfolio-form .toggle-group {
+/* 공개 체크박스 */
+.portfolio-form .visibility {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.portfolio-form .btn-submit {
-  width: 100%;
+.portfolio-form .visibility input[type="checkbox"] {
+  transform: scale(1.1);
+}
+
+/* 저장 버튼 */
+.save-btn {
+  margin-top: 24px;
   padding: 12px;
-  background: #6c5ce7;
+  background-color: #6c63ff;
   color: white;
+  font-weight: bold;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #554edc;
+}
+
+/* 하단탭 공간 확보 */
+.bottom-space {
+  height: 60px;
 }
