@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>회원가입 - Livee</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/main.css" />
-  <link rel="stylesheet" href="/signup.css" />
+  <link rel="stylesheet" href="/main.css?v=1.04" />
+  <link rel="stylesheet" href="/signup.css?v=1.0" />
 </head>
 <body style="background:#fff">
 
+  <!-- ✅ 회원가입 폼 -->
   <main class="signup-container">
     <h1 class="signup-logo-text">회원가입</h1>
 
@@ -38,7 +39,6 @@
         <button type="button" id="requestAuth">인증요청</button>
       </div>
 
-      <!-- 인증번호 입력 영역 -->
       <div id="authWrap" style="display:none;">
         <input type="text" placeholder="인증번호 입력 (3분 이내)" />
         <div id="authTimer">남은시간 03:00</div>
@@ -53,16 +53,11 @@
     </form>
   </main>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
-  <!-- JS -->
+  <!-- ✅ JS -->
   <script src="/signup.js"></script>
+  <script defer src="/js/bottom-tab.js"></script>
 </body>
 </html>
