@@ -10,31 +10,15 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">Livee</div>
-    <div class="right-icons">
-      <i class="ri-search-line"></i>
-      <i class="ri-notification-3-line"></i>
-      <i class="ri-user-line"></i>
-    </div>
-  </header>
+  <!-- ✅ 공통 헤더 -->
+  <div id="header-container"></div>
 
-  <!-- 상단탭 -->
-  <nav class="top-tabs">
-    <a href="/index.html">홈</a>
-    <a href="/clip.html">숏클립</a>
-    <a href="/event.html">이벤트</a>
-    <a href="/live.html">라이브</a>
-    <a href="/influencer.html">인플루언서</a>
-    <a href="/agency.html">대행서비스</a>
-    <a href="/news.html" class="active">뉴스</a>
-  </nav>
+  <!-- ✅ 공통 상단탭 -->
+  <div id="top-tab-container"></div>
 
-  <!-- 콘텐츠 -->
+  <!-- ✅ 콘텐츠 -->
   <main class="news-wrapper">
     <section class="news-list">
-
       <!-- 기사 카드 -->
       <div class="news-card">
         <img src="https://via.placeholder.com/300x160/ffe0e0/000?text=라이브+할인" alt="뉴스썸네일">
@@ -47,7 +31,6 @@
           <a href="#" class="more-link">자세히 보기</a>
         </div>
       </div>
-
     </section>
 
     <!-- 홍보요청 버튼 -->
@@ -56,15 +39,12 @@
     </div>
   </main>
 
-  <!-- 하단탭 -->
-  <nav class="bottom-tab">
-    <a href="/index.html"><i class="ri-home-line"></i><div>홈</div></a>
-    <a href="/recruitlist.html"><i class="ri-live-line"></i><div>라이브</div></a>
-    <a href="/portfolio.html"><i class="ri-briefcase-line"></i><div>쇼호스트</div></a>
-    <a href="/liveschedule.html"><i class="ri-calendar-line"></i><div>일정</div></a>
-    <a href="/login.html"><i class="ri-user-3-line"></i><div>마이</div></a>
-  </nav>
+  <!-- ✅ 공통 하단탭 -->
+  <div id="bottom-tab-container"></div>
 
-  <script defer src="/main.js?v=1.01"></script>
+  <!-- ✅ 공통 스크립트 -->
+  <script defer src="/js/header.js"></script>
+  <script defer src="/js/top-tab.js"></script>
+  <script defer src="/js/bottom-tab.js"></script>
 </body>
 </html>
