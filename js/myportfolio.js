@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const portfolioContent = document.getElementById('portfolioContent');
   const token = localStorage.getItem('liveeToken');
 
-  // 🔐 로그인 체크
   if (!token) {
     portfolioContent.innerHTML = `
       <p>로그인이 필요합니다.</p>
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await res.json();
     console.log('✅ 포트폴리오 데이터:', data);
 
-    // 🔎 데이터 없음
     if (!data || !data._id) {
       portfolioContent.innerHTML = `
         <p>작성된 포트폴리오가 없습니다.</p>
@@ -40,8 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    // ✅ 포트폴리오 표시
-    const safePhoto = data.photo && data.photo !== '' ? data.photo : '/images/default-profile.png';
+    const safePhoto = data.photoUrl && data.photoUrl !== '' ? data.photoUrl : '/images/default-profile.png'; // ✅ 수정된 필드명
     portfolioContent.innerHTML = `
       <div class="portfolio-card">
         <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
