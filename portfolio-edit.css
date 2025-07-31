@@ -19,48 +19,81 @@ body {
   font-weight: 600;
 }
 
-/* 가로정렬 가능한 row 클래스 */
+/* ✅ form-group 기본 스타일 */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* ✅ row 구조 */
 .form-group.row {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 18px;
 }
 
-.form-group.row label {
+/* ✅ 라벨 스타일 */
+.form-group label {
   font-size: 0.95rem;
   font-weight: 500;
-  min-width: 80px;
-  flex: 0 0 auto;
+  display: block;
+  margin-bottom: 6px;
 }
 
-.form-group.row input[type="text"],
-.form-group.row input[type="number"],
-.form-group.row input[type="file"],
-.form-group.row textarea {
-  flex: 1;
+/* ✅ row 라벨은 고정 폭 */
+.form-group.row label {
+  min-width: 80px;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+/* ✅ input, textarea 공통 */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
   padding: 10px 12px;
   font-size: 0.95rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
-  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.form-group.row textarea {
+.form-group textarea {
   resize: none;
   height: 72px;
 }
 
+/* ✅ row-input: input + checkbox 정렬 */
+.row-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+/* ✅ 체크박스 라벨 */
 .checkbox-inline {
   font-size: 0.85rem;
   color: #555;
   display: flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
+/* ✅ 미리보기 이미지 썸네일 (선택적 사용) */
+#previewImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* ✅ 제출 버튼 */
 button.submit-btn {
   width: 100%;
   padding: 14px;
@@ -78,4 +111,27 @@ button.submit-btn {
 
 button.submit-btn:hover {
   background-color: #5639cb;
+}
+
+/* ✅ 반응형 대응 */
+@media (max-width: 480px) {
+  .form-group.row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group.row label {
+    min-width: auto;
+  }
+
+  .row-input {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row-input input,
+  .row-input textarea {
+    width: 100%;
+  }
 }
