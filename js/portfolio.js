@@ -24,13 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       div.className = 'portfolio-card';
       div.innerHTML = `
         <img src="${item.photo || '/default-profile.png'}" alt="프로필 이미지" />
-        <div class="portfolio-card-content">
-          <h3>${item.title}</h3>
-          <p><strong>이름:</strong> ${item.public_name ? item.name : '비공개'}</p>
-          <p><strong>경력:</strong> ${item.public_career ? item.career : '비공개'}</p>
-          <p><strong>활동:</strong> ${item.activity}</p>
-          <p><strong>카테고리:</strong> ${item.category}</p>
-        </div>
+        <h3>${item.title}</h3>
+        <p><strong>이름:</strong> ${item.public_name ? item.name : '비공개'}</p>
+        <p><strong>경력:</strong> ${item.public_career ? item.career : '비공개'}</p>
+        <p><strong>활동:</strong> ${item.activity}</p>
+        <p><strong>카테고리:</strong> ${item.category}</p>
       `;
       portfolioList.appendChild(div);
     });
