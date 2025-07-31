@@ -1,44 +1,39 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const portfolioContent = document.getElementById('portfolioContent');
+  const portfolioList = document.getElementById('portfolioContent');
+  portfolioList.innerHTML = '<p>불러오는 중입니다...</p>';
 
   try {
-    console.log('📡 전체 포트폴리오 불러오는 중...');
-
-    const res = await fetch('https://livee-server-dev.onrender.com/portfolio/list');
+    const res = await fetch('https://livee-server-dev.onrender.com/portfolio');
 
     if (!res.ok) {
       const errText = await res.text();
-      throw new Error(errText || '포트폴리오 목록 불러오기 실패');
+      throw new Error(errText || '포트폴리오 불러오기 실패');
     }
 
-    const portfolios = await res.json();
+    const data = await res.json();
 
-    if (!portfolios || portfolios.length === 0) {
-      portfolioContent.innerHTML = `<p>등록된 포트폴리오가 없습니다.</p>`;
+    if (!data || data.length === 0) {
+      portfolioList.innerHTML = '<p>등록된 포트폴리오가 없습니다.</p>';
       return;
     }
 
-    // 카드 형태로 표시
-    portfolioContent.innerHTML = portfolios.map(data => {
-      const safePhoto = data.photoUrl && data.photoUrl !== '' ? data.photoUrl : '/images/default-profile.png';
+    portfolioList.innerHTML = ''; // 초기 메시지 제거
 
-      return `
-        <div class="portfolio-card">
-          <div class="portfolio-thumbnail">
-            <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
-          </div>
-          <div class="portfolio-info">
-            <h3>${data.title || '(제목 없음)'}</h3>
-            <p><strong>이름:</strong> ${data.name || '-'}</p>
-            <p><strong>경력:</strong> ${data.career || '-'}</p>
-            <p><strong>카테고리:</strong> ${data.category || '-'}</p>
-          </div>
-        </div>
+    data.forEach((item) => {
+      const div = document.createElement('div');
+      div.className = 'portfolio-card';
+      div.innerHTML = `
+        <img src="${item.photo || '/default-profile.png'}" alt="프로필 이미지" />
+        <h3>${item.title}</h3>
+        <p><strong>이름:</strong> ${item.public_name ? item.name : '비공개'}</p>
+        <p><strong>경력:</strong> ${item.public_career ? item.career : '비공개'}</p>
+        <p><strong>활동:</strong> ${item.activity}</p>
+        <p><strong>카테고리:</strong> ${item.category}</p>
       `;
-    }).join('');
-
+      portfolioList.appendChild(div);
+    });
   } catch (err) {
-    console.error('❌ 포트폴리오 로딩 실패:', err);
-    portfolioContent.innerHTML = `<p>포트폴리오를 불러오는 중 오류가 발생했어요. 😢</p>`;
+    console.error('❌ 전체 포트폴리오 불러오기 오류:', err);
+    portfolioList.innerHTML = '<p>포트폴리오를 불러오는 중 오류가 발생했어요. 😢</p>';
   }
 });
