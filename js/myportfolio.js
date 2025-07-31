@@ -38,19 +38,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const safePhoto = data.photoUrl && data.photoUrl !== '' ? data.photoUrl : '/images/default-profile.png'; // ✅ 수정된 필드명
+    const safePhoto = data.photoUrl && data.photoUrl !== '' ? data.photoUrl : '/images/default-profile.png';
+
     portfolioContent.innerHTML = `
-      <div class="portfolio-card">
-        <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
-        <h3>${data.title}</h3>
-        <p><strong>이름:</strong> ${data.name}</p>
-        <p><strong>경력:</strong> ${data.career}</p>
-        <p><strong>활동:</strong> ${data.activity}</p>
-        <p><strong>특성:</strong> ${data.character}</p>
-        <p><strong>희망 출연료:</strong> ${data.fee}</p>
-        <p><strong>출연 조건:</strong> ${data.condition}</p>
-        <p><strong>카테고리:</strong> ${data.category}</p>
-        <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
+      <div class="portfolio-wrapper">
+        <div class="portfolio-card">
+          <div class="profile-info">
+            <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
+            <div class="profile-texts">
+              <div class="name">${data.name || '이름 없음'}</div>
+              <div class="desc">${data.career || ''}</div>
+            </div>
+          </div>
+
+          <p><strong>제목:</strong> ${data.title || '-'}</p>
+          <p><strong>활동:</strong> ${data.activity || '-'}</p>
+          <p><strong>특성:</strong> ${data.character || '-'}</p>
+          <p><strong>희망 출연료:</strong> ${data.fee ? `${data.fee.toLocaleString()}원` : '-'}</p>
+          <p><strong>출연 조건:</strong> ${data.condition || '-'}</p>
+          <p><strong>카테고리:</strong> ${data.category || '-'}</p>
+
+          <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
+        </div>
       </div>
     `;
   } catch (err) {
