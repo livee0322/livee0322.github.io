@@ -22,14 +22,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     data.forEach((item) => {
       const div = document.createElement('div');
       div.className = 'portfolio-card';
+
+      // 안전 fallback 값 설정
+      const photo = item.photo || '/default-profile.png';
+      const name = item.public_name ? item.name : '비공개';
+      const career = item.public_career ? item.career : '비공개';
+      const activity = item.activity || '-';
+      const category = item.category || '-';
+
       div.innerHTML = `
-        <img src="${item.photo || '/default-profile.png'}" alt="프로필 이미지" />
-        <h3>${item.title}</h3>
-        <p><strong>이름:</strong> ${item.public_name ? item.name : '비공개'}</p>
-        <p><strong>경력:</strong> ${item.public_career ? item.career : '비공개'}</p>
-        <p><strong>활동:</strong> ${item.activity}</p>
-        <p><strong>카테고리:</strong> ${item.category}</p>
+        <img src="${photo}" alt="프로필 이미지" />
+        <div class="portfolio-card-content">
+          <h3>${item.title || '제목 없음'}</h3>
+          <p><strong>이름:</strong> ${name}</p>
+          <p><strong>경력:</strong> ${career}</p>
+          <p><strong>활동:</strong> ${activity}</p>
+          <p><strong>카테고리:</strong> ${category}</p>
+        </div>
       `;
+
       portfolioList.appendChild(div);
     });
   } catch (err) {
