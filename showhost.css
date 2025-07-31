@@ -1,0 +1,54 @@
+/* 쇼호스트 전체 레이아웃 */
+.showhost-container {
+  padding: 20px 0 100px;
+  background-color: #f9f9fb;
+  min-height: 100vh;
+}
+
+.showhost-container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+/* 카드 스타일 */
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* 이미지 스타일 */
+.portfolio-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+/* 텍스트 내용 */
+.portfolio-card-content {
+  flex: 1;
+}
+
+.portfolio-card-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.portfolio-card-content p {
+  margin: 2px 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
