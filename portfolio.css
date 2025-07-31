@@ -1,9 +1,3 @@
-body {
-  background: #f9f9f9;
-  font-family: 'Apple SD Gothic Neo', sans-serif;
-  margin: 0;
-}
-
 /* 포트폴리오 전체 영역 */
 .portfolio-wrapper {
   padding: 1rem;
@@ -12,81 +6,66 @@ body {
 
 /* 개별 카드 */
 .portfolio-card {
+  display: flex;
+  align-items: center;
   background: #fff;
   border-radius: 1rem;
-  padding: 1.2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  margin-bottom: 1.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  height: 120px; /* ✅ 세로 고정 */
+}
+
+/* 프로필 이미지 박스 */
+.profile-image-box {
+  width: 96px;
+  height: 96px;
+  background: #fff;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.profile-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 또는 contain 원하시면 변경 가능 */
+}
+
+/* 텍스트 박스 */
+.profile-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
 }
 
-/* 프로필 정보 */
-.profile-info {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.profile-info img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #eee;
-  flex-shrink: 0;
-}
-
-.profile-texts {
-  flex-grow: 1;
-}
-
-.profile-texts .name {
+.profile-content .title {
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
+  color: #111;
 }
 
-.profile-texts .desc {
-  font-size: 0.85rem;
-  color: #555;
-}
-
-/* 항목 텍스트 */
-.portfolio-card p {
+.profile-content .desc {
   font-size: 0.9rem;
-  line-height: 1.5;
-  margin: 0;
-  color: #333;
+  color: #555;
+  line-height: 1.4;
 }
 
-.portfolio-card p strong {
-  display: inline-block;
-  width: 90px;
-  color: #666;
-}
-
-/* 스킬 해시태그 */
-.skills {
-  font-size: 0.85rem;
-  color: #6366f1;
-  margin: 0.5rem 0;
-}
-
-/* 수정 버튼 */
+/* 제안 버튼 */
 .portfolio-card button {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
   background: #5c6eff;
   color: white;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  width: 100%;
-  transition: background 0.2s;
-}
-
-.portfolio-card button:hover {
-  background: #4752d1;
+  align-self: flex-start;
 }
