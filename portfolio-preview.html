@@ -42,7 +42,7 @@
       try {
         const res = await fetch('https://livee-server-dev.onrender.com/portfolio/mine', {
           headers: {
-            Authorization: \`Bearer \${token}\`,
+            Authorization: `Bearer ${token}`,
           },
         });
 
@@ -63,16 +63,16 @@
 
         portfolioContent.innerHTML = `
           <div class="portfolio-card">
-            <img src="\${data.photo || '/default-profile.png'}" alt="프로필 이미지" />
-            <h3>\${data.title}</h3>
-            <p><strong>이름:</strong> \${data.name}</p>
-            <p><strong>경력:</strong> \${data.career}</p>
-            <p><strong>활동:</strong> \${data.activity}</p>
-            <p><strong>성격:</strong> \${data.character}</p>
-            <p><strong>희망 출연료:</strong> \${data.fee}</p>
-            <p><strong>출연 조건:</strong> \${data.condition}</p>
-            <p><strong>카테고리:</strong> \${data.category}</p>
-            <button onclick="location.href='/portfolio-edit.html?id=\${data._id}'">수정하기</button>
+            <img src="${data.photoUrl || '/default-profile.png'}" alt="프로필 이미지" class="portfolio-photo" />
+            <h3>${data.title}</h3>
+            <p><strong>이름:</strong> ${data.name}</p>
+            <p><strong>경력:</strong> ${data.career}</p>
+            <p><strong>활동:</strong> ${data.activity}</p>
+            <p><strong>성격:</strong> ${data.character}</p>
+            <p><strong>희망 출연료:</strong> ${data.fee}</p>
+            <p><strong>출연 조건:</strong> ${data.condition}</p>
+            <p><strong>카테고리:</strong> ${data.category}</p>
+            <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
           </div>
         `;
       } catch (err) {
