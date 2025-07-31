@@ -1,71 +1,71 @@
-/* 포트폴리오 전체 영역 */
-.portfolio-wrapper {
-  padding: 1rem;
-  padding-bottom: 100px; /* 하단탭 가리지 않게 */
+/* Remixicon 적용을 위해 꼭 필요한 CDN */
+@import url("https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css");
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9fb;
+  margin: 0;
+  padding: 0;
+  color: #222;
 }
 
-/* 개별 카드 */
+.portfolio-preview {
+  padding: 24px 16px 120px;
+}
+
+.portfolio-preview h2 {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* 카드 스타일 */
 .portfolio-card {
-  display: flex;
-  align-items: center;
   background: #fff;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 1rem;
-  height: 120px; /* ✅ 세로 고정 */
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.5;
 }
 
-/* 프로필 이미지 박스 */
-.profile-image-box {
-  width: 96px;
-  height: 96px;
-  background: #fff;
-  border-radius: 0.75rem;
-  flex-shrink: 0;
-  overflow: hidden;
-  border: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
-
-.profile-image-box img {
+/* ✅ 이미지 비율 고정 스타일 추가 */
+.portfolio-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* 또는 contain 원하시면 변경 가능 */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: block;
+  margin-bottom: 12px;
 }
 
-/* 텍스트 박스 */
-.profile-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.portfolio-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 4px 0 8px;
 }
 
-.profile-content .title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  color: #111;
-}
-
-.profile-content .desc {
+.portfolio-card p {
   font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
+  margin: 4px 0;
 }
 
-/* 제안 버튼 */
 .portfolio-card button {
-  margin-top: 0.5rem;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.85rem;
-  background: #5c6eff;
-  color: white;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #6A4FE0;
+  color: #fff;
   border: none;
-  border-radius: 0.5rem;
-  align-self: flex-start;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.portfolio-card button:hover {
+  background-color: #5639cb;
 }
