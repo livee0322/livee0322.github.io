@@ -1,47 +1,69 @@
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 24px 16px 16px;
+/* 전체 레이아웃 */
+.portfolio-preview {
+  padding: 20px 0 100px;
+  background-color: #f9f9fb;
 }
 
-.profile-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-
-.profile-title {
-  margin: 0;
-  font-size: 1.1rem;
+.portfolio-preview h2 {
+  font-size: 1.4rem;
   font-weight: 600;
+  padding: 0 16px;
+  margin-bottom: 16px;
 }
 
-.profile-name {
-  margin: 4px 0 0;
-  color: #666;
-  font-size: 0.95rem;
-}
-
-.info-card {
+/* 카드 스타일 */
+.portfolio-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  margin: 16px;
   padding: 16px;
-  margin: 12px 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
 }
 
-.info-card h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
+/* 이미지 스타일 */
+.portfolio-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+/* 텍스트 내용 */
+.portfolio-card-content {
+  flex: 1;
+}
+
+.portfolio-card-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
+  color: #222;
 }
 
-.info-card p {
-  margin: 0;
+.portfolio-card-content p {
+  margin: 2px 0;
   font-size: 0.95rem;
   color: #444;
+  line-height: 1.4;
+}
+
+/* 수정 버튼 */
+.portfolio-card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  background-color: #6A4FE0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.portfolio-card button:hover {
+  background-color: #5639cb;
 }
