@@ -41,27 +41,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     const safePhoto = data.photoUrl && data.photoUrl !== '' ? data.photoUrl : '/images/default-profile.png';
 
     portfolioContent.innerHTML = `
-      <div class="portfolio-wrapper">
-        <div class="portfolio-card">
-          <div class="profile-info">
-            <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
-            <div class="profile-texts">
-              <div class="name">${data.name || '이름 없음'}</div>
-              <div class="desc">${data.career || ''}</div>
-            </div>
-          </div>
-
-          <p><strong>제목:</strong> ${data.title || '-'}</p>
-          <p><strong>활동:</strong> ${data.activity || '-'}</p>
-          <p><strong>특성:</strong> ${data.character || '-'}</p>
-          <p><strong>희망 출연료:</strong> ${data.fee ? `${data.fee.toLocaleString()}원` : '-'}</p>
-          <p><strong>출연 조건:</strong> ${data.condition || '-'}</p>
-          <p><strong>카테고리:</strong> ${data.category || '-'}</p>
-
-          <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
-        </div>
+  <div class="portfolio-wrapper">
+    <div class="portfolio-card">
+      <div class="profile-image-box">
+        <img src="${safePhoto}" alt="프로필 이미지" onerror="this.onerror=null;this.src='/images/default-profile.png';" />
       </div>
-    `;
+      <div class="profile-content">
+        <div class="title">${data.name || '이름 없음'}</div>
+        <div class="desc">
+          ${data.title || '-'}<br/>
+          경력: ${data.career || '-'}<br/>
+          활동: ${data.activity || '-'}
+        </div>
+        <button onclick="location.href='/portfolio-edit.html?id=${data._id}'">수정하기</button>
+      </div>
+    </div>
+  </div>
+`;
   } catch (err) {
     console.error('❌ 포트폴리오 불러오기 오류:', err);
     portfolioContent.innerHTML = `<p>포트폴리오 불러오는 중 오류가 발생했어요. 😢</p>`;
