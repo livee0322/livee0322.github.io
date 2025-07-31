@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await res.json();
 
     if (!data || data.length === 0) {
-      portfolioList.innerHTML = '<p>등록된 포트폴리오가 없습니다.</p>';
+      portfolioList.innerHTML = '<p>등록된 쇼호스트가 없습니다.</p>';
       return;
     }
 
@@ -22,29 +22,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     data.forEach((item) => {
       const div = document.createElement('div');
       div.className = 'portfolio-card';
-
-      // 안전 fallback 값 설정
-      const photo = item.photo || '/default-profile.png';
-      const name = item.public_name ? item.name : '비공개';
-      const career = item.public_career ? item.career : '비공개';
-      const activity = item.activity || '-';
-      const category = item.category || '-';
-
       div.innerHTML = `
-        <img src="${photo}" alt="프로필 이미지" />
+        <img src="${item.photo || '/default-profile.png'}" alt="프로필 이미지" />
         <div class="portfolio-card-content">
           <h3>${item.title || '제목 없음'}</h3>
-          <p><strong>이름:</strong> ${name}</p>
-          <p><strong>경력:</strong> ${career}</p>
-          <p><strong>활동:</strong> ${activity}</p>
-          <p><strong>카테고리:</strong> ${category}</p>
+          <p><strong>이름:</strong> ${item.public_name ? item.name : '비공개'}</p>
+          <p><strong>경력:</strong> ${item.public_career ? item.career : '비공개'}</p>
+          <p><strong>활동:</strong> ${item.activity || '-'}</p>
+          <p><strong>카테고리:</strong> ${item.category || '-'}</p>
         </div>
       `;
-
       portfolioList.appendChild(div);
     });
   } catch (err) {
-    console.error('❌ 전체 포트폴리오 불러오기 오류:', err);
-    portfolioList.innerHTML = '<p>포트폴리오를 불러오는 중 오류가 발생했어요. 😢</p>';
+    console.error('❌ 쇼호스트 불러오기 오류:', err);
+    portfolioList.innerHTML = '<p>쇼호스트를 불러오는 중 오류가 발생했어요. 😢</p>';
   }
 });
